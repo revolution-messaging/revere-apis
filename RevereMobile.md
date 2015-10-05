@@ -1,8 +1,9 @@
-HOST: https://mobile.reverehq.com/api
-
 # Revere Mobile
 
-# Introduction
+HOST: https://mobile.reverehq.com/api
+
+## Introduction
+
 The Revere Mobile platform is a REST service that provides access to the Revere Mobile platform and enables rich, user-oriented web and mobile applications.
 
 The platform allows you to define mobile flows, which can be thought of as a conversation that can be had with a subscriber.
@@ -11,17 +12,18 @@ With the platform, you can also define metadata fields that can be associated wi
 
 Mobile flows offer a rich set of options for interacting with a subscriber. More information about mobile flows in the Flow Components section.
 
-# Group Basic Concepts
+## Reference
+## Basic Concepts
 
-# Object IDs
+### Object IDs
 
 The Revere Mobile service describes many types of objects, such as users, subscribers, lists, metadata files, and mobile flows. The service uses 24-digit hexadecimal string to identify objects, for example, "4e7b79780cf25110e4ee41ac".
 
-# Authentication
+### Authentication
 
 There are two ways to authenticate calls to the Revere Mobile platform: authenticate the session, or authenticate each request.
 
-## Authenticating the session
+#### Authenticating the session
 
 To authenticate a session, send a POST request to the v1/authentication endpoint. The JSON request contains the user name and password. When you authenticate the session, the service sets SessionId and JSESSIONID cookies, and subsequent calls to the service are authenticated and associated with the user who logged in.
 
@@ -29,19 +31,19 @@ The session ID and the authentication expire after 30 minutes of idle time. To m
 
 For details on the log in and log out requests, see the Authentication API reference section.
 
-## Authenticating each request
+#### Authenticating each request
 
 To separately authenticate each request, include the API key for the user in the Authorization HTTP header. This approach does not require an active session ID. This method is more appropriate for integrations that always use the same credentials and do not want to add the complexity of session logic.
 
-## Choosing an approach
+#### Choosing an approach
 
 Whereas all users of the web application will need a user name and password, only users who access the Revere Mobile API would need an individual API key. Your account manager at Revolution Messaging can help you determine which procedure works best for you and will issue an API key if appropriate.
 
-# Session Shortcode
+### Session Shortcode
 
 Many platform objects are tied to a shortcode in addition to their permissions group. If you have access to more than one shortcode under your user credentials, the system will assume you are operating on your default shortcode unless you change it with the _Change your session shortcode_ method (see the section on the _shortcode_ endpoint for details). The majority of users will have access to only one shortcode and can safely disregard this requirement.
 
-# HTTP Headers
+### HTTP Headers
 
 There are a few HTTP headers that need to be included in all requests. Some have been identified above. If using an authenticated session, there are two cookies that must be included in each subsequent request:
 
@@ -58,7 +60,7 @@ In addition to HTTP headers required for authentication, there are additional on
     Content-Type: application/json
 There are a few exceptions to these format headers, those will be identified in the documentation for the specific APIs affected.
 
-# Collections and Pagination
+### Collections and Pagination
 
 The Revere Mobile API uses pagination to chunk collections of items. A page is simply a range of items from the collection. You may want to retrieve the collection items a page at a time for bandwidth issues, or to relate the request to the UI of an app that only shows a certain number of items per logic page.
 
@@ -66,14 +68,14 @@ In the URL query parameters, you specify the page size and the page number. The 
 
 For example, if you requested the third page of 20 items, the method would return the 41st through 60th items. If the collection of items on the server contained fewer than 60 items, but more than 40, this same request would return the 41st and all remaining items in the collection. If the collection on the server contained fewer than 41 elements, then this same call would return an empty collection.
 
-## Request query parameters
+#### Request query parameters
 
 * `size` (page size) is the number of items that a call to the operation will return. The default value is -1, which returns all of the items in the collection.
 * `page` (page number) is the 1-based index of the page to return. The default value is 1.
 
 For example, the request URL to retrieve the third page of 20 lists would be:
     http://revolutionmsg.com/v1/list?size=20&page=3
-## Response JSON elements
+#### Response JSON elements
 * `page` indicates the 1-based index for this page of items.
 * `size` indicates how many items are on each page.
 * `total` indicates how many items are in the collection on the server.
@@ -91,7 +93,7 @@ For the preceding request, if 73 lists are defined, the JSON response would cont
             }
 
 
-## BroadcastResponse [/APIModel/BroadcastResponse]
+#### BroadcastResponse [/APIModel/BroadcastResponse]
 + Model (application/json)
 APIModel for BroadcastResponse
     + Headers
@@ -105,7 +107,7 @@ APIModel for BroadcastResponse
                 "schedule": ""
             }
 
-## BroadcastRequest [/APIModel/BroadcastRequest]
+#### BroadcastRequest [/APIModel/BroadcastRequest]
 + Model (application/json)
 APIModel for BroadcastResponse
     + Headers
@@ -136,7 +138,7 @@ APIModel for BroadcastResponse
                 ]
             }
 
-## APIKey [/APIModel/APIKey]
+#### APIKey [/APIModel/APIKey]
 + Model
 API Model for APIKey
 
@@ -151,7 +153,7 @@ API Model for APIKey
                 "apiKey":"2baa7764-f2fa-4b07-b5de-867dd8ee2532"
             }
 
-## BroadcastSummaryReportQuery [/APIModel/BroadcastSummaryReportQuery]
+#### BroadcastSummaryReportQuery [/APIModel/BroadcastSummaryReportQuery]
 + Model (application/json)
 APIModel for BroadcastSummaryReportQuery
     + Headers
@@ -175,7 +177,7 @@ APIModel for BroadcastSummaryReportQuery
                 }
             }
 
-## MORoute [/APIModel/MORoute]
+#### MORoute [/APIModel/MORoute]
 + Model (application/json)
     + Headers
     + Body
@@ -187,7 +189,7 @@ APIModel for BroadcastSummaryReportQuery
                 "rule": "^cancel\\s.*"
             }
 
-## SubscriberGrowthReportQuery [/APIModel/SubscriberGrowthReportQuery]
+#### SubscriberGrowthReportQuery [/APIModel/SubscriberGrowthReportQuery]
 + Model (application/json)
 APIModel for SubscriberGrowthReportQuery
     + Headers
@@ -203,7 +205,7 @@ APIModel for SubscriberGrowthReportQuery
                 "bucketSize": "DAY"
             }
 
-## MessageSummaryReportQuery [/APIModel/MessageSummaryReportQuery]
+#### MessageSummaryReportQuery [/APIModel/MessageSummaryReportQuery]
 + Model (application/json)
 APIModel for MessageSummaryReportQuery
     + Headers
@@ -218,7 +220,7 @@ APIModel for MessageSummaryReportQuery
                 "bucketSize": "DAY"
             }
 
-## MessageDetailsReportQuery [/APIModel/MessageDetailsReportQuery]
+#### MessageDetailsReportQuery [/APIModel/MessageDetailsReportQuery]
 + Model (application/json)
 APIModel for MessageDetailsReportQuery
     + Headers
@@ -233,7 +235,7 @@ APIModel for MessageDetailsReportQuery
                 "endOn": "2015-01-21"
             }
 
-## PollResultsReportQuery [/APIModel/PollResultsReportQuery]
+#### PollResultsReportQuery [/APIModel/PollResultsReportQuery]
 + Model (application/json)
 APIModel for PollResultsReportQuery
     + Headers
@@ -247,7 +249,7 @@ APIModel for PollResultsReportQuery
               "name": "Poll Summary for Mobile Flow SomeCampaignName"
             }
 
-## Shortcode [/APIModel/Shortcode]
+#### Shortcode [/APIModel/Shortcode]
 + Model (application/json)
 APIModel for Shortcode
     + Headers
@@ -275,7 +277,7 @@ APIModel for Shortcode
             }
 
 
-## SmartListRequest [/APIModel/SmartListRequest]
+#### SmartListRequest [/APIModel/SmartListRequest]
 + Model (application/json)
 APIModel for SmartListRequest
     + Headers
@@ -301,7 +303,7 @@ APIModel for SmartListRequest
                 "name": "510 areacode OR chose 7"
             }
 
-## SmartListResponse [/APIModel/SmartListResponse]
+#### SmartListResponse [/APIModel/SmartListResponse]
 + Model (application/json)
 APIModel for SmartListResponse
     + Headers
@@ -333,7 +335,7 @@ APIModel for SmartListResponse
                 "name":"510 areacode OR chose 7"
             }
 
-## AccountRequest [/APIModel/AccountRequest]
+#### AccountRequest [/APIModel/AccountRequest]
 
 + Model (application/json)
 APIModel for AccountRequest
@@ -347,7 +349,7 @@ APIModel for AccountRequest
                 "userName": "jondoe"
             }
 
-## AccountResponse [/APIModel/AccountResponse]
+#### AccountResponse [/APIModel/AccountResponse]
 
 + Model (application/json)
 APIModel for AccountResponse
@@ -362,7 +364,7 @@ APIModel for AccountResponse
                 "username": "jondoe"
             }
 
-## Authenticate [/APIModel/Authenticate]
+#### Authenticate [/APIModel/Authenticate]
 + Model (application/json)
 APIModel for Authenticate
     + Headers
@@ -373,7 +375,7 @@ APIModel for Authenticate
                 "username": "jondoe"
             }
 
-## Campaign [/APIModel/Campaign]
+#### Campaign [/APIModel/Campaign]
 + Model (application/json)
 APIModel for Campaign
     + Headers
@@ -395,7 +397,7 @@ APIModel for Campaign
                 "status": "ACTIVE"
             }
 
-## CatchAll [/APIModel/CatchAll]
+#### CatchAll [/APIModel/CatchAll]
 + Model (application/json)
 APIModel for CatchAll
     + Headers
@@ -413,7 +415,7 @@ APIModel for CatchAll
                 "subscriber": ""
             }
 
-## CatchAllCounter [/APIModel/CatchAllCounter]
+#### CatchAllCounter [/APIModel/CatchAllCounter]
 + Model (application/json)
 APIModel for CatchAllCounter
     + Headers
@@ -423,7 +425,7 @@ APIModel for CatchAllCounter
                 "total": "81800"
             }
 
-## Collection [/APIModel/Collection]
+#### Collection [/APIModel/Collection]
 + Model (application/json)
 APIModel for Collection
     + Headers
@@ -436,7 +438,7 @@ APIModel for Collection
                 "total": "81800"
             }
 
-## SubscriberCountCollection [/APIModel/SubscriberCountCollection]
+#### SubscriberCountCollection [/APIModel/SubscriberCountCollection]
 + Model (application/json)
     + Headers
     + Body
@@ -448,7 +450,7 @@ APIModel for Collection
               "collection": []
             }
 
-## ContentModule [/APIModel/ContentModule]
+#### ContentModule [/APIModel/ContentModule]
 + Model (application/json)
 APIModel for ContentModule
     + Headers
@@ -469,7 +471,7 @@ APIModel for ContentModule
                 }
             }
 
-## SubscriberMessagesResponse [/APIModel/SubscriberMessagesResponse]
+#### SubscriberMessagesResponse [/APIModel/SubscriberMessagesResponse]
 + Model (application/json)
   APIModel for SubscriberMessagesResponse
   + Headers
@@ -480,7 +482,7 @@ APIModel for ContentModule
             "messages": []
             }
 
-## EditMobileFlow [/APIModel/EditMobileFlow]
+#### EditMobileFlow [/APIModel/EditMobileFlow]
 + Model (application/json)
 APIModel for EditMobileFlow
     + Headers
@@ -503,7 +505,7 @@ APIModel for EditMobileFlow
                 "modules": []
             }
 
-## Geospatial [/APIModel/Geospatial]
+#### Geospatial [/APIModel/Geospatial]
 + Model (application/json)
 APIModel for Geospatial
     + Headers
@@ -519,7 +521,7 @@ APIModel for Geospatial
                 ]
             }
 
-## Group [/APIModel/Group]
+#### Group [/APIModel/Group]
 + Model (application/json)
 APIModel for Group
     + Headers
@@ -533,7 +535,7 @@ APIModel for Group
                 "name": "sample"
             }
 
-## Keyword [/APIModel/Keyword]
+#### Keyword [/APIModel/Keyword]
 + Model (application/json)
 APIModel for Keyword
     + Headers
@@ -548,7 +550,7 @@ APIModel for Keyword
                 "shortCode": "4e8b4b5afda5efeeec370e8a"
             }
 
-## KeywordAvailable [/APIModel/KeywordAvailable]
+#### KeywordAvailable [/APIModel/KeywordAvailable]
 + Model (application/json)
 APIModel for KeywordAvailable
     + Headers
@@ -559,7 +561,7 @@ APIModel for KeywordAvailable
                 "name": "sample"
               }
 
-## List [/APIModel/List]
+#### List [/APIModel/List]
 + Model (application/json)
 APIModel for List
     + Headers
@@ -576,7 +578,7 @@ APIModel for List
                 "status": "ACTIVE"
             }
 
-## Messaging [/APIModel/Messaging]
+#### Messaging [/APIModel/Messaging]
 + Model (application/json)
 APIModel for Messaging
     + Headers
@@ -626,7 +628,7 @@ APIModel for Messaging
                 "shortCode":"515b0768ca10e4ec580fcc60"
             }
 
-## Metadata [/APIModel/Metadata]
+#### Metadata [/APIModel/Metadata]
 + Model (application/json)
 APIModel for Metadata
     + Headers
@@ -645,7 +647,7 @@ APIModel for Metadata
                 "status": "ACTIVE"
             }
 
-## MetadataValue [/APIModel/MetadataValue]
+#### MetadataValue [/APIModel/MetadataValue]
 + Model (application/json)
 APIModel for MetadataValue
     + Headers
@@ -657,7 +659,7 @@ APIModel for MetadataValue
                 "value": "12"
             }
 
-## MobileFlow [/APIModel/MobileFlow]
+#### MobileFlow [/APIModel/MobileFlow]
 + Model (application/json)
 APIModel for MobileFlow
     + Headers
@@ -675,7 +677,7 @@ APIModel for MobileFlow
             }
 
 
-## QueryFilterDetailRequest [/APIModel/QueryFilterDetailRequest]
+#### QueryFilterDetailRequest [/APIModel/QueryFilterDetailRequest]
 + Model (application/json)
 APIModel for QueryFilterDetailRequest
     + Headers
@@ -688,7 +690,7 @@ APIModel for QueryFilterDetailRequest
                 "value": "11,12,13"
             }
 
-## QueryFilter [/APIModel/QueryFilter]
+#### QueryFilter [/APIModel/QueryFilter]
 + Model (application/json)
 APIModel for QueryFilter
     + Headers
@@ -714,7 +716,7 @@ APIModel for QueryFilter
                 "shortCode": "4e8b4b5afda5efeeec370e8a"
             }
 
-## QueryFilterDetail [/APIModel/QueryFilterDetail]
+#### QueryFilterDetail [/APIModel/QueryFilterDetail]
     + Headers
     + Body
     
@@ -725,7 +727,7 @@ APIModel for QueryFilter
                 "value": "11,12,13"
             }
 
-## QueryFilterDetailResponse [/APIModel/QueryFilterDetailResponse]
+#### QueryFilterDetailResponse [/APIModel/QueryFilterDetailResponse]
 + Model (application/json)
 APIModel for QueryFilterDetailResponse
     + Headers
@@ -738,7 +740,7 @@ APIModel for QueryFilterDetailResponse
                 "value": "11,12,13"
             }
 
-## QueryFilterRequest [/APIModel/QueryFilterRequest]
+#### QueryFilterRequest [/APIModel/QueryFilterRequest]
 + Model (application/json)
 APIModel for QueryFilterRequest
     + Headers
@@ -764,7 +766,7 @@ APIModel for QueryFilterRequest
                 "shortCode": "4e8b4b5afda5efeeec370e8a"
             }
 
-## QueryFilterResponse [/APIModel/QueryFilterResponse]
+#### QueryFilterResponse [/APIModel/QueryFilterResponse]
 + Model (application/json)
 APIModel for QueryFilterResponse
     + Headers
@@ -790,7 +792,7 @@ APIModel for QueryFilterResponse
                 "shortCode": "4e8b4b5afda5efeeec370e8a"
             }
 
-## ComplexFilter [/APIModel/Query/ComplexFilter]
+#### ComplexFilter [/APIModel/Query/ComplexFilter]
 + Model (application/json)
 APIModel for complex filter queries
     + Headers
@@ -829,7 +831,7 @@ APIModel for complex filter queries
                 }
             }
 
-## ReportingStatus [/APIModel/ReportingStatus]
+#### ReportingStatus [/APIModel/ReportingStatus]
 + Model (application/json)
 APIModel for ReportingStatus
     + Headers
@@ -840,7 +842,7 @@ APIModel for ReportingStatus
                 status: "ONLINE"
             }
 
-## ReportingTemplateRequest [/APIModel/ReportingTemplateRequest]
+#### ReportingTemplateRequest [/APIModel/ReportingTemplateRequest]
 + Model (application/json)
 APIModel for ReportingTemplateRequest
     + Headers
@@ -864,7 +866,7 @@ APIModel for ReportingTemplateRequest
             }
 
 
-## ReportingTemplateResponse [/APIModel/ReportingTemplateResponse]
+#### ReportingTemplateResponse [/APIModel/ReportingTemplateResponse]
 + Model (application/json)
 APIModel for ReportingTemplateResponse
     + Headers
@@ -890,7 +892,7 @@ APIModel for ReportingTemplateResponse
             } 
 
 
-## Role [/APIModel/Role]
+#### Role [/APIModel/Role]
 + Model (application/json)
 APIModel for Role
     + Headers
@@ -913,7 +915,7 @@ APIModel for Role
                 "status": "ACTIVE"
             }
 
-## Security [/APIModel/Security]
+#### Security [/APIModel/Security]
 + Model (application/json)
 APIModel for Security
     + Headers
@@ -923,7 +925,7 @@ APIModel for Security
                 "id": "5493568f0cf2fcad2e35ecb5"
             }
 
-## Segment [/APIModel/Segment]
+#### Segment [/APIModel/Segment]
 + Model (application/json)
 APIModel for Segment
     + Headers
@@ -935,7 +937,7 @@ APIModel for Segment
                 "value": "A"
             }
 
-## Session [/APIModel/Session]
+#### Session [/APIModel/Session]
 + Model (application/json)
 APIModel for Session
     + Headers
@@ -956,7 +958,7 @@ APIModel for Session
                 "username": "jondoe"
             }
 
-## SessionResponse [/APIModel/SessionResponse]
+#### SessionResponse [/APIModel/SessionResponse]
 + Model (application/json)
 APIModel for SessionResponse
     + Headers
@@ -979,7 +981,7 @@ APIModel for SessionResponse
                 "username": "jondoe"
             }
 
-## Subscriber [/APIModel/Subscriber]
+#### Subscriber [/APIModel/Subscriber]
 + Model (application/json)
 APIModel for Subscriber
     + Headers
@@ -1067,7 +1069,7 @@ APIModel for Subscriber
                 "blacklist": []
             }
 
-## SubscribersAndList [/APIModel/SubscribersAndList]
+#### SubscribersAndList [/APIModel/SubscribersAndList]
 + Model (application/json)
 APIModel for SubscribersAndList
     + Headers
@@ -1078,7 +1080,7 @@ APIModel for SubscribersAndList
                 "subscribers": ""
             }
 
-## Trigger [/APIModel/Trigger]
+#### Trigger [/APIModel/Trigger]
 + Model (application/json)
 APIModel for Trigger
     + Headers
@@ -1093,7 +1095,7 @@ APIModel for Trigger
                 "shortCode": "4e8b4b5afda5efeeec370e8a"
             }
 
-## User [/APIModel/User]
+#### User [/APIModel/User]
 + Model (application/json)
 APIModel for User
     + Headers
@@ -1124,7 +1126,7 @@ APIModel for User
                 "status": "ACTIVE"
             }
 
-## UserDetails [/APIModel/UserDetails]
+#### UserDetails [/APIModel/UserDetails]
 + Model (application/json)
 APIModel for UserDetails
     + Headers
@@ -1139,7 +1141,7 @@ APIModel for UserDetails
                 "company": "Shoemakers International Union"
             }
 
-# Group Authenticate
+### Group Authenticate
 
 These methods deal with logging into and out of the platform.
 
@@ -1166,33 +1168,36 @@ These methods deal with logging into and out of the platform.
 | user  | string    | true  | User ID   |
 | username  | string    | true  | User's login ID   |
 
-## v1 [/v1/authenticate]
+#### v1 [/v1/authenticate]
 
-### log in [POST]
+** log in [POST] **
 + Request
   [Authenticate][]
 
 + Response 204
 + Response 401
 
-# GET /v1/authenticate/whoami
+```
+GET /v1/authenticate/whoami
+```
 Retrieve information on your currently-active session
 
 + Response 200
   [SessionResponse][]
 + Response 401
 + Response 403
-
-# POST /v1/authenticate/logout
+```
+POST /v1/authenticate/logout
+```
 End your authentication session
 
 + Response 204
 + Response 401
 + Response 403
 
-## v2 [/v2/authenticate]
+#### v2 [/v2/authenticate]
 
-### log in [POST]
+** log in [POST] **
 + Request
   [Authenticate][]
 
@@ -1201,7 +1206,9 @@ End your authentication session
 + Response 401
 + Response 403
 
-# GET /v2/authenticate/whoami
+```
+GET /v2/authenticate/whoami
+```
 Retrieve information on your currently-active session
 
 + Response 200
@@ -1209,16 +1216,16 @@ Retrieve information on your currently-active session
 + Response 401
 + Response 403
 
-# Group Broadcast
+### Group Broadcast
 
 Use the Broadcast API to retrieve and cancel scheduled broadcasts.
 
-## v2 [/v2/broadcast/{id}]
+#### v2 [/v2/broadcast/{id}]
 
 + Parameters
     + id (optional, 24 char hex) ... the THING's unique identifier. Required in PUT & DELETE requests, and in GET requests to retrieve information about a specific broadcast.
 
-### get broadcast [GET]
+** get broadcast [GET] **
 
 Retrieve information about a specific broadcast if {id} is specified, or a collection of scheduled broadcasts with pagination parameters if {id} is absent
 
@@ -1229,7 +1236,7 @@ Retrieve information about a specific broadcast if {id} is specified, or a colle
 + Response 403
 + Response 500
  
-### delete broadcast [DELETE]
+** delete broadcast [DELETE] **
 
 Cancel a specific scheduled broadcast
 
@@ -1239,7 +1246,7 @@ Cancel a specific scheduled broadcast
 + Response 403
 + Response 500 
 
-### create broadcast [POST]
+** create broadcast [POST] **
 
 Send or schedule a broadcast
 + Request
@@ -1251,7 +1258,7 @@ Send or schedule a broadcast
 + Response 403
 + Response 500
 
-# Group Campaign
+### Group Campaign
 All outbound messages and any object that can send an outbound message on the platform must be associated with a campaign. Use campaigns to organize your mobile program.
 
 *Campaign* model
@@ -1268,36 +1275,40 @@ All outbound messages and any object that can send an outbound message on the pl
 | startDate | Date  | false | The starting date of the campaign.    |
 | status    | string    | false | Flag indicating whether this campaign is currently active.    |
 
-## v1 [/v1/campaign/{id}]
+#### v1 [/v1/campaign/{id}]
 
 + Parameters
   + id (optional, 24 char hex) ... the campaign's unique identifier. Required in GET, PUT & DELETE requests.
 
-### get campaign [GET]
+** get campaign [GET] **
 + Response 200
   [Campaign][]
 
-### delete campaign [DELETE]
+** delete campaign [DELETE] **
 + Response 204
 
-### update campaign [PUT]
+** update campaign [PUT] **
 + Request
   [Campaign][]
 + Response 204
 
-# POST /v1/campaign/
+```
+POST /v1/campaign/
+```
 Create a new campaign
 + Request
 [Campaign][]
 + Response 200
 [Campaign][]
 
-# GET /v1/campaign
+```
+GET /v1/campaign
+```
 Retrieve a collection of campaigns
 + Response 200
   [Collection][]
 
-# Group Catchall/Inbox
+### Group Catchall/Inbox
 
 *Catch-all counter* model
 
@@ -1319,19 +1330,21 @@ Retrieve a collection of campaigns
 | status    | string    | false | Indicates whether this inbox message is currently active. Deleted inbox messages are marked INACTIVE and will not be retrieved in the future.  The allowable values are 'ACTIVE' and 'INACTIVE'. This element is case-sensitive.  |
 | subscriber    | string    | false | The ID of the subscriber that wrote this message. |
 
-## v1 [/v1/catchAll/{id}]
+#### v1 [/v1/catchAll/{id}]
 
 + Parameters
   + id (optional, 24 char hex) ... a message's unique identifier. Required in GET, PUT & DELETE requests.
 
-### delete an inbox message [DELETE]
+** delete an inbox message [DELETE] **
 + Response 204
 + Response 401
 + Response 403
 + Response 404
 + Response 500
 
-# GET /v1/catchAll/inboxCounter
+```
+GET /v1/catchAll/inboxCounter
+```
 Retrieve the number of messages in the inbox
 + Response 200
     [CatchAllCounter][]
@@ -1339,7 +1352,9 @@ Retrieve the number of messages in the inbox
 + Response 403
 + Response 500
 
-### GET /api/v1/catchAll
+```
+GET /api/v1/catchAll
+```
 Retrieve inbox messages
 + Response 200
     [CatchAll][]
@@ -1348,7 +1363,7 @@ Retrieve inbox messages
 + Response 403
 + Response 500
 
-# Group Filter
+### Group Filter
 Filters consist of a set of lists, a set of metadata-based criteria, and are used to retrieve dedpulicated collections of subscribers who are on one or more of the component lists and fit the criteria. v1 of the filter API allows only the simpler filters described with the `QueryFilter` model, below. These filters are limited to a set of AND criteria, including only subscribers who match all of the criteria in the filter. v2 of the API is backward-compatible, accepting the same models as v1, but also allows for the `ComplexFilter` model, which incorporates both AND and OR matches and also allows for arbitrary levels of recursion, as `ComplexFilterDetail` objects may be nested in the `details` property of other `ComplexFilterDetail` objects.
 
 The 
@@ -1397,12 +1412,12 @@ The
 | zipcodes  | list  | false | The ZIP codes that fall partially or completely within the described area, including the center ZIP code. |
 
 
-## v1 [/v1/filter/{id}]
+#### v1 [/v1/filter/{id}]
 
 + Parameters
   + id (optional, 24 char hex) ... the filter's unique identifier. Required in GET, PUT & DELETE requests.
 
-### get query filter [GET]
+** get query filter [GET] **
 
 Retrieve a filter by ID. This endpoint is capable of retrieving complex as well as simple filters, though complex filters may only be created or updated using the v2 endpoint.
 
@@ -1413,7 +1428,7 @@ Retrieve a filter by ID. This endpoint is capable of retrieving complex as well 
 + Response 403
 + Response 500
 
-### update query filter [PUT]
+** update query filter [PUT] **
 + Request
     [QueryFilter][]
 + Response 204
@@ -1422,7 +1437,7 @@ Retrieve a filter by ID. This endpoint is capable of retrieving complex as well 
 + Response 403
 + Response 500
 
-### delete query filter [DELETE]
+** delete query filter [DELETE] **
 
 Delete a filter by ID. This endpoint is capable of deleting complex as well as simple filters, though complex filters may only be created or updated using the v2 endpoint.
 
@@ -1432,7 +1447,7 @@ Delete a filter by ID. This endpoint is capable of deleting complex as well as s
 + Response 403
 + Response 500
 
-### create query filter [POST]
+** create query filter [POST] **
 + Request
     [QueryFilter][]
 + Response 204
@@ -1441,7 +1456,9 @@ Delete a filter by ID. This endpoint is capable of deleting complex as well as s
 + Response 403
 + Response 500
 
-# GET /v1/filter/zipcode 
+```
+GET /v1/filter/zipcode 
+```
 
 Use this method to retrieve all ZIP codes within a radius of another ZIP code. The response from this endpoint is usually used to build a filter for subscribers near a certain location.
 
@@ -1452,14 +1469,14 @@ Use this method to retrieve all ZIP codes within a radius of another ZIP code. T
 + Response 403
 + Response 500
 
-## v2 [/v2/filter/{id}]
+#### v2 [/v2/filter/{id}]
 
 Example payloads here use the `ComplexFilter` model, though this endpoint accepts `QueryFilter` objects as well.
 
 + Parameters
   + id (optional, 24 char hex) ... the filter's unique identifier. Required in GET, PUT & DELETE requests.
 
-### Update an existing query filter [PUT]
+** Update an existing query filter [PUT] **
 
 + Request
     [ComplexFilter][]
@@ -1469,7 +1486,7 @@ Example payloads here use the `ComplexFilter` model, though this endpoint accept
 + Response 500
 
 
-### Create a new query filter [POST]
+** Create a new query filter [POST] **
 
 + Request
     [ComplexFilter][]
@@ -1480,7 +1497,7 @@ Example payloads here use the `ComplexFilter` model, though this endpoint accept
 + Response 403
 + Response 500
 
-# Group Group
+### Group Group
 All platform objects are associated with a group, and role permissions are exercised over the group.
 
 *Group* Model
@@ -1494,12 +1511,12 @@ All platform objects are associated with a group, and role permissions are exerc
 | name  | string    | false | Name  |
 
 
-## v1 [/v1/group/{id}]
+#### v1 [/v1/group/{id}]
 
 + Parameters
   + id (optional, 24 char hex) ... the campaign's unique identifier. Required in GET, PUT & DELETE requests.
 
-### get [GET]
+** get [GET] **
 Retrieve group specified by ID
 
 + Response 200
@@ -1509,7 +1526,7 @@ Retrieve group specified by ID
 + Response 403
 + Response 500
 
-### delete [DELETE]
+** delete [DELETE] **
 Delete group specified by ID
 
 + Response 204
@@ -1518,7 +1535,7 @@ Delete group specified by ID
 + Response 403
 + Response 500
 
-### update [PUT]
+** update [PUT] **
 Update a group by ID
 
 + Request
@@ -1529,7 +1546,7 @@ Update a group by ID
 + Response 403
 + Response 500
 
-### create [POST]
+** create [POST] **
 Create a new group
 + Request
     [Group][]
@@ -1540,7 +1557,9 @@ Create a new group
 + Response 403
 + Response 500
 
-# GET /v1/group
+```
+GET /v1/group
+```
 Retrieve groups by filter and pagination parameters
 
 + Response 200
@@ -1550,37 +1569,37 @@ Retrieve groups by filter and pagination parameters
 + Response 403
 + Response 500
 
-# Group Impersonate
+### Group Impersonate
 Impersonate allows master admin users to alter their session to act as if they were another user.
 
-## v1 [/v1/impersonate/{user}]
+#### v1 [/v1/impersonate/{user}]
 
 + Parameters
   + user (optional, 24 char hex) ... the unique identifier of the user to be impersonated.
 
-### release [DELETE]
+** release [DELETE] **
 + Response 204
 + Response 400
 + Response 401
 + Response 403
 + Response 500
 
-### impersonate [POST]
+** impersonate [POST] **
 + Response 204
 + Response 400
 + Response 401
 + Response 403
 + Response 500
 
-# Group List
+### Group List
 Lists are collections of mobile subscribers. Lists may be used in broadcasts or in the creation of filters.
 
-## v1 [/v1/list/{id}]
+#### v1 [/v1/list/{id}]
 
 + Parameters
   + id (optional, 24 char hex) ... the campaign's unique identifier. Required in GET, PUT & DELETE requests.
 
-### get list [GET]
+** get list [GET] **
 + Response 200
     [List][]
 + Response 400
@@ -1588,14 +1607,14 @@ Lists are collections of mobile subscribers. Lists may be used in broadcasts or 
 + Response 403
 + Response 500
  
-### delete list [DELETE]
+** delete list [DELETE] **
 + Response 204
 + Response 400
 + Response 401
 + Response 403
 + Response 500
 
-### update list [PUT]
+** update list [PUT] **
 + Request
     [List][]
 + Response 204
@@ -1604,7 +1623,7 @@ Lists are collections of mobile subscribers. Lists may be used in broadcasts or 
 + Response 403
 + Response 500
 
-### create list [POST]
+** create list [POST] **
 + Request
     [List][]
 + Response 200
@@ -1614,7 +1633,7 @@ Lists are collections of mobile subscribers. Lists may be used in broadcasts or 
 + Response 403
 + Response 500
 
-# Group Messaging
+### Group Messaging
 Messaging methods allow you to send broadcasts and one-off messages from the platform.
 
 `Messaging` model
@@ -1637,7 +1656,7 @@ Messaging methods allow you to send broadcasts and one-off messages from the pla
 | subscribers   | list  | false | The IDs of the subscribers to which to send the content.  |
 | tags  | array | false | The tags with which to label any messages associated with this content.   |
 
-# Group Metadata
+### Group Metadata
 Metadata methods deal with the metdata fields the platform uses to store subscriber data. See the Subscriber methods for manipulating the metadata on individual subscribers.
 
 `Metadata` model
@@ -1655,12 +1674,12 @@ Metadata methods deal with the metdata fields the platform uses to store subscri
 | status    | string    | false | Indicates whether this metadata field is currently active.    |
 | validValues   | list  | false | An array of valid values for this metadata field. |
 
-## v1 [/v1/metadata/{id}]
+#### v1 [/v1/metadata/{id}]
 
 + Parameters
   + id (optional, 24 char hex) ... the metadata field's unique identifier. Required in GET, PUT & DELETE requests.
 
-### get metadata [GET]
+** get metadata [GET] **
 + Response 200
     [Metadata][]
 + Response 400
@@ -1668,14 +1687,14 @@ Metadata methods deal with the metdata fields the platform uses to store subscri
 + Response 403
 + Response 500
  
-### delete metadata [DELETE]
+** delete metadata [DELETE] **
 + Response 204
 + Response 400
 + Response 401
 + Response 403
 + Response 500
 
-### update metadata [PUT]
+** update metadata [PUT] **
 + Request
     [Metadata][]
 + Response 204
@@ -1684,7 +1703,7 @@ Metadata methods deal with the metdata fields the platform uses to store subscri
 + Response 403
 + Response 500
 
-### create metadata [POST]
+** create metadata [POST] **
 + Request
     [Metadata][]
 + Response 200
@@ -1694,9 +1713,11 @@ Metadata methods deal with the metdata fields the platform uses to store subscri
 + Response 403
 + Response 500
 
-# POST /v1/metadata/{metadataId}/share/{roleId}
+```
+POST /v1/metadata/{metadataId}/share/{roleId}
+```
 
-## Share Metadata
+#### Share Metadata
 
 This method grants a role other than your own access to a metadata field. Users with that role will have all the permissions they have with metadata generally on this field.
 
@@ -1715,7 +1736,7 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-# Group Mobileflow
+### Group Mobileflow
 
 `MobileFlow` model
 
@@ -1750,12 +1771,12 @@ This method grants a role other than your own access to a metadata field. Users 
 | params    | string    | false | Map of content parameters. These vary based on the type. Refer to the Content Modules section at the end of this document for a description of the parameters for each of the content types available.  |
 | type  | string    | false | The content type of the content module. For a description of available content types, refer to the Content Modules section at the end of this document. |
 
-## v1 [/v1/mobileflow/{id}]
+#### v1 [/v1/mobileflow/{id}]
 
 + Parameters
   + id (required, 24 char hex) ... the mobile flow's unique identifier. Required in GET, PUT & DELETE requests.
 
-### get mobileflow [GET]
+** get mobileflow [GET] **
 + Response 200
     [MobileFlow][]
 + Response 400
@@ -1763,14 +1784,14 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
  
-### delete mobileflow [DELETE]
+** delete mobileflow [DELETE] **
 + Response 204
 + Response 400
 + Response 401
 + Response 403
 + Response 500
 
-### update mobileflow [PUT]
+** update mobileflow [PUT] **
 + Request
     [MobileFlow][]
 + Response 204
@@ -1779,7 +1800,7 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-### create mobileflow [POST]
+** create mobileflow [POST] **
 + Request
     [MobileFlow][]
 + Response 200
@@ -1789,12 +1810,12 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-## v2 [/v2/mobileflow/{id}]
+#### v2 [/v2/mobileflow/{id}]
 
 + Parameters
     + id (optional, 24 char hex) ... the mobile flow's unique identifier. Required in GET, PUT & DELETE requests.
 
-### get mobileflow [GET]
+** get mobileflow [GET] **
 + Response 200
     [MobileFlow][]
 + Response 400
@@ -1802,14 +1823,14 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
  
-### delete mobileflow [DELETE]
+** delete mobileflow [DELETE] **
 + Response 204
 + Response 400
 + Response 401
 + Response 403
 + Response 500
 
-### update mobileflow [PUT]
+** update mobileflow [PUT] **
 + Request
     [MobileFlow][]
 + Response 204
@@ -1818,7 +1839,7 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-### create mobileflow [POST]
+** create mobileflow [POST] **
 + Request
     [MobileFlow][]
 + Response 200
@@ -1828,9 +1849,9 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-# Group MO Routing
+### Group MO Routing
 
-## `moroute` model
+#### `moroute` model
 
 | property  | type  | required      | description   |
 |-----      |-----  |-----          |-----|
@@ -1839,13 +1860,13 @@ This method grants a role other than your own access to a metadata field. Users 
 | shortCode | 24 char hex   | true          | the ID of the shortcode that the MO route works on    |
 | rule      | string (regex expression) | true  | a valid regex rule; MOs to the `shortcode` that match this rule will be considered equivalent to the MO route's `keyword` |
 
-## v2 [/v2/moroute/{id}]
+#### v2 [/v2/moroute/{id}]
 
 + Parameters
   + id (optional, 24 char hex) ... the MO Route's unique identifier. Required in PUT & DELETE requests; when omitted from a GET request, returns a collection of all MO Routes.
 
 
-### retrieve moroute [GET]
+** retrieve moroute [GET] **
 + Response 200
     [MORoute][]
 + Response 400
@@ -1853,7 +1874,7 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-### create moroute [POST]
+** create moroute [POST] **
 + Request
     [MORoute][]
 + Response 204
@@ -1862,7 +1883,7 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-### update moroute [PUT]
+** update moroute [PUT] **
 + Request
     [MORoute][]
 + Response 200
@@ -1872,14 +1893,14 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-### delete moroute [DELETE]
+** delete moroute [DELETE] **
 + Response 204
 + Response 400
 + Response 401
 + Response 403
 + Response 500
 
-# Group Role
+### Group Role
 
 `Role` model
 
@@ -1895,12 +1916,12 @@ This method grants a role other than your own access to a metadata field. Users 
 | permissions   | list  | false | Permissions   |
 | status    | string    | false | Status    |
 
-## v1 [/v1/role/{id}]
+#### v1 [/v1/role/{id}]
 
 + Parameters
   + id (optional, 24 char hex) ... the role's unique identifier. Required in GET, PUT & DELETE requests.
 
-### get role [GET]
+** get role [GET] **
 + Response 200
     [Role][]
 + Response 400
@@ -1908,14 +1929,14 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
  
-### delete role [DELETE]
+** delete role [DELETE] **
 + Response 204
 + Response 400
 + Response 401
 + Response 403
 + Response 500
 
-### update role [PUT]
+** update role [PUT] **
 + Request
     [Role][]
 + Response 204
@@ -1924,7 +1945,7 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-### create role [POST]
+** create role [POST] **
 + Request
     [Role][]
 + Response 200
@@ -1934,12 +1955,12 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-## v2 [/v2/role/{id}]
+#### v2 [/v2/role/{id}]
 
 + Parameters
     + id (optional, 24 char hex) ... the role's unique identifier. Required in GET, PUT & DELETE requests.
 
-### get role [GET]
+** get role [GET] **
 + Response 200
     [Role][]
 + Response 400
@@ -1947,14 +1968,14 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
  
-### delete role [DELETE]
+** delete role [DELETE] **
 + Response 204
 + Response 400
 + Response 401
 + Response 403
 + Response 500
 
-### update role [PUT]
+** update role [PUT] **
 + Request
     [Role][]
 + Response 204
@@ -1963,7 +1984,7 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-### create role [POST]
+** create role [POST] **
 + Request
     [Role][]
 + Response 200
@@ -1973,11 +1994,11 @@ This method grants a role other than your own access to a metadata field. Users 
 + Response 403
 + Response 500
 
-# Group Reporting
+### Group Reporting
 
 Reporting comes in both synchronous and asynchronous varieties. Synchronous reporting retrieves metrics on your program in JSON format for consumption by a browser or application. Asynchronous reporting lets you create, run and rerun reporting templates that are compiled in the background, retrieving them as CSV files.
 
-## Synchronous Reporting
+#### Synchronous Reporting
 
 These reports use several query parameters in common to determine the scope of the report:
 
@@ -1991,7 +2012,9 @@ These reports use several query parameters in common to determine the scope of t
 | summaryType   |CAMPAIGN', 'MOBILEFLOW', 'KEYWORD |  |  |
 | timeframe     | 'TODAY', 'YESTERDAY', 'THISWEEK', 'LAST7', 'LASTWEEK', 'LAST14', 'THISMONTH', 'LAST30', 'LASTMONTH', 'ALLTIME' | false | sets the time period covered by the report; either `timeframe` or `beginOn` and `endOn` must be present | 
 
-# GET /v1/reporting/subscriberGrowthReport?listId={listId}&filterId={filterId}
+```
+GET /v1/reporting/subscriberGrowthReport?listId={listId}&filterId={filterId}
+```
 
 Retrieve subscriber growth report matching filter parameters
 
@@ -2006,7 +2029,9 @@ Retrieve subscriber growth report matching filter parameters
 + Response 403
 + Response 500
 
-# GET /v1/reporting/listDetails/export/{id}
+```
+GET /v1/reporting/listDetails/export/{id}
+```
 
 Export list of subscribers for a specified filtered list
 
@@ -2028,7 +2053,9 @@ Export list of subscribers for a specified filtered list
 + Response 403
 + Response 500
 
-# GET /v1/reporting/subProfile/export/{id}
+```
+GET /v1/reporting/subProfile/export/{id}
+```
 
 Export subscriber messages on a specified short code. Defaults to session short code.
 
@@ -2042,7 +2069,9 @@ Export subscriber messages on a specified short code. Defaults to session short 
 + Response 403
 + Response 500
 
-# GET /v1/reporting/inbox/export
+```
+GET /v1/reporting/inbox/export
+```
 
 Export inbox messages on a specified short code. Defaults to session short code.
 
@@ -2055,9 +2084,11 @@ Export inbox messages on a specified short code. Defaults to session short code.
 + Response 403
 + Response 500
 
-# GET /v1/reporting/messageDetails
+```
+GET /v1/reporting/messageDetails
+```
 
-# messageDetailsReport
+### messageDetailsReport
 
 Retrieve message details report matching filter parameters
 
@@ -2070,9 +2101,11 @@ Retrieve message details report matching filter parameters
 + Response 403
 + Response 500
 
-# GET /v1/reporting/messageDetails/export
+```
+GET /v1/reporting/messageDetails/export
+```
 
-# messageDetailsExport
+### messageDetailsExport
 
 Export message details report matching filter parameters
 
@@ -2085,9 +2118,11 @@ Export message details report matching filter parameters
 + Response 403
 + Response 500
 
-# GET /v1/reporting/messageReport
+```
+GET /v1/reporting/messageReport
+```
 
-# messageSummaryReport
+### messageSummaryReport
 
 Retrieve message summary report matching filter parameters
 
@@ -2100,9 +2135,11 @@ Retrieve message summary report matching filter parameters
 + Response 403
 + Response 500
 
-# GET /v1/reporting/messageReport/{summaryObject}/export
+```
+GET /v1/reporting/messageReport/{summaryObject}/export
+```
 
-# messageSummaryReportExport
+### messageSummaryReportExport
 Export message summary report matching filter parameters
 
 + Parameters
@@ -2117,9 +2154,11 @@ Export message summary report matching filter parameters
 + Response 403
 + Response 500
 
-# GET /v1/reporting/subscriberGrowthReport/export
+```
+GET /v1/reporting/subscriberGrowthReport/export
+```
 
-# subscriberGrowthExport
+### subscriberGrowthExport
 
 Export subscriber growth report matching filter parameters
 
@@ -2132,9 +2171,11 @@ Export subscriber growth report matching filter parameters
 + Response 403
 + Response 500
 
-# GET /v1/reporting/messageReport/activity
+```
+GET /v1/reporting/messageReport/activity
+```
 
-# messageSummaryActivity
+### messageSummaryActivity
 
 Retrieve message summary report for session short code
 
@@ -2147,9 +2188,11 @@ Retrieve message summary report for session short code
 + Response 403
 + Response 500
 
-# GET /v1/reporting/broadcastSummary
+```
+GET /v1/reporting/broadcastSummary
+```
 
-# broadcastSummaryReport
+### broadcastSummaryReport
 
 Retrieve broadcast summary report for session short code
 
@@ -2162,9 +2205,11 @@ Retrieve broadcast summary report for session short code
 + Response 403
 + Response 500
 
-# GET /v1/reporting/broadcastSummary/export
+```
+GET /v1/reporting/broadcastSummary/export
+```
 
-# broadcastSummaryExport
+### broadcastSummaryExport
 
 Export broadcast summary report for session short code
 
@@ -2177,7 +2222,7 @@ Export broadcast summary report for session short code
 + Response 403
 + Response 500
 
-# Asynchronous Reporting [/v2/reporting/{id}]
+### Asynchronous Reporting [/v2/reporting/{id}]
 
 Asynchronous reporting allows larger and more complext reports to be saved, delegated to a separate reporting server and run without impacting the resources allocated to the application as a whole.
 
@@ -2185,11 +2230,11 @@ These methods involve the creation and management of _reporting templates_, whic
 
 Reporting data is retrieved as a downloadable CSV file.
 
-## Reporting Template Models
+#### Reporting Template Models
 
 The following models are used in asynchronous reporting.
 
-### `ReportingStatus` model
+** `ReportingStatus` model **
 
 the current state of the reporting server.
 
@@ -2198,7 +2243,7 @@ the current state of the reporting server.
 | lag   | number    | true  | Reporting lag in minutes  |
 | status    | string    | true  | Reporting service status  |
 
-### `ReportingTemplateRequest` model
+** `ReportingTemplateRequest` model **
 
 used when submitting requests (GET, POST or PUT) having to do with reporting templates.
 
@@ -2211,7 +2256,7 @@ used when submitting requests (GET, POST or PUT) having to do with reporting tem
 | query  | `ReportingRequestQuery` model | false | Report query details. This is specific to the type of report |
 | shortCode | string    | false | Short Code ID |
  
-### `ReportingTemplateResponse` model
+** `ReportingTemplateResponse` model **
 
 represents a reporting template when reutrned from the application
 
@@ -2224,11 +2269,11 @@ represents a reporting template when reutrned from the application
 | query  | `ReportingRequestQuery` model | false | Report query details. This is specific to the type of report. See Reporting Query Models, below. |
 | shortCode | string    | true  | Short Code ID |
 
-## Reporting Query Models
+#### Reporting Query Models
 
 The `query` property of a `ReportingTemplateResponse` or `ReportingTemplateRequest` model will be one of the following query models, each reprepsenting a different type of report.
 
-### Message Details report
+** Message Details report **
 
 a comprehensive report of every message matching the template criteria received and/or sent by the application
 
@@ -2244,7 +2289,7 @@ a comprehensive report of every message matching the template criteria received 
 | mobileFlow    | 24-char hex   | false | the ID of a campaign whose messages are included in the report |
 | keyword       | 24-char hex   | false | the ID of a campaign whose messages are included in the report |
 
-### Message Totals report
+** Message Totals report **
 
 an report that aggregates numbers of messages by type and interval
 
@@ -2256,7 +2301,7 @@ an report that aggregates numbers of messages by type and interval
 | endOn         | date  | true | the end time of the report | 
 | bucketSize    |'DAY', 'WEEK', 'MONTH'     | true | the interval into which reporting data is aggregated |
 
-### Subscriber Growth report
+** Subscriber Growth report **
 
 a report showing the change in subscriber status for one or more lists or smart lists over time, aggregated by interval
 
@@ -2269,7 +2314,7 @@ a report showing the change in subscriber status for one or more lists or smart 
 | endOn         | date  | false | the start time of the report; either `timeframe` or `beginOn` and `endOn` must be present | 
 | bucketSize    |'DAY', 'WEEK', 'MONTH'     | true | the interval into which reporting data is aggregated |
 
-### Broadcast Summary report
+** Broadcast Summary report **
 
 a report of all broadcasts sent by the application to one or more lists or filters for a given time period
 
@@ -2281,7 +2326,7 @@ a report of all broadcasts sent by the application to one or more lists or filte
 | beginOn       | date  | false | the start time of the report; either `timeframe` or `beginOn` and `endOn` must be present | 
 | endOn         | date  | false | the start time of the report; either `timeframe` or `beginOn` and `endOn` must be present | 
 
-### Poll Results report
+** Poll Results report **
 
 a report of poll results gathered through the use of the `interactive poll` flow component
 
@@ -2293,7 +2338,7 @@ a report of poll results gathered through the use of the `interactive poll` flow
 + Parameters
     + id (optional, 24-char hex) ... the ID of the reporting template
 
-## Retrieve last run report [GET]
+#### Retrieve last run report [GET]
 
 Returns the most recent results from a reporting template. Note that the Accept header in this request is application/csv, unlike most requests made to Revere Mobile
 
@@ -2308,7 +2353,7 @@ Returns the most recent results from a reporting template. Note that the Accept 
 + Response 403
 + Response 500
 
-## Retrieve reporting template information by id [GET]
+#### Retrieve reporting template information by id [GET]
 
 + Response 204
 + Response 400
@@ -2316,7 +2361,7 @@ Returns the most recent results from a reporting template. Note that the Accept 
 + Response 403
 + Response 500
 
-## Rerun report template [PUT]
+#### Rerun report template [PUT]
 
 updates the file associated with a reporting template for retrieval later
 
@@ -2326,7 +2371,7 @@ updates the file associated with a reporting template for retrieval later
 + Response 403
 + Response 500
 
-## Delete access to a reporting template [DELETE]
+#### Delete access to a reporting template [DELETE]
 
 + Response 204
 + Response 400
@@ -2334,7 +2379,7 @@ updates the file associated with a reporting template for retrieval later
 + Response 403
 + Response 500
 
-## Create a new reporting template [POST]
+#### Create a new reporting template [POST]
 
 + Request
     [ReportingTemplateRequest][]
@@ -2345,7 +2390,9 @@ updates the file associated with a reporting template for retrieval later
 + Response 403
 + Response 500
 
-# GET /v2/reporting/
+```
+GET /v2/reporting/
+```
 
 + Response 200
     [Collection][]
@@ -2354,9 +2401,11 @@ updates the file associated with a reporting template for retrieval later
 + Response 403
 + Response 500
 
-# GET /v2/reporting/status
+``` 
+GET /v2/reporting/status
+```
 
-## Retrieve reporting status including lag
+#### Retrieve reporting status including lag
 
 + Response 200
     [ReportingStatus][]
@@ -2365,9 +2414,9 @@ updates the file associated with a reporting template for retrieval later
 + Response 403
 + Response 500
 
-# Group Shortcode
+### Group Shortcode
 
-### `shortcode` model
+** `shortcode` model **
 
 | property  | type  | required  | description   |
 |-----|-----|-----|-----|
@@ -2389,9 +2438,11 @@ updates the file associated with a reporting template for retrieval later
 | sessionTimeout         | integer | yes | Time (in milliseconds) that the session window should remain open |
 | mms                    | boolean  |   yes | true only for shortcodes enabled for MMS delivery |
 
-# POST /v1/shortcode/sessionshortcode/{shortcodeId}
+```
+POST /v1/shortcode/sessionshortcode/{shortcodeId}
+```
 
-### Change your session shortcode
+** Change your session shortcode **
 
 Many platform objects are tied to a specific shortcode as well as a permissions group. Use this method to change the shortcode you are working on in order to access and manipulate these objects. Because most users will have access to only one shortcode, this method will not be necessary to the majority.
 
@@ -2404,12 +2455,12 @@ Many platform objects are tied to a specific shortcode as well as a permissions 
 + Response 403
 + Response 500
 
-## v1 [/v1/shortcode/{id}]
+#### v1 [/v1/shortcode/{id}]
 
 + Parameters
     + id (optional, 24 char hex) ... The smart list's unique identifier. Required in GET, PUT & DELETE requests. Whem omitted from a GET request, the request will return a collection of all smart lists.
 
-### get shortcode [GET]
+** get shortcode [GET] **
 + Response 200
     [Shortcode][]
 + Response 400
@@ -2417,9 +2468,9 @@ Many platform objects are tied to a specific shortcode as well as a permissions 
 + Response 403
 + Response 500
 
-## v2 [/vs/shortcode/{id}]
+#### v2 [/vs/shortcode/{id}]
 
-### update shortcode [PUT]
+** update shortcode [PUT] **
 
 Update certain properties of a shortcode. May only be used to update the following:
 
@@ -2436,11 +2487,11 @@ Update certain properties of a shortcode. May only be used to update the followi
 + Response 403
 + Response 500
 
-# Group Smart Lists
+### Group Smart Lists
 
 A smart list is similar to a persistent filter, comprised of constituent lists and criteria filters, but which is treated like a subscription list for all intents and purposes, including reporting.
 
-### `smartlist` model
+** `smartlist` model **
 
 | property  | type  | required  | description   |
 |-----|-----|-----|-----|
@@ -2453,12 +2504,12 @@ A smart list is similar to a persistent filter, comprised of constituent lists a
 | name    | string   | yes   |  human-friendly name for the smart list |
 
 
-## v2 [/v2/smartlist/{id}]
+#### v2 [/v2/smartlist/{id}]
 
 + Parameters
     + id (optional, 24 char hex) ... The smart list's unique identifier. Required in GET, PUT & DELETE requests. Whem omitted from a GET request, the request will return a collection of all smart lists.
 
-### create smart list [POST]
+** create smart list [POST] **
 + Request
     [SmartListRequest][]
 + Response 200
@@ -2468,7 +2519,7 @@ A smart list is similar to a persistent filter, comprised of constituent lists a
 + Response 403
 + Response 500
 
-### get smart list [GET]
+** get smart list [GET] **
 + Response 200
     [SmartListResponse][]
 + Response 400
@@ -2476,16 +2527,16 @@ A smart list is similar to a persistent filter, comprised of constituent lists a
 + Response 403
 + Response 500
 
-### delete smart list [DELETE]
+** delete smart list [DELETE] **
 + Response 204
 + Response 400
 + Response 401
 + Response 403
 + Response 500
 
-# POST /v2/smartlist/{smartlistid}/share/{roleid}
+### POST /v2/smartlist/{smartlistid}/share/{roleid}
 
-## Share smart list: grant another permissions role access to the smart list.
+#### Share smart list: grant another permissions role access to the smart list.
 
 + Parameters
     + smartlistid (24 char hex) ... the ID of the smartlist to be shared.
@@ -2497,13 +2548,13 @@ A smart list is similar to a persistent filter, comprised of constituent lists a
 + Response 403
 + Response 500
 
-# Group Subscriber
+### Group Subscriber
 
 Subscribers are the individual members Revere Mobile interacts with.
 
-# GET /v1/subscriber/{idOrMsisdn}
+### GET /v1/subscriber/{idOrMsisdn}
 
-## Retrieve subscriber by phone number or system ID
+#### Retrieve subscriber by phone number or system ID
 
 + Parameters
     + idOrMsisdn (optional, 24 char hex or 12-digit msisdn) ... may be the subscriber's 24-char hex identifier or their mobile phone number.
@@ -2515,9 +2566,9 @@ Subscribers are the individual members Revere Mobile interacts with.
 + Response 403
 + Response 500
 
-# GET /v1/subscriber?search={search}
+### GET /v1/subscriber?search={search}
 
-## Retrieve subscriber by profile metadata
+#### Retrieve subscriber by profile metadata
 
 **Profile metadata** is a privileged status of metadata fields used to build a core subscriber profile. The following fields are considered profile metadata (note that some permission groups may have their own fields which are meant to store similar qualities as these):
 
@@ -2544,9 +2595,11 @@ Subscribers are the individual members Revere Mobile interacts with.
 + Response 403
 + Response 500
 
-# GET /v1/subscriber/count
+```
+GET /v1/subscriber/count
+```
 
-## Retrieve the number of subscribers in a list or filter.
+#### Retrieve the number of subscribers in a list or filter.
 
 + Parameters
     + listId (optional, 24 char hex) ... the ID of a list that you are counting subscribers on. Mutually exclusive with `filterId`.
@@ -2559,9 +2612,11 @@ Subscribers are the individual members Revere Mobile interacts with.
 + Response 403
 + Response 500
 
-# GET /v1/subscriber
+```
+GET /v1/subscriber
+```
 
-## Retrieve a paginated collection of subscribers belonging to a list or filter.
+#### Retrieve a paginated collection of subscribers belonging to a list or filter.
 
 This method operates differently from other collection-retrieval methods. If retrieving a number of pages, the maximum `size` of each page is 60; passing a number greater than this or passing -1 will result in pages with 60 records each. To retrieve up to 5000 records per request, omit `page` and set `size` to any value up to 5000. Subsequent requests may contain the `lastId` parameter to retrieve following "pages" of subscribers.
 
@@ -2579,9 +2634,9 @@ This method operates differently from other collection-retrieval methods. If ret
 + Response 403
 + Response 500
 
-# PUT /v1/subscriber/addMetadata/{idOrMsisdn}
+### PUT /v1/subscriber/addMetadata/{idOrMsisdn}
 
-## Add a value for a metadata field to a subscriber.
+#### Add a value for a metadata field to a subscriber.
 
 + Parameters
     + idOrMsisdn (optional, 24 char hex or 12-digit msisdn) ... may be the subscriber's 24-char hex identifier or their mobile phone number.
@@ -2593,13 +2648,15 @@ This method operates differently from other collection-retrieval methods. If ret
 + Response 403
 + Response 500
 
-## v2 [/v1/subscriber/{idOrMsisdn}?search={search}]
+#### v2 [/v1/subscriber/{idOrMsisdn}?search={search}]
 
 + Parameters
     + idOrMsisdn (optional, 24 char hex or 12-digit msisdn) ... may be the subscriber's 24-char hex identifier or their mobile phone number with country code.
     + search (optional, string) ... search string to be matched in any of a subscriber's profile metadata. Not used when idOrMsisdn is specified.
 
-# GET /v2/subscriber/{idOrMsisdn}
+```
+GET /v2/subscriber/{idOrMsisdn}
+```
 
 Retrieve subscriber profile by ID or Mobile Number
 + Parameters
@@ -2612,7 +2669,9 @@ Retrieve subscriber profile by ID or Mobile Number
 + Response 403
 + Response 500
 
-# PUT /v2/subscriber/{idOrMsisdn}/list/{listId}
+```
+PUT /v2/subscriber/{idOrMsisdn}/list/{listId}
+```
 
 Adds a subscriber to a subscription list. **Caution: subscribing people using this method does not ensure they have been properly opted-in or welcomed to the program.** Use this method only to add an existing, legitimate subscriber to a different list, not to introduce new people to a list.
 
@@ -2626,7 +2685,9 @@ Adds a subscriber to a subscription list. **Caution: subscribing people using th
 + Response 403
 + Response 500
 
-# GET /v2/subscriber?listId={listId}&filterId={filterId}
+```
+GET /v2/subscriber?listId={listId}&filterId={filterId}
+```
 
 Retrieve a collection of subscribers matching the listId and/or filterId criteria. This method operates unlike other collection methods in that it returns a maximum of 60 results per page if the `size` parameter is either -1, 60 or greater.
 
@@ -2641,7 +2702,9 @@ Retrieve a collection of subscribers matching the listId and/or filterId criteri
 + Response 403
 + Response 500
 
-# GET /v2/subscriber/{msisdn}/messages
+```
+GET /v2/subscriber/{msisdn}/messages
+```
 
 Retrieve messages sent to and from a subscriber, with delivery status (if known)
 
@@ -2655,17 +2718,19 @@ Retrieve messages sent to and from a subscriber, with delivery status (if known)
 + Response 403
 + Response 500
 
-# Group Blacklist
+```
+Group Blacklist
+```
 
 The blacklist is a collection of subscribers who the current shortcode is prevented from interacting with. No response will be made to any inbound messages from these subscribers and no outbound messages will ever be delivered to them. 
 
-## v2 [/v2/subscriber/blacklist/{idOrMsisdn}?shortCode={shortCode}]
+#### v2 [/v2/subscriber/blacklist/{idOrMsisdn}?shortCode={shortCode}]
 
 + Parameters
     + idOrMsisdn (required, 24 char hex or 12-digit msisdn) ... may be a subscriber's 24-char hex identifier or their mobile phone number; omitted from the _Retrieve blacklist_ method
     + shortCode (optional, 24 char hex or 12-digit msisdn) ... the shortcode to blacklist the subscriber on; defaults to the session shortcode if omitted
 
-### Add subscriber to blacklist [POST]
+** Add subscriber to blacklist [POST] **
    
 + Response 204
 + Response 400
@@ -2673,7 +2738,7 @@ The blacklist is a collection of subscribers who the current shortcode is preven
 + Response 403
 + Response 500
 
-### Remove subscriber from blacklist [DELETE]
+** Remove subscriber from blacklist [DELETE] **
    
 + Response 204
 + Response 400
@@ -2681,7 +2746,7 @@ The blacklist is a collection of subscribers who the current shortcode is preven
 + Response 403
 + Response 500
 
-### Retrieve blacklist [GET]
+** Retrieve blacklist [GET] **
    
 + Response 200
     [Collection][]
@@ -2690,11 +2755,11 @@ The blacklist is a collection of subscribers who the current shortcode is preven
 + Response 403
 + Response 500
 
-# Group Trigger
+### Group Trigger
 
 A trigger is a platform object that can cause a message to be sent. In plain language, both broadcasts and keywords are triggers. Both can be accessed via this API endpoint, though the use of the Trigger API for broadcasts is deprecated in favor of the Broadcast API.
 
-### `Trigger` Model
+** `Trigger` Model **
 
 | property  | type  | required  | description   |
 |-----|-----|-----|-----|
@@ -2705,12 +2770,12 @@ A trigger is a platform object that can cause a message to be sent. In plain lan
 | name  | string    | false | Trigger name  |
 | shortCode | string    | false | Short code ID |
 
-## v1 [/v1/trigger/{id}]
+#### v1 [/v1/trigger/{id}]
 
 + Parameters
   + id (optional, 24 char hex) ... the trigger's unique identifier. Required in PUT & DELETE requests, and in GET requests to retrieve information about a specific trigger.
 
-### get trigger by id [GET]
+** get trigger by id [GET] **
 
 Retrieve information on a specific trigger. When passed without the {id} parameter, this retrieves a paginated collection of all triggers.
 
@@ -2721,7 +2786,7 @@ Retrieve information on a specific trigger. When passed without the {id} paramet
 + Response 403
 + Response 500
  
-### delete trigger [DELETE]
+** delete trigger [DELETE] **
 
 Remove a keyword or scheduled broadcast. The {id} parameter is required.
 
@@ -2731,7 +2796,7 @@ Remove a keyword or scheduled broadcast. The {id} parameter is required.
 + Response 403
 + Response 500
 
-### update trigger [PUT]
+** update trigger [PUT] **
 
 Reassign a keyword to a different mobile flow, or unassign it entirely.
 
@@ -2743,7 +2808,7 @@ Reassign a keyword to a different mobile flow, or unassign it entirely.
 + Response 403
 + Response 500
 
-### create trigger [POST]
+** create trigger [POST] **
 
 Create a new keyword.
 
@@ -2756,7 +2821,7 @@ Create a new keyword.
 + Response 403
 + Response 500
 
-# GET /v1/trigger/recent
+### GET /v1/trigger/recent
 
 Retrieve a collection of recent broadcasts by pagination parameters.
 
@@ -2767,7 +2832,9 @@ Retrieve a collection of recent broadcasts by pagination parameters.
 + Response 403
 + Response 500
 
-# GET /v1/trigger/isKeywordAvailable/{name}
+```
+GET /v1/trigger/isKeywordAvailable/{name}
+```
 
 Check to see whether a given keyword is available on the current shortcode.
 
@@ -2781,7 +2848,9 @@ Check to see whether a given keyword is available on the current shortcode.
 + Response 403
 + Response 500
 
-# GET /v1/trigger/broadcast
+```
+GET /v1/trigger/broadcast
+```
 
 Retrieve a list of scheduled broadcasts by pagination parameters.
 
@@ -2792,11 +2861,11 @@ Retrieve a list of scheduled broadcasts by pagination parameters.
 + Response 403
 + Response 500
 
-# Group User
+### Group User
 
 Use these endpoints to control other users' access to Revere Mobile.
 
-### `User` Model
+** `User` Model **
 
 | property  | type  | required  | description   |
 |-----|-----|-----|-----|
@@ -2813,7 +2882,7 @@ Use these endpoints to control other users' access to Revere Mobile.
 | shortCodes    | list  | false | Short codes   |
 | status    | string    | false | Status    |
 
-### `UserDetails` Model
+** `UserDetails` Model **
 
 | property  | type  | required  | description   |
 |-----|-----|-----|-----|
@@ -2825,12 +2894,12 @@ Use these endpoints to control other users' access to Revere Mobile.
 | phone | string    | false | Phone number  |
 | title | string    | false | Title |
 
-## v1 [/v1/user/{id}]
+#### v1 [/v1/user/{id}]
 
 + Parameters
   + id (optional, 24 char hex) ... the user's unique identifier. Required in PUT & DELETE requests, and in GET requests to retrieve information about a specific trigger.
 
-### get user [GET]
+** get user [GET] **
 
 Retrieve information on a specific user with the {id} parameter set, or retrieve a collection of all users without {id}
 
@@ -2841,7 +2910,7 @@ Retrieve information on a specific user with the {id} parameter set, or retrieve
 + Response 403
 + Response 500
  
-### delete user [DELETE]
+** delete user [DELETE] **
 
 Remove a user from the Revere Mobile platform
 
@@ -2851,7 +2920,7 @@ Remove a user from the Revere Mobile platform
 + Response 403
 + Response 500
 
-### update user [PUT]
+** update user [PUT] **
 
 Change a user's properties
 
@@ -2863,7 +2932,7 @@ Change a user's properties
 + Response 403
 + Response 500
 
-### create user [POST]
+** create user [POST] **
 
 Create a new user
 
@@ -2876,7 +2945,9 @@ Create a new user
 + Response 403
 + Response 500
 
-# POST /v2/user/{id}/apikey
+```
+POST /v2/user/{id}/apikey
+```
 
 Create or reset a user's API key. The user may use this key to authenticate API requests as described in Authentication, above. A note of caution: once created, an API key may not be retrieved, only reset.
 
@@ -2896,7 +2967,7 @@ Create or reset a user's API key. The user may use this key to authenticate API 
 + Response 403
 + Response 500
 
-# Group Mobile Flow Components
+### Group Mobile Flow Components
 
 A mobile flow represents a complex interaction with a subscriber or other end-user. A mobile flow is composed of a series of content modules that contain the specifics of the interaction. You can set the maximum number of messages per month that the mobile flow will send to any one subscriber.
 
@@ -2921,7 +2992,7 @@ Avoid the use of curly braces, double quotes, and carriage returns to maintain v
 Include the protocol name, such as http:// or mailto: as part of any URL.
 The following sections describe each of the available content module types.
 
-## BASICTEXT
+#### BASICTEXT
 
 A basic text content module sends a text message to a subscriber.
 
@@ -2931,7 +3002,7 @@ Parameter    |    Description
 |----|----|
 response    |    The text to send to the subscriber.
 
-## COLLECTMETADATA
+#### COLLECTMETADATA
 
 A collect metadata module prompts the subscriber for the value for a metadata field.
 
@@ -2946,13 +3017,13 @@ metadataId    |    The ID of the metadata field for which to collect information
 requestMessage    |    The request message for the metadata value.
 responseMessage    |    The response message for a valid value.
 
-## DYNAMICCONTENT
+#### DYNAMICCONTENT
 
 A dynamic content module posts information about the subscriber or interaction to a web service and proceeds based on the response back from that service. The module waits for a response from the web service to determine how to respond to the subscriber.
 
 The web service should respond with a simple XML or JSON payload depending on which format is specified in the URL:
 
-### XML Payload
+** XML Payload **
 
     <dynamiccontent>
         <endSession>true</endSession>
@@ -2960,7 +3031,7 @@ The web service should respond with a simple XML or JSON payload depending on wh
     </dynamiccontent>
      
 
-### JSON Payload
+** JSON Payload **
  
     {
       "endSession": true,
@@ -2988,7 +3059,7 @@ $msisdn    |    The domestic or international MSISDN of the subscriber.
 $short_code    |    The short code of the mobile flow.
 When the module calls the web service, it includes in the POST payload information for all of the above data. If the target URL contains a format query parameter set to 'json', then the POST payload is formatted as JSON; otherwise, the POST payload is formatted as XML.
 
-## POLL
+#### POLL
 
 A poll content module involves the subscriber in a poll. This module can branch based on the subscriber's choice.
 
@@ -3014,7 +3085,7 @@ mobileFlow    |    The ID of the mobile flow to which to branch if nextStep is '
 nextStep    |    Either 'proceed', 'terminate', or 'forwardToMobileFlow'. This indicates the next step the mobile flow takes if the subscriber picks this choice. Specify 'proceed' to have the flow proceed to the next module in the flow. Specify 'terminate' to exit the mobile flow. Specify 'forwardToMobileFlow' to branch to the flow indicated by the mobileFlowb parameter.
 value    |    The symbol that the subscriber enters to pick this choice.
 
-## POSTTOURL
+#### POSTTOURL
 
 A post to URL module posts information about the subscriber or interaction to a web service.
 
@@ -3035,7 +3106,7 @@ $msisdn |    The domestic or international MSISDN of the subscriber.
 $short_code |    The short code of the mobile flow.
 When the module calls the web service, it includes in the POST payload information for all of the above data. If the target URL contains a format query parameter set to 'json', then the POST payload is formatted as JSON; otherwise, the POST payload is formatted as XML.
 
-## SUBSCRIPTION
+#### SUBSCRIPTION
 
 A subscription content module adds a subscriber to a list, with an optional confirmation dialog.
 
@@ -3050,7 +3121,7 @@ optInType    |    Either singleOptIn or doubleOptIn.
 subscribedMessage    |    Optional. The message sent when the subscriber is already a member of the list.
 For single opt in, the optInMessage parameter is unused. For double opt in, the optInMessage parameter must be specified with the messaging intended to confirm the subscriber’s intent to be added to the list in question.
 
-## TAGMETADATA
+#### TAGMETADATA
 
 A tag metadata content module assigns a value to a metadata field for the subscriber.
 
@@ -3060,9 +3131,9 @@ Parameter    |    Description
 |----|----|
 metadataId    |    The value to assign to the metadata field for the subscriber.
 
-## VALIDATION
+#### VALIDATION
 
-The validation content module can branch the current flow based on validation factors. If the subscriber passes the validation, the mobile flow progresses based on the `consequentNextStep` and `consequentMobileFlow` parameters; otherwise the flow progresses based on the `alternativeNextStep` and `alternativeMobileFlow` parameters.
+The validation content module can HOST: https://mobile.reverehq.com/apibranch the current flow based on validation factors. If the subscriber passes the validation, the mobile flow progresses based on the `consequentNextStep` and `consequentMobileFlow` parameters; otherwise the flow progresses based on the `alternativeNextStep` and `alternativeMobileFlow` parameters.
 
 The next step parameters can contain either 'proceed', 'terminate', or 'forwardToMobileFlow'. This indicates that the associated next step the mobile flow should take. Specify 'proceed' to have the flow proceed to the next module in the flow. Specify 'terminate' to exit the mobile flow. Specify 'forwardToMobileFlow' to branch to the flow indicated by the associated mobile flow parameter.
 
@@ -3097,13 +3168,13 @@ leftHand    |    Always 'subscriber'.
 rightHand    |    The ID of the list or the ID of the metadata field, depending on the value of the innerOperator parameter.
 rightHandValue    |    The value to check, for the 'hasValue' and 'doesNotHaveValue' operators.
 
-# Group Examples
+### Group Examples
 
 The Revere Mobile platform uses a REST architecture. All requests to the platform must set the Content-Type and Accept HTTP headers to application/json. While the platform can accept calls over the HTTP or HTTPS protocol, by default, you should use the HTTPS protocol. When you authenticate a session, the response will set two cookies: SessionId and JSESSIONID. You must include these cookies in all subsequent requests, they identify your authenticated session. All the examples below include HTTP headers and payload for requests and responses as given by curl.
 
-## Example 1: Logging in and out
+#### Example 1: Logging in and out
 
-### To authenticate a session
+** To authenticate a session **
 
 To start an authenticated session, call the v1/authenticate method, using the username and password associated with your account.
 
@@ -3137,7 +3208,7 @@ HTTP Response:
   
 On successful authentication, the response has a status code of 200 (OK), a null payload, and the response sets the SessionId and JSESSIONID cookies, which identifies your session.
 
-### To check session status
+** To check session status **
 
 Your session remains authenticated for up to 30 minutes of idle time. You can call the v1/authenticate/whoami method to check the current session status.
 
@@ -3177,12 +3248,12 @@ HTTP Response:
   
 Otherwise, the response has a status code of 401 (Unauthorized).
 
-### To actively close a session
+** To actively close a session **
 
 Whenever you are finished accessing the platform, you should actively log out.
 
 Send a POST request with null payload to https://revolutionmsg.com/v1/authenticate/logout
-## Example 2: Sending an SMS message
+#### Example 2: Sending an SMS message
 
 You can send a simple, one-off message to a subscriber by using the v2/message method.
 
@@ -3225,7 +3296,7 @@ HTTP Response
       "files": []
             }
   
-## Example 3: Subscribe an end user to a list and add metadata for the user
+#### Example 3: Subscribe an end user to a list and add metadata for the user
 
 This example demonstrates how to create a list and metadata field, join a subscriber to that list and update the metadata field for that subscriber, and then verify the operation by getting the profile of the subscriber.
 
