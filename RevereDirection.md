@@ -30,12 +30,12 @@ A single link object with its desktop versus mobile stats
 **Response**
 ```json
 Status: 200 
-```
+
 + Header
-```
+
 X-My-Header: The Value
-```
+
 + Body
-```json
+
 { "id": 2, "title": "Pick-up posters from post-office" }
 ```
