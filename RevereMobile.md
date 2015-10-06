@@ -58,6 +58,7 @@ In addition to HTTP headers required for authentication, there are additional on
 
     Accept: application/json
     Content-Type: application/json
+    
 There are a few exceptions to these format headers, those will be identified in the documentation for the specific APIs affected.
 
 ### Collections and Pagination
@@ -82,349 +83,314 @@ For example, the request URL to retrieve the third page of 20 lists would be:
 * `collection` is an array that contains the items on the requested page.
 
 For the preceding request, if 73 lists are defined, the JSON response would contain the following, where the collection array contains objects describing the requested lists:
-
-    {
-      "page": 3,
-      "size": 20,
-      "total": 73,
-      "collection": [
+```
+{
+    "page": 3,
+    "size": 20,
+    "total": 73,
+    "collection": [
         ...
-      ]
-            }
+    ]
+}
+```
 
-
-#### BroadcastResponse [/APIModel/BroadcastResponse]
-+ Model (application/json)
+#### [BroadcastResponse](/APIModel/BroadcastResponse(
+**Model**
 APIModel for BroadcastResponse
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "content": "",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "schedule": ""
-            }
-
-#### BroadcastRequest [/APIModel/BroadcastRequest]
-+ Model (application/json)
+```
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "content": "",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "schedule": ""
+}
+```
+#### [BroadcastRequest](/APIModel/BroadcastRequest)
+**Model**
 APIModel for BroadcastResponse
-    + Headers
-    + Body
-
-            {
-                "sendAt": "2015-03-11T17:58:28.367Z",
-                "metadata": "4ec0a3dc0364de64869d93c2",
-                "content": [
-                    {
-                        "channel": "sms",
-                        "audience": [
-                            "550081f80cf2dcf7e469337f"
-                        ],
-                        "slices": [
-                            {
-                                "percentage": 50,
-                                "message": "test",
-                                "value": "blah"
-                            },
-                            {
-                                "percentage": 50,
-                                "mobileFlow": "523373030cf2431ec692c57d",
-                                "value": "blah1"
-                            }
-                        ]
-                    }
-                ]
-            }
-
-#### APIKey [/APIModel/APIKey]
-+ Model
+```
+{
+    "sendAt": "2015-03-11T17:58:28.367Z",
+    "metadata": "4ec0a3dc0364de64869d93c2",
+    "content": [
+        {
+            "channel": "sms",
+            "audience": [
+                "550081f80cf2dcf7e469337f"
+            ],
+            "slices": [
+                {
+                    "percentage": 50,
+                    "message": "test",
+                    "value": "blah"
+                },
+                {
+                    "percentage": 50,
+                    "mobileFlow": "523373030cf2431ec692c57d",
+                    "value": "blah1"
+                }
+            ]
+        }
+    ]
+}
+```
+#### [APIKey](/APIModel/APIKey)
+**Model**
 API Model for APIKey
 
-    + Headers
-    
-            Accept: application/json
-            Content-Type: application/json
-        
-    + Body
-    
-            {
-                "apiKey":"2baa7764-f2fa-4b07-b5de-867dd8ee2532"
-            }
-
-#### BroadcastSummaryReportQuery [/APIModel/BroadcastSummaryReportQuery]
-+ Model (application/json)
++ Headers
+```    
+Accept: application/json
+Content-Type: application/json
+``` 
++ Body
+```
+{
+    "apiKey":"2baa7764-f2fa-4b07-b5de-867dd8ee2532"
+}
+```
+#### [BroadcastSummaryReportQuery](/APIModel/BroadcastSummaryReportQuery)
+**Model**
 APIModel for BroadcastSummaryReportQuery
-    + Headers
-    + Body
-
-            {
-                "id": null,
-                "account": null,
-                "group": null,
-                "shortCode": null,
-                "name": null,
-                "lastReport": null,
-                "query": {
-                    "type": "broadcastSummary",
-                    "lists": [
-                        "54cffeca0cf2c7c3bf30a289",
-                        "54d001740cf2c7c3bf30a6e4"
-                    ],
-                    "beginOn": "2015-01-01",
-                    "endOn": "2015-01-21"
-                }
-            }
-
-#### MORoute [/APIModel/MORoute]
-+ Model (application/json)
-    + Headers
-    + Body
-
-            {
-                "id": "50d4cdec0364ad1a2c78a078",
-                "keyword": "4e8d38cf0364b418446ce746",
-                "shortCode": "4e8b4b5afda5efeeec370e8a",
-                "rule": "^cancel\\s.*"
-            }
-
-#### SubscriberGrowthReportQuery [/APIModel/SubscriberGrowthReportQuery]
-+ Model (application/json)
+```
+{
+    "id": null,
+    "account": null,
+    "group": null,
+    "shortCode": null,
+    "name": null,
+    "lastReport": null,
+    "query": {
+        "type": "broadcastSummary",
+        "lists": [
+            "54cffeca0cf2c7c3bf30a289",
+            "54d001740cf2c7c3bf30a6e4"
+        ],
+        "beginOn": "2015-01-01",
+        "endOn": "2015-01-21"
+    }
+}
+```
+#### [MORoute](/APIModel/MORoute)
+**Model**
+```
+{
+    "id": "50d4cdec0364ad1a2c78a078",
+    "keyword": "4e8d38cf0364b418446ce746",
+    "shortCode": "4e8b4b5afda5efeeec370e8a",
+    "rule": "^cancel\\s.*"
+}
+```
+#### [SubscriberGrowthReportQuery](/APIModel/SubscriberGrowthReportQuery)
+**Model**
 APIModel for SubscriberGrowthReportQuery
-    + Headers
-    + Body
-
-            {
-                "type": "subscriberGrowth",
-                "lists": [
-                    "50465ac30cf2806788a960af"
-                ],
-                "beginOn": "2015-01-01",
-                "endOn": "2015-01-21",
-                "bucketSize": "DAY"
-            }
-
-#### MessageSummaryReportQuery [/APIModel/MessageSummaryReportQuery]
-+ Model (application/json)
+```
+{
+    "type": "subscriberGrowth",
+    "lists": [
+        "50465ac30cf2806788a960af"
+    ],
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21",
+    "bucketSize": "DAY"
+}
+```
+#### [MessageSummaryReportQuery](/APIModel/MessageSummaryReportQuery)
+**Model**
 APIModel for MessageSummaryReportQuery
-    + Headers
-    + Body
-
-            {
-                "type": "messageSummary",
-                "summaryType": "CAMPAIGN",
-                "campaign": "502520fd0cf236b8a1545f8b",
-                "beginOn": "2015-01-01",
-                "endOn": "2015-01-21",
-                "bucketSize": "DAY"
-            }
-
-#### MessageDetailsReportQuery [/APIModel/MessageDetailsReportQuery]
-+ Model (application/json)
+```
+{
+    "type": "messageSummary",
+    "summaryType": "CAMPAIGN",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21",
+    "bucketSize": "DAY"
+}
+```
+#### [MessageDetailsReportQuery](/APIModel/MessageDetailsReportQuery)
+**Model**
 APIModel for MessageDetailsReportQuery
-    + Headers
-    + Body
-
-            {
-                "type": "messageDetails",
-                "campaign": "502520fd0cf236b8a1545f8b",
-                "messageType": "MO",
-                "contentType": "SUBSCRIPTION",
-                "beginOn": "2015-01-01",
-                "endOn": "2015-01-21"
-            }
-
-#### PollResultsReportQuery [/APIModel/PollResultsReportQuery]
-+ Model (application/json)
+```
+{
+    "type": "messageDetails",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "messageType": "MO",
+    "contentType": "SUBSCRIPTION",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21"
+}
+```
+#### [PollResultsReportQuery](/APIModel/PollResultsReportQuery)
+**Model**
 APIModel for PollResultsReportQuery
-    + Headers
-    + Body
-
-            {
-                "type": "pollSummary",
-                "mobileFlow": "mobileFlowId",
-              },
-              "scheduleAt": "2014-12-24T16:00:00.727-05:00",
-              "name": "Poll Summary for Mobile Flow SomeCampaignName"
-            }
-
-#### Shortcode [/APIModel/Shortcode]
-+ Model (application/json)
+```
+{
+    query: {
+        "type": "pollSummary",
+        "mobileFlow": "mobileFlowId"
+    },
+    "scheduleAt": "2014-12-24T16:00:00.727-05:00",
+    "name": "Poll Summary for Mobile Flow SomeCampaignName"
+}
+```
+#### [Shortcode](/APIModel/Shortcode)
+**Model**
 APIModel for Shortcode
-    + Headers
-    + Body
+```
+{
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "provider": "AggregateUS",
+    "countryCode": "1",
+    "dedicated": true,
+    "description": "RevMsg",
+    "maxSmsLength": 160,
+    "profileId": "98765",
+    "shortcode": "675309",
+    "testPrefix": null,
+    "defaultStopResponse": "You will not receive any more mobile updates from {subscriber.recentMf.programName; default=\"RevMsg\"}.",
+    "defaultHelpResponse": "Mobile updates from {subscriber.recentMf.programName; default=\"RevMsg\"}. Reply STOP to quit. Msg&Data rates may apply. Tech support: sms@txthlp.com",
+    "carrierStopResponses": {},
+    "carrierHelpResponses": {},
+    "status": "ACTIVE",
+    "forwardURL": null,
+    "internalProcessing": null,
+    "sessionTimeout": 10800000,
+    "mms": false
+}
+```
 
-            {
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "provider": "AggregateUS",
-                "countryCode": "1",
-                "dedicated": true,
-                "description": "RevMsg",
-                "maxSmsLength": 160,
-                "profileId": "98765",
-                "shortcode": "675309",
-                "testPrefix": null,
-                "defaultStopResponse": "You will not receive any more mobile updates from {subscriber.recentMf.programName; default=\"RevMsg\"}.",
-                "defaultHelpResponse": "Mobile updates from {subscriber.recentMf.programName; default=\"RevMsg\"}. Reply STOP to quit. Msg&Data rates may apply. Tech support: sms@txthlp.com",
-                "carrierStopResponses": {},
-                "carrierHelpResponses": {},
-                "status": "ACTIVE",
-                "forwardURL": null,
-                "internalProcessing": null,
-                "sessionTimeout": 10800000,
-                "mms": false
-            }
-
-
-#### SmartListRequest [/APIModel/SmartListRequest]
-+ Model (application/json)
+#### [SmartListRequest](/APIModel/SmartListRequest)
+**Model**
 APIModel for SmartListRequest
-    + Headers
-
-            Accept: application/json
-    + Body
-    
-            {
-                "lists": ["548f5cd20cf2f50c89c05ab8"],
-                "queryFilterDetails": {
-                            "operator": "OR",
-                            "details": [{
-                                        "metadata": "546239d10cf25fdcf0aea9bc",
-                                        "operator": "=",
-                                        "value": "510"
-                            },
-                            {
-                            "metadata": "548f5f3b0cf2f50c89c15385",
-                                        "operator": "=",
-                                        "value": "7"
-                            }
-                ]},
-                "name": "510 areacode OR chose 7"
-            }
-
-#### SmartListResponse [/APIModel/SmartListResponse]
-+ Model (application/json)
+```
+{
+    "lists": ["548f5cd20cf2f50c89c05ab8"],
+    "queryFilterDetails": {
+        "operator": "OR",
+        "details": [{
+            "metadata": "546239d10cf25fdcf0aea9bc",
+            "operator": "=",
+            "value": "510"
+        },
+        {
+            "metadata": "548f5f3b0cf2f50c89c15385",
+            "operator": "=",
+            "value": "7"
+        }
+    ]},
+    "name": "510 areacode OR chose 7"
+}
+```
+#### [SmartListResponse](/APIModel/SmartListResponse)
+**Model**
 APIModel for SmartListResponse
-    + Headers
-    + Body
-
+```
+{
+    "id":"5493568f0cf2fcad2e35ecb5",
+    "account":"546239d10cf25fdcf0aea9b2",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "shortCode":"515b0768ca10e4ec580fcc60",
+    "queryFilterDetails":{
+        "operator":"or",
+        "details":[
             {
-                "id":"5493568f0cf2fcad2e35ecb5",
-                "account":"546239d10cf25fdcf0aea9b2",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "shortCode":"515b0768ca10e4ec580fcc60",
-                "queryFilterDetails":{
-                            "operator":"or",
-                            "details":[
-                                {
-                                            "metadata":"546239d10cf25fdcf0aea9bc",
-                                            "operator":"=",
-                                            "value":"510",
-                                            "radius":null
-                                },
-                                {
-                                            "metadata":"548f5f3b0cf2f50c89c15385",
-                                            "operator":"=",
-                                            "value":"7",
-                                            "radius":null
-                                }
-                            ]
-                },
-                "lists":["548f5cd20cf2f50c89c05ab8"],
-                "name":"510 areacode OR chose 7"
+                "metadata":"546239d10cf25fdcf0aea9bc",
+                "operator":"=",
+                "value":"510",
+                "radius":null
+            },
+            {
+                "metadata":"548f5f3b0cf2f50c89c15385",
+                "operator":"=",
+                "value":"7",
+                "radius":null
             }
+        ]
+    },
+    "lists":["548f5cd20cf2f50c89c05ab8"],
+    "name":"510 areacode OR chose 7"
+}
+```
+#### [AccountRequest](/APIModel/AccountRequest)
 
-#### AccountRequest [/APIModel/AccountRequest]
-
-+ Model (application/json)
+**Model**
 APIModel for AccountRequest
-    + Headers
-    + Body
+```
+{
+    "name": "Jon Doe",
+    "password": "thiswouldbeareallybadactualpassword",
+    "shortCode":"515b0768ca10e4ec580fcc60",
+    "userName": "jondoe"
+}
+```
+#### [AccountResponse](/APIModel/AccountResponse)
 
-            {
-                "name": "Jon Doe",
-                "password": "thiswouldbeareallybadactualpassword",
-                "shortCode":"515b0768ca10e4ec580fcc60",
-                "userName": "jondoe"
-            }
-
-#### AccountResponse [/APIModel/AccountResponse]
-
-+ Model (application/json)
+**Model**
 APIModel for AccountResponse
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "role": "4fd220440cf2c16d2fa79ac0",
-                "user": "4eea05e50cf29daf65b1d3e0",
-                "username": "jondoe"
+```
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "role": "4fd220440cf2c16d2fa79ac0",
+    "user": "4eea05e50cf29daf65b1d3e0",
+    "username": "jondoe"
             }
-
-#### Authenticate [/APIModel/Authenticate]
-+ Model (application/json)
+```
+#### [Authenticate](/APIModel/Authenticate)
+**Model**
 APIModel for Authenticate
-    + Headers
-    + Body
-    
-            {
-                "password": "thiswouldbeareallybadactualpassword",
-                "username": "jondoe"
-            }
-
-#### Campaign [/APIModel/Campaign]
-+ Model (application/json)
+```
+{
+    "password": "thiswouldbeareallybadactualpassword",
+    "username": "jondoe"
+}
+```
+#### [Campaign](/APIModel/Campaign)
+**Model**
 APIModel for Campaign
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "endDate": null,
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "mobileFlows": [
-                    "4edfcb2a0cf2146271ed7e46",
-                    "4eea18df0cf29daf65b1e9e9",
-                    "4eea18e60cf29daf65b1ea01"
-                ],
-                "name": "sample",
-                "shortCode":"515b0768ca10e4ec580fcc60",
-                "startDate": "Fri Aug 10 09:55:57 CDT 2012",
-                "status": "ACTIVE"
-            }
-
-#### CatchAll [/APIModel/CatchAll]
-+ Model (application/json)
+```   
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "endDate": null,
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "mobileFlows": [
+        "4edfcb2a0cf2146271ed7e46",
+        "4eea18df0cf29daf65b1e9e9",
+        "4eea18e60cf29daf65b1ea01"
+    ],
+    "name": "sample",
+    "shortCode":"515b0768ca10e4ec580fcc60",
+    "startDate": "Fri Aug 10 09:55:57 CDT 2012",
+    "status": "ACTIVE"
+}
+```
+#### [CatchAll](/APIModel/CatchAll)
+**Model**
 APIModel for CatchAll
-    + Headers
-    + Body
-    
-            {
-                "dateReceived": "2012-11-04",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "list":"548f5cd20cf2f50c89c05ab8",
-                "msg": "Can you hear me now?",
-                "msisdn": "0012022999393",
-                "shortCode":"515b0768ca10e4ec580fcc60",
-                "shortCodeIdString": "",
-                "status": "ACTIVE",
-                "subscriber": ""
+```   
+{
+    "dateReceived": "2012-11-04",
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "list":"548f5cd20cf2f50c89c05ab8",
+    "msg": "Can you hear me now?",
+    "msisdn": "0012022999393",
+    "shortCode":"515b0768ca10e4ec580fcc60",
+    "shortCodeIdString": "",
+    "status": "ACTIVE",
+    "subscriber": ""
             }
-
-#### CatchAllCounter [/APIModel/CatchAllCounter]
-+ Model (application/json)
+```
+#### [CatchAllCounter](/APIModel/CatchAllCounter)
+**Model**
 APIModel for CatchAllCounter
-    + Headers
-    + Body
-    
-            {
-                "total": "81800"
-            }
-
+```   
+{
+    "total": "81800"
+}
+```
 #### Collection [/APIModel/Collection]
 + Model (application/json)
 APIModel for Collection
