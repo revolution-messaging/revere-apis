@@ -405,7 +405,7 @@ APIModel for Collection
     "collection": []
 }
 ```
-#### [ContentModule]/(APIModel/ContentModule)
+#### [ContentModule](/APIModel/ContentModule)
 **Model**
 APIModel for ContentModule
 ```
@@ -1057,97 +1057,187 @@ These methods deal with logging into and out of the platform.
 | user  | string    | true  | User ID   |
 | username  | string    | true  | User's login ID   |
 
-#### v1 [/v1/authenticate]
-
-** log in [POST] **
-+ Request
-  [Authenticate][]
-
-+ Response 204
-+ Response 401
+#### v1
+**log in**
+```
+POST /v1/authenticate
+```
+**Request**
+```
+[Authenticate][]
+```
+**Response**
+```
+Status: 204
+```
+**Response**
+```
+Status: 401
+```
 
 ```
 GET /v1/authenticate/whoami
 ```
 Retrieve information on your currently-active session
 
-+ Response 200
-  [SessionResponse][]
-+ Response 401
-+ Response 403
+**Response**
+``` 
+Status: 200
+[SessionResponse][]
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
 ```
 POST /v1/authenticate/logout
 ```
 End your authentication session
-
-+ Response 204
-+ Response 401
-+ Response 403
-
-#### v2 [/v2/authenticate]
-
-** log in [POST] **
-+ Request
-  [Authenticate][]
-
-+ Response 200
-  [Session][]
-+ Response 401
-+ Response 403
-
+**Response**
+```
+Status: 204
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
+#### v2
+**log in**
+```
+POST /v2/authenticate
+```
+**Request**
+```
+[Authenticate][]
+```
+**Response**
+```
+Status: 200
+[Session][]
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
 ```
 GET /v2/authenticate/whoami
 ```
 Retrieve information on your currently-active session
-
-+ Response 200
-  [SessionResponse][]
-+ Response 401
-+ Response 403
-
+** Response**
+```
+Status: 200
+[SessionResponse][]
+  ```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
 ### Group Broadcast
 
 Use the Broadcast API to retrieve and cancel scheduled broadcasts.
 
-#### v2 [/v2/broadcast/{id}]
+#### v2
+**Parameters**
+id (optional, 24 char hex) ... the THING's unique identifier. Required in PUT & DELETE requests, and in GET requests to retrieve information about a specific broadcast.
 
-+ Parameters
-    + id (optional, 24 char hex) ... the THING's unique identifier. Required in PUT & DELETE requests, and in GET requests to retrieve information about a specific broadcast.
-
-** get broadcast [GET] **
-
+**get broadcast**
+```
+GET /v2/broadcast/{id}
+```
 Retrieve information about a specific broadcast if {id} is specified, or a collection of scheduled broadcasts with pagination parameters if {id} is absent
-
-+ Response 200
-    [BroadcastResponse][]
-+ Response 400
-+ Response 401
-+ Response 403
-+ Response 500
- 
-** delete broadcast [DELETE] **
-
+** Response**
+```
+Status: 200
+[BroadcastResponse][]
+```
+**Response**
+```
+Status: 400
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
+**Response**
+```
+Status: 500
+```
+**delete broadcast**
+```
+DELETE /v2/broadcast/{id}
+```
 Cancel a specific scheduled broadcast
-
-+ Response 204
-+ Response 400
-+ Response 401
-+ Response 403
-+ Response 500 
-
-** create broadcast [POST] **
-
+**Response**
+```
+Status: 204
+```
+**Response**
+```
+Status: 400
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
+**Response**
+```
+Status: 500
+```
+**create broadcast**
+```
+POST /v2/broadcast/{id}
+```
 Send or schedule a broadcast
-+ Request
-    [BroadcastRequest][]
-            
-+ Response 204
-+ Response 400
-+ Response 401
-+ Response 403
-+ Response 500
+**Request**
+```
+[BroadcastRequest][]
+```
+**Response**
+```
+Status: 204
+```
+**Response**
+```
+Status: 400
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
+**Response**
+```
+Status: 500
+```
 
-### Group Campaign
+### Campaign
 All outbound messages and any object that can send an outbound message on the platform must be associated with a campaign. Use campaigns to organize your mobile program.
 
 *Campaign* model
@@ -1164,40 +1254,62 @@ All outbound messages and any object that can send an outbound message on the pl
 | startDate | Date  | false | The starting date of the campaign.    |
 | status    | string    | false | Flag indicating whether this campaign is currently active.    |
 
-#### v1 [/v1/campaign/{id}]
-
-+ Parameters
-  + id (optional, 24 char hex) ... the campaign's unique identifier. Required in GET, PUT & DELETE requests.
-
-** get campaign [GET] **
-+ Response 200
-  [Campaign][]
-
-** delete campaign [DELETE] **
-+ Response 204
-
-** update campaign [PUT] **
-+ Request
-  [Campaign][]
-+ Response 204
-
+#### v1
+**Parameters**
+id (optional, 24 char hex) ... the campaign's unique identifier. Required in GET, PUT & DELETE requests.
+**get campaign**
+```
+GET /v1/campaign/{id}
+```
+**Response**
+```
+Staus: 200
+[Campaign][]
+```
+**delete campaign**
+```
+DELETE /v1/campaign/{id}
+```
+**Response**
+```
+Status: 204
+```
+**update campaign **
+```
+Status: PUT
+```
+**Request**
+```
+[Campaign][]
+```
+**Response** 
+```
+Status: 204
+```
 ```
 POST /v1/campaign/
 ```
 Create a new campaign
-+ Request
+**Request**
+```
 [Campaign][]
-+ Response 200
+```
+**Response** 
+```
+Status: 200
 [Campaign][]
+```
 
 ```
 GET /v1/campaign
 ```
 Retrieve a collection of campaigns
-+ Response 200
-  [Collection][]
-
-### Group Catchall/Inbox
+**Response**
+```
+Status: 200
+[Collection][]
+```
+### Catchall/Inbox
 
 *Catch-all counter* model
 
@@ -1219,45 +1331,84 @@ Retrieve a collection of campaigns
 | status    | string    | false | Indicates whether this inbox message is currently active. Deleted inbox messages are marked INACTIVE and will not be retrieved in the future.  The allowable values are 'ACTIVE' and 'INACTIVE'. This element is case-sensitive.  |
 | subscriber    | string    | false | The ID of the subscriber that wrote this message. |
 
-#### v1 [/v1/catchAll/{id}]
-
-+ Parameters
-  + id (optional, 24 char hex) ... a message's unique identifier. Required in GET, PUT & DELETE requests.
-
-** delete an inbox message [DELETE] **
-+ Response 204
-+ Response 401
-+ Response 403
-+ Response 404
-+ Response 500
-
+#### v1
+**Parameters**
+id (optional, 24 char hex) ... a message's unique identifier. Required in GET, PUT & DELETE requests.
+**delete an inbox message**
+```
+DELETE /v1/catchAll/{id}
+```
+**Response**
+```
+Status: 204
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
+**Response**
+```
+Status: 404
+```
+**Response**
+```
+Status: 500
+```
 ```
 GET /v1/catchAll/inboxCounter
 ```
 Retrieve the number of messages in the inbox
-+ Response 200
-    [CatchAllCounter][]
-+ Response 401
-+ Response 403
-+ Response 500
-
+**Response**
+```
+Status: 200
+[CatchAllCounter][]
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
+**Response**
+```
+Status: 500
+```
 ```
 GET /api/v1/catchAll
 ```
 Retrieve inbox messages
-+ Response 200
-    [CatchAll][]
-+ Response 400
-+ Response 401
-+ Response 403
-+ Response 500
+**Response**
+```
+Staus: 200
+[CatchAll][]
+```
+**Response**
+```
+Status: 400
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
+**Response**
+```
+Status: 500
+```
 
-### Group Filter
+### Filter
 Filters consist of a set of lists, a set of metadata-based criteria, and are used to retrieve dedpulicated collections of subscribers who are on one or more of the component lists and fit the criteria. v1 of the filter API allows only the simpler filters described with the `QueryFilter` model, below. These filters are limited to a set of AND criteria, including only subscribers who match all of the criteria in the filter. v2 of the API is backward-compatible, accepting the same models as v1, but also allows for the `ComplexFilter` model, which incorporates both AND and OR matches and also allows for arbitrary levels of recursion, as `ComplexFilterDetail` objects may be nested in the `details` property of other `ComplexFilterDetail` objects.
 
-The 
-
-`QueryFilter` model
+The `QueryFilter` model
 
 | property  | type  | required  | description   |
 |-----|-----|-----|-----|
@@ -1301,54 +1452,120 @@ The
 | zipcodes  | list  | false | The ZIP codes that fall partially or completely within the described area, including the center ZIP code. |
 
 
-#### v1 [/v1/filter/{id}]
-
-+ Parameters
-  + id (optional, 24 char hex) ... the filter's unique identifier. Required in GET, PUT & DELETE requests.
-
-** get query filter [GET] **
-
+#### v1
+**Parameters**
+id (optional, 24 char hex) ... the filter's unique identifier. Required in GET, PUT & DELETE requests.
+**get query filter**
+```
+GET /v1/filter/{id}
+```
 Retrieve a filter by ID. This endpoint is capable of retrieving complex as well as simple filters, though complex filters may only be created or updated using the v2 endpoint.
+**Response**
+```
+Status: 200
+[QueryFilter][]
+```
+**Response**
+```
+Status: 400
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
+**Response**
+```
+Status: 500
+```
+**update query filter**
+```
+PUT /v1/filter/{id}
+```
+**Request**
+```
+[QueryFilter][]
+```
+**Response**
+```
+Status: 204
+```
+**Response**
+```
+Status: 400
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
+**Response**
+```
+Status: 500
+```
 
-+ Response 200
-    [QueryFilter][]
-+ Response 400
-+ Response 401
-+ Response 403
-+ Response 500
-
-** update query filter [PUT] **
-+ Request
-    [QueryFilter][]
-+ Response 204
-+ Response 400
-+ Response 401
-+ Response 403
-+ Response 500
-
-** delete query filter [DELETE] **
-
+**delete query filter**
+```
+DELETE /v1/filter/{id}
+```
 Delete a filter by ID. This endpoint is capable of deleting complex as well as simple filters, though complex filters may only be created or updated using the v2 endpoint.
-
-+ Response 204
-+ Response 400
-+ Response 401
-+ Response 403
-+ Response 500
-
-** create query filter [POST] **
-+ Request
-    [QueryFilter][]
-+ Response 204
-+ Response 400
-+ Response 401
-+ Response 403
-+ Response 500
-
+**Response**
+```
+Status: 204
+```
+**Response**
+```
+Status: 400
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
+**Response**
+```
+Status: 500
+```
+**create query filter**
+```
+POST /v1/filter/{id}
+```
+**Request**
+```
+[QueryFilter][]
+```
+**Response**
+```
+Status: 204
+```
+**Response**
+```
+Status: 400
+```
+**Response**
+```
+Status: 401
+```
+**Response**
+```
+Status: 403
+```
+**Response**
+```
+Status: 500
+```
 ```
 GET /v1/filter/zipcode 
 ```
-
 Use this method to retrieve all ZIP codes within a radius of another ZIP code. The response from this endpoint is usually used to build a filter for subscribers near a certain location.
 
 + Response 200
