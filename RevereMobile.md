@@ -94,7 +94,7 @@ For the preceding request, if 73 lists are defined, the JSON response would cont
 }
 ```
 
-#### [BroadcastResponse](/APIModel/BroadcastResponse(
+#### [BroadcastResponse](/APIModel/BroadcastResponse)
 **Model**
 APIModel for BroadcastResponse
 ```
@@ -138,13 +138,6 @@ APIModel for BroadcastResponse
 #### [APIKey](/APIModel/APIKey)
 **Model**
 API Model for APIKey
-
-+ Headers
-```    
-Accept: application/json
-Content-Type: application/json
-``` 
-+ Body
 ```
 {
     "apiKey":"2baa7764-f2fa-4b07-b5de-867dd8ee2532"
@@ -391,722 +384,652 @@ APIModel for CatchAllCounter
     "total": "81800"
 }
 ```
-#### Collection [/APIModel/Collection]
-+ Model (application/json)
+#### [Collection](/APIModel/Collection)
+**Model**
 APIModel for Collection
-    + Headers
-    + Body
-    
-            {
-                "collection": [],
-                "page": "1",
-                "size": "60",
-                "total": "81800"
-            }
-
-#### SubscriberCountCollection [/APIModel/SubscriberCountCollection]
-+ Model (application/json)
-    + Headers
-    + Body
-
-            {
-              "page": null,
-              "size": null,
-              "total": 3092,
-              "collection": []
-            }
-
-#### ContentModule [/APIModel/ContentModule]
-+ Model (application/json)
+```  
+{
+    "collection": [],
+    "page": "1",
+    "size": "60",
+    "total": "81800"
+}
+```
+#### [SubscriberCountCollection](/APIModel/SubscriberCountCollection)
+**Model**
+```
+{
+    "page": null,
+    "size": null,
+    "total": 3092,
+    "collection": []
+}
+```
+#### [ContentModule]/(APIModel/ContentModule)
+**Model**
 APIModel for ContentModule
-    + Headers
-    + Body
-    
-            {
-                "head": "4eeb60220cf29daf65b3751e",
-                "type": "SUBSCRIPTION",
-                "params": {
-                    "subscribedSubject": null,
-                    "confirmSubject": null,
-                    "listId": "4ec68c8d0cf2a3b767982188",
-                    "optInType": "singleOptIn",
-                    "confirmFiles": [],
-                    "subscribedFiles": [],
-                    "subscribedMessage": "You already texted in, what more do you expect?",
-                    "confirmMessage": "Thanks for joining the Revolution staff test list. NOW GET BACK TO WORK!"
-                }
-            }
-
-#### SubscriberMessagesResponse [/APIModel/SubscriberMessagesResponse]
-+ Model (application/json)
-  APIModel for SubscriberMessagesResponse
-  + Headers
-  + Body
-
-            {
-            "msisdn": "",
-            "messages": []
-            }
-
-#### EditMobileFlow [/APIModel/EditMobileFlow]
-+ Model (application/json)
+```
+{
+    "head": "4eeb60220cf29daf65b3751e",
+    "type": "SUBSCRIPTION",
+    "params": {
+        "subscribedSubject": null,
+        "confirmSubject": null,
+        "listId": "4ec68c8d0cf2a3b767982188",
+        "optInType": "singleOptIn",
+        "confirmFiles": [],
+        "subscribedFiles": [],
+        "subscribedMessage": "You already texted in, what more do you expect?",
+        "confirmMessage": "Thanks for joining the Revolution staff test list. NOW GET BACK TO WORK!"
+    }
+}
+```
+#### [SubscriberMessagesResponse](/APIModel/SubscriberMessagesResponse)
+**Model**
+APIModel for SubscriberMessagesResponse
+```
+{
+    "msisdn": "",
+    "messages": []
+}
+```
+#### [EditMobileFlow](/APIModel/EditMobileFlow)
+**Model**
 APIModel for EditMobileFlow
-    + Headers
-    + Body
-    
-            {
-                "campaign": "5493568f0cf2fcad2e35ecb5",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "keywords": [
-                    {
-                        "id": "4ec68cef0cf2a3b7679821ab",
-                        "account": null,
-                        "group": null,
-                        "shortCode": null,
-                        "name": "rmstaff",
-                        "mobileFlow": null
-                    }
-                ],
-                "mobileFlow": "4edfcb2a0cf2146271ed7e46",
-                "modules": []
-            }
-
-#### Geospatial [/APIModel/Geospatial]
-+ Model (application/json)
+```
+{
+    "campaign": "5493568f0cf2fcad2e35ecb5",
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "keywords": [
+        {
+            "id": "4ec68cef0cf2a3b7679821ab",
+            "account": null,
+            "group": null,
+            "shortCode": null,
+            "name": "rmstaff",
+            "mobileFlow": null
+        }
+    ],
+    "mobileFlow": "4edfcb2a0cf2146271ed7e46",
+     "modules": []
+}
+```
+#### [Geospatial](/APIModel/Geospatial)
+**Model**
 APIModel for Geospatial
-    + Headers
-    + Body
-    
-            {
-                "centerZipcode": "20036",
-                "radius": "50",
-                "zipcodes": [
-                    "17329",
-                    "17331",
-                    "17332
-                ]
-            }
-
-#### Group [/APIModel/Group]
-+ Model (application/json)
+``` 
+{
+    "centerZipcode": "20036",
+    "radius": "50",
+    "zipcodes": [
+        "17329",
+        "17331",
+        "17332
+    ]
+}
+```
+#### [Group](/APIModel/Group)
+**Model**
 APIModel for Group
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "createdBy": "5493568f0cf2fcad2e35ecb5",
-                "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "name": "sample"
-            }
-
-#### Keyword [/APIModel/Keyword]
-+ Model (application/json)
+```
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "createdBy": "5493568f0cf2fcad2e35ecb5",
+    "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+    "id": "5493568f0cf2fcad2e35ecb5",
+     "name": "sample"
+}
+```
+#### [Keyword](/APIModel/Keyword)
+**Model**
 APIModel for Keyword
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "mobileFlow": "4edfcb2a0cf2146271ed7e46",
-                "name": "sample",
-                "shortCode": "4e8b4b5afda5efeeec370e8a"
-            }
-
-#### KeywordAvailable [/APIModel/KeywordAvailable]
-+ Model (application/json)
+```   
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "mobileFlow": "4edfcb2a0cf2146271ed7e46",
+    "name": "sample",
+    "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
+```
+#### [KeywordAvailable](/APIModel/KeywordAvailable)
+**Model**
 APIModel for KeywordAvailable
-    + Headers
-    + Body
-        
-            {
-                "available": true,
-                "name": "sample"
-              }
-
-#### List [/APIModel/List]
-+ Model (application/json)
+```       
+{
+    "available": true,
+    "name": "sample"
+}
+```
+#### [List](/APIModel/List)
+**Model**
 APIModel for List
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "createdBy": "5493568f0cf2fcad2e35ecb5",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "name": "sample",
-                "noOfSubscribers": "81800",
-                "shortCode":"515b0768ca10e4ec580fcc60",
-                "status": "ACTIVE"
-            }
-
-#### Messaging [/APIModel/Messaging]
-+ Model (application/json)
+```  
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "createdBy": "5493568f0cf2fcad2e35ecb5",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "name": "sample",
+    "noOfSubscribers": "81800",
+    "shortCode":"515b0768ca10e4ec580fcc60",
+    "status": "ACTIVE"
+}
+```
+#### [Messaging](/APIModel/Messaging)
+**Model**
 APIModel for Messaging
-    + Headers
-    + Body
-    
-            {
-                "campaign": "5493568f0cf2fcad2e35ecb5",
-                "filteredLists": [
-                    "54dd29ed0cf21202213a7a8e"
-                ],
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "message": "Hey, what's up?"
-                "mobileFlow": "4edfcb2a0cf2146271ed7e46",
-                "modules":[
-                    {
-                        "type": "SUBSCRIPTION",
-                        "params": {
-                            "listId": "53023a0e300445356466e8f3",
-                            "optInType": "doubleOptIn",
-                            "optInMessage": "Would you like to join my mobile list? Text STOP to end, HELP for info. 4 msg/mo. Msg&Data Rates May Apply. More: rm.to/tclegal",
-                            "confirmMessage": "Thanks for joining my list!",
-                            "subscribedMessage": "Thanks for your support, you're already subscribed!"
-                        }
-                    },
-                    {
-                        "type": "TAGMETADATA",
-                        "params": {
-                            "53023e8e0cf2eeecfb1bbe68": "My Tag"
-                        }
-                    }
-                ],
-                "msisdns": [
-                    "0012022999393"
-                ],
-                "programName": "Test Campaign",
-                "schedule": "Thu Feb 12 17:32:26 EST 2015",
-                "segments": [
-                    {
-                        "percent": 50,
-                        "message": "Hey, what's up?"
-                    },
-                    {
-                        "percent": 50,
-                        "message": "How YOU doin'?"
-                    }
-                ],
-                "shortCode":"515b0768ca10e4ec580fcc60"
+```   
+{
+    "campaign": "5493568f0cf2fcad2e35ecb5",
+    "filteredLists": [
+        "54dd29ed0cf21202213a7a8e"
+    ],
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "message": "Hey, what's up?"
+    "mobileFlow": "4edfcb2a0cf2146271ed7e46",
+    "modules":[
+        {
+            "type": "SUBSCRIPTION",
+            "params": {
+                "listId": "53023a0e300445356466e8f3",
+                "optInType": "doubleOptIn",
+                "optInMessage": "Would you like to join my mobile list? Text STOP to end, HELP for info. 4 msg/mo. Msg&Data Rates May Apply. More: rm.to/tclegal",
+                "confirmMessage": "Thanks for joining my list!",
+                "subscribedMessage": "Thanks for your support, you're already subscribed!"
             }
-
-#### Metadata [/APIModel/Metadata]
-+ Model (application/json)
+        },
+        {
+            "type": "TAGMETADATA",
+            "params": {
+                "53023e8e0cf2eeecfb1bbe68": "My Tag"
+            }
+        }
+    ],
+    "msisdns": [
+        "0012022999393"
+    ],
+    "programName": "Test Campaign",
+    "schedule": "Thu Feb 12 17:32:26 EST 2015",
+    "segments": [
+        {
+            "percent": 50,
+            "message": "Hey, what's up?"
+        },
+        {
+            "percent": 50,
+            "message": "How YOU doin'?"
+        }
+    ],
+    "shortCode":"515b0768ca10e4ec580fcc60"
+}
+```
+#### [Metadata](/APIModel/Metadata)
+**Model**
 APIModel for Metadata
-    + Headers
-    + Body
-    
-            {
-                "id": "54dd2c1e0cf21202213a7e84",
-                "account": "4e6fa6177a475eefd68fb5ef",
-                "group": "4e6fa6187a475eefd68fb5f5",
-                "format": "[0-9]{1,2}",
-                "name": "shoe size",
-                "scope": "GROUP",
-                "multiValue": false,
-                "validValues": null,
-                "eventUrl": "http://tools.revmsg.net/metadataHandler",
-                "status": "ACTIVE"
-            }
-
-#### MetadataValue [/APIModel/MetadataValue]
-+ Model (application/json)
+```
+{
+    "id": "54dd2c1e0cf21202213a7e84",
+    "account": "4e6fa6177a475eefd68fb5ef",
+    "group": "4e6fa6187a475eefd68fb5f5",
+    "format": "[0-9]{1,2}",
+    "name": "shoe size",
+    "scope": "GROUP",
+    "multiValue": false,
+    "validValues": null,
+    "eventUrl": "http://tools.revmsg.net/metadataHandler",
+    "status": "ACTIVE"
+}
+```
+#### [MetadataValue](/APIModel/MetadataValue)
+**Model**
 APIModel for MetadataValue
-    + Headers
-    + Body
-    
-            {
-                "id": "54dd2c1e0cf21202213a7e84",
-                "name": "shoe size",
-                "value": "12"
-            }
-
-#### MobileFlow [/APIModel/MobileFlow]
-+ Model (application/json)
+```
+{
+    "id": "54dd2c1e0cf21202213a7e84",
+    "name": "shoe size",
+    "value": "12"
+}
+```
+#### [MobileFlow](/APIModel/MobileFlow)
+**Model**
 APIModel for MobileFlow
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "campaign": "5493568f0cf2fcad2e35ecb5",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "name": "sample",
-                "programName": "Sample Program",
-                "shortCode":"515b0768ca10e4ec580fcc60",
-                "status": "ACTIVE"
-            }
+``` 
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "campaign": "5493568f0cf2fcad2e35ecb5",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "name": "sample",
+    "programName": "Sample Program",
+    "shortCode":"515b0768ca10e4ec580fcc60",
+    "status": "ACTIVE"
+}
+```
 
-
-#### QueryFilterDetailRequest [/APIModel/QueryFilterDetailRequest]
-+ Model (application/json)
+#### [QueryFilterDetailRequest](/APIModel/QueryFilterDetailRequest)
+**Model**
 APIModel for QueryFilterDetailRequest
-    + Headers
-    + Body
-    
-            {
-                "metadata": "54dd2c1e0cf21202213a7e84",
-                "operator": "in",
-                "radius": null,
-                "value": "11,12,13"
-            }
-
-#### QueryFilter [/APIModel/QueryFilter]
-+ Model (application/json)
+```   
+{
+    "metadata": "54dd2c1e0cf21202213a7e84",
+    "operator": "in",
+    "radius": null,
+     "value": "11,12,13"
+}
+```
+#### [QueryFilter](/APIModel/QueryFilter)
+**Model**
 APIModel for QueryFilter
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "lists": [
-                    "54d001740cf2c7c3bf30a6e4",
-                    "54cffeca0cf2c7c3bf30a289"
-                ],
-                "name": "sample",
-                "queryFilterDetails": [
-                    {
-                        "metadata": "54dd2c1e0cf21202213a7e84",
-                        "operator": "in",
-                        "radius": null,
-                        "value": "11,12,13"
-                    }
-                ],
-                "shortCode": "4e8b4b5afda5efeeec370e8a"
-            }
-
-#### QueryFilterDetail [/APIModel/QueryFilterDetail]
-    + Headers
-    + Body
-    
-            {
-                "metadata": "54dd2c1e0cf21202213a7e84",
-                "operator": "in",
-                "radius": null,
-                "value": "11,12,13"
-            }
-
-#### QueryFilterDetailResponse [/APIModel/QueryFilterDetailResponse]
-+ Model (application/json)
+```   
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "lists": [
+        "54d001740cf2c7c3bf30a6e4",
+        "54cffeca0cf2c7c3bf30a289"
+    ],
+    "name": "sample",
+    "queryFilterDetails": [
+        {
+            "metadata": "54dd2c1e0cf21202213a7e84",
+            "operator": "in",
+            "radius": null,
+            "value": "11,12,13"
+        }
+    ],
+     "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
+```
+#### [QueryFilterDetail](/APIModel/QueryFilterDetail)
+```  
+{
+    "metadata": "54dd2c1e0cf21202213a7e84",
+    "operator": "in",
+    "radius": null,
+    "value": "11,12,13"
+}
+```
+#### [QueryFilterDetailResponse](/APIModel/QueryFilterDetailResponse)
+**Model**
 APIModel for QueryFilterDetailResponse
-    + Headers
-    + Body
-    
-            {
-                "metadata": "54dd2c1e0cf21202213a7e84",
-                "operator": "in",
-                "radius": null,
-                "value": "11,12,13"
-            }
-
-#### QueryFilterRequest [/APIModel/QueryFilterRequest]
-+ Model (application/json)
+```
+{
+    "metadata": "54dd2c1e0cf21202213a7e84",
+    "operator": "in",
+    "radius": null,
+    "value": "11,12,13"
+}
+```
+#### [QueryFilterRequest](/APIModel/QueryFilterRequest)
+**Model**
 APIModel for QueryFilterRequest
-    + Headers
-    + Body
-    
+```  
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "details": [
+        {
+            "metadata": "54dd2c1e0cf21202213a7e84",
+            "operator": "in",
+            "radius": null,
+            "value": "11,12,13"
+        }
+    ],
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "lists": [
+        "54d001740cf2c7c3bf30a6e4",
+        "54cffeca0cf2c7c3bf30a289"
+    ],
+    "name": "sample",
+    "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
+```
+#### [QueryFilterResponse](/APIModel/QueryFilterResponse)
+**Model**
+APIModel for QueryFilterResponse
+```   
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "lists": [
+        "54d001740cf2c7c3bf30a6e4",
+        "54cffeca0cf2c7c3bf30a289"
+    ],
+    "name": "sample",
+    "queryFilterDetails": [
+        {
+            "metadata": "54dd2c1e0cf21202213a7e84",
+            "operator": "in",
+            "radius": null,
+            "value": "11,12,13"
+        }
+    ],
+    "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
+```
+#### [ComplexFilter](/APIModel/Query/ComplexFilter)
+**Model**
+APIModel for complex filter queries
+```
+{
+    "name": "complicatedfilter",
+    "lists": [
+        "54cffeca0cf2c7c3bf30a289",
+        "54d001740cf2c7c3bf30a6e4"
+    ],
+        "queryFilterDetails": {
+        "operator":"AND",
+        "details":[
             {
-                "account": "546239d10cf25fdcf0aea9b2",
+                "value": "21",
+                "operator": ">=",
+                "metadata": "metadataId"
+            },
+            {
+                "operator":"OR",
                 "details": [
                     {
-                        "metadata": "54dd2c1e0cf21202213a7e84",
-                        "operator": "in",
-                        "radius": null,
-                        "value": "11,12,13"
-                    }
-                ],
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "lists": [
-                    "54d001740cf2c7c3bf30a6e4",
-                    "54cffeca0cf2c7c3bf30a289"
-                ],
-                "name": "sample",
-                "shortCode": "4e8b4b5afda5efeeec370e8a"
-            }
-
-#### QueryFilterResponse [/APIModel/QueryFilterResponse]
-+ Model (application/json)
-APIModel for QueryFilterResponse
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "lists": [
-                    "54d001740cf2c7c3bf30a6e4",
-                    "54cffeca0cf2c7c3bf30a289"
-                ],
-                "name": "sample",
-                "queryFilterDetails": [
-                    {
-                        "metadata": "54dd2c1e0cf21202213a7e84",
-                        "operator": "in",
-                        "radius": null,
-                        "value": "11,12,13"
-                    }
-                ],
-                "shortCode": "4e8b4b5afda5efeeec370e8a"
-            }
-
-#### ComplexFilter [/APIModel/Query/ComplexFilter]
-+ Model (application/json)
-APIModel for complex filter queries
-    + Headers
-    + Body
-
-            {
-                "name": "complicatedfilter",
-                "lists": [
-                    "54cffeca0cf2c7c3bf30a289",
-                    "54d001740cf2c7c3bf30a6e4"
-                ],
-                "queryFilterDetails": {
-                    "operator":"AND",
-                    "details":[
-                        {
-                            "value": "21",
-                            "operator": ">=",
-                            "metadata": "metadataId"
-                        },
-                        {
-                           "operator":"OR",
-                           "details": [
-                               {
-                                    "value": "214",
-                                    "operator": "=",
-                                    "metadata": "metadataId"
-                                },
-                                {
-                                    "value": "972",
-                                    "operator": "=",
-                                    "metadata": "metadataId"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-
-#### ReportingStatus [/APIModel/ReportingStatus]
-+ Model (application/json)
-APIModel for ReportingStatus
-    + Headers
-    + Body
-    
-            {
-                lag: 7
-                status: "ONLINE"
-            }
-
-#### ReportingTemplateRequest [/APIModel/ReportingTemplateRequest]
-+ Model (application/json)
-APIModel for ReportingTemplateRequest
-    + Headers
-    + Body
-    
-            {
-                "id": null,
-                "account": null,
-                "group": null,
-                "shortCode": null,
-                "name": null,
-                "lastReport": null,
-                "query": {
-                    "type": "messageDetails",
-                    "campaign": "502520fd0cf236b8a1545f8b",
-                    "messageType": "MO",
-                    "contentType": "SUBSCRIPTION",
-                    "beginOn": "2015-01-01",
-                    "endOn": "2015-01-21"
-                }
-            }
-
-
-#### ReportingTemplateResponse [/APIModel/ReportingTemplateResponse]
-+ Model (application/json)
-APIModel for ReportingTemplateResponse
-    + Headers
-    + Body
-    
-            {
-                "id": "reportId",
-                "account": "accountId",
-                "group": "groupId",
-                "shortCode": "shortCodeId",
-                "name": "Poll Summary for Mobile Flow SomeCampaignName",
-                "lastReport": {
-                  "file": null,
-                  "status": "NEW",
-                  "submittedAt": "2014-09-01T08:42:39.539-05:00",
-                  "completedAt": null,
-                  "scheduledAt": "2014-12-24T15:00:00.727-06:00"
-                },
-                "query": {
-                  "type": "pollSummary",
-                  "mobileFlow": "mobileFlowId"
-                }
-            } 
-
-
-#### Role [/APIModel/Role]
-+ Model (application/json)
-APIModel for Role
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "createdBy": "5493568f0cf2fcad2e35ecb5",
-                "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "groupsVisible": [
-                    "4e6fa6187a475eefd68fb5f5"
-                ],
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "name": "sample",
-                "permissions":[
-                    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
-                    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
-                ],
-                "status": "ACTIVE"
-            }
-
-#### Security [/APIModel/Security]
-+ Model (application/json)
-APIModel for Security
-    + Headers
-    + Body
-    
-            {
-                "id": "5493568f0cf2fcad2e35ecb5"
-            }
-
-#### Segment [/APIModel/Segment]
-+ Model (application/json)
-APIModel for Segment
-    + Headers
-    + Body
-    
-            {
-                "percent": 50,
-                "message": "Hey, what's up?",
-                "value": "A"
-            }
-
-#### Session [/APIModel/Session]
-+ Model (application/json)
-APIModel for Session
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "impersonated": false,
-                "isAdmin": false,
-                "isGroupAdmin": false,
-                "isRoot": false,
-                "permissions":[
-                    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
-                    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
-                ],
-                "role": "4fd220440cf2c16d2fa79ac0",
-                "username": "jondoe"
-            }
-
-#### SessionResponse [/APIModel/SessionResponse]
-+ Model (application/json)
-APIModel for SessionResponse
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "impersonated": false,
-                "isAdmin": false,
-                "isGroupAdmin": false,
-                "isRoot": false,
-                "permissions":[
-                    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
-                    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
-                ],
-                "role": "4fd220440cf2c16d2fa79ac0",
-                "sessionId": "5493568f0cf2fcad2e35ecb5",
-                "user": "5493568f0cf2fcad2e35ecb5",
-                "username": "jondoe"
-            }
-
-#### Subscriber [/APIModel/Subscriber]
-+ Model (application/json)
-APIModel for Subscriber
-    + Headers
-    + Body
-    
-            {
-                "id": "543438bf0cf25a19cdb8354e",
-                "firstName": "Jon",
-                "lastName": "Snow",
-                "email": "jsnow@blackwatch.org",
-                "facebook": "stark.bastard23",
-                "twitter": "stark.bastard23",
-                "mobileNumber": "0016081112222",
-                "state": "WI",
-                "timeZone": "-0700",
-                "areaCode": "608",
-                "zipCode": "54806",
-                "birthDate": "1999-12-31T00:00:00.000",
-                "dateAdded": "2014-12-16T13:57:02.355",
-                "metadata": {
-                    "548f5f3b0cf2f50c89c15385": [
-                        "7"
-                    ],
-                    "548f64ad0cf2f50c89c39f53": [
-                        "12311980"
-                    ],
-                    "546239d10cf25fdcf0aea9bf": [
-                        "2014-12-16T13:57:02.355"
-                    ],
-                    "546239d10cf25fdcf0aea9be": [
-                        "1999-12-31T00:00:00.000"
-                    ],
-                    "546239d10cf25fdcf0aea9bd": [
-                        "54806"
-                    ],
-                    "546239d10cf25fdcf0aea9bc": [
-                        "608"
-                    ],
-                    "546239d10cf25fdcf0aea9bb": [
-                        "-0700"
-                    ],
-                    "546239d10cf25fdcf0aea9ba": [
-                        "WI"
-                    ],
-                    "546239d10cf25fdcf0aea9b5": [
-                        "Snow"
-                    ],
-                    "546239d10cf25fdcf0aea9b6": [
-                        "jsnow@blackwatch.org"
-                    ],
-                    "548f656a0cf2f50c89c3fc75": [
-                        "54806"
-                    ],
-                    "546239d10cf25fdcf0aea9b4": [
-                        "Jon"
-                    ],
-                    "546239d10cf25fdcf0aea9b9": [
-                        "0016081112222"
-                    ],
-                    "546239d10cf25fdcf0aea9b7": [
-                        "stark.bastard23"
-                    ],
-                    "546239d10cf25fdcf0aea9b8": [
-                        "stark.bastard23"
-                    ]
-                },
-                "listDetails": {
-                    "5094304e0cf280bc6a98bf8e": {
-                        "details": {
-                            "mobileFlow": "509430b10cf280bc6a98bff8",
-                            "trigger": "509430b10cf280bc6a98bff9"
-                        },
-                        "joinDate": "Thu Oct 09 11:36:14 CDT 2014",
-                        "source": "MOBILE"
+                        "value": "214",
+                        "operator": "=",
+                        "metadata": "metadataId"
                     },
-                    "4f3454170cf25b1ca44caf6a": {
-                        "details": {
-                            "mobileFlow": "54934e240cf2a36986b4770f",
-                            "trigger": "54934e240cf2a36986b47710"
-                        },
-                        "joinDate": "Thu Dec 18 15:59:27 CST 2014",
-                        "source": "MOBILE"
+                    {
+                        "value": "972",
+                        "operator": "=",
+                        "metadata": "metadataId"
                     }
-                },
-                "blacklist": []
+                ]
             }
-
-#### SubscribersAndList [/APIModel/SubscribersAndList]
-+ Model (application/json)
+        ]
+    }
+}
+```
+#### [ReportingStatus](/APIModel/ReportingStatus)
+**Model**
+APIModel for ReportingStatus
+```   
+{
+    lag: 7
+    status: "ONLINE"
+}
+```
+#### [ReportingTemplateRequest](/APIModel/ReportingTemplateRequest)
+**Model**
+APIModel for ReportingTemplateRequest
+```   
+{
+    "id": null,
+    "account": null,
+    "group": null,
+    "shortCode": null,
+    "name": null,
+    "lastReport": null,
+    "query": {
+        "type": "messageDetails",
+        "campaign": "502520fd0cf236b8a1545f8b",
+        "messageType": "MO",
+        "contentType": "SUBSCRIPTION",
+        "beginOn": "2015-01-01",
+        "endOn": "2015-01-21"
+    }
+}
+```
+#### [ReportingTemplateResponse](/APIModel/ReportingTemplateResponse)
+**Model**
+APIModel for ReportingTemplateResponse
+```
+{
+    "id": "reportId",
+    "account": "accountId",
+    "group": "groupId",
+    "shortCode": "shortCodeId",
+    "name": "Poll Summary for Mobile Flow SomeCampaignName",
+    "lastReport": {
+        "file": null,
+        "status": "NEW",
+        "submittedAt": "2014-09-01T08:42:39.539-05:00",
+        "completedAt": null,
+        "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+    },
+    "query": {
+        "type": "pollSummary",
+        "mobileFlow": "mobileFlowId"
+    }
+} 
+```
+#### [Role](/APIModel/Role)
+**Model**
+APIModel for Role
+```
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "createdBy": "5493568f0cf2fcad2e35ecb5",
+    "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "groupsVisible": [
+        "4e6fa6187a475eefd68fb5f5"
+    ],
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "name": "sample",
+    "permissions":[
+        "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+        "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+    ],
+     "status": "ACTIVE"
+}
+```
+#### [Security](/APIModel/Security)
+**Model**
+APIModel for Security
+``` 
+{
+    "id": "5493568f0cf2fcad2e35ecb5"
+}
+```
+#### [Segment](/APIModel/Segment)
+**Model**
+APIModel for Segment
+``` 
+{
+    "percent": 50,
+    "message": "Hey, what's up?",
+    "value": "A"
+}
+```
+#### [Session](/APIModel/Session)
+**Model**
+APIModel for Session
+```
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "impersonated": false,
+    "isAdmin": false,
+    "isGroupAdmin": false,
+    "isRoot": false,
+    "permissions":[
+        "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+        "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+    ],
+    "role": "4fd220440cf2c16d2fa79ac0",
+    "username": "jondoe"
+}
+```
+#### [SessionResponse](/APIModel/SessionResponse)
+**Model**
+APIModel for SessionResponse
+```   
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "impersonated": false,
+    "isAdmin": false,
+    "isGroupAdmin": false,
+    "isRoot": false,
+    "permissions":[
+        "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+        "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+    ],
+    "role": "4fd220440cf2c16d2fa79ac0",
+    "sessionId": "5493568f0cf2fcad2e35ecb5",
+    "user": "5493568f0cf2fcad2e35ecb5",
+    "username": "jondoe"
+}
+```
+#### [Subscriber](/APIModel/Subscriber)
+**Model**
+APIModel for Subscriber
+``` 
+{
+    "id": "543438bf0cf25a19cdb8354e",
+    "firstName": "Jon",
+    "lastName": "Snow",
+    "email": "jsnow@blackwatch.org",
+    "facebook": "stark.bastard23",
+    "twitter": "stark.bastard23",
+    "mobileNumber": "0016081112222",
+    "state": "WI",
+    "timeZone": "-0700",
+    "areaCode": "608",
+    "zipCode": "54806",
+    "birthDate": "1999-12-31T00:00:00.000",
+    "dateAdded": "2014-12-16T13:57:02.355",
+    "metadata": {
+        "548f5f3b0cf2f50c89c15385": [
+            "7"
+        ],
+        "548f64ad0cf2f50c89c39f53": [
+            "12311980"
+        ],
+        "546239d10cf25fdcf0aea9bf": [
+            "2014-12-16T13:57:02.355"
+        ],
+        "546239d10cf25fdcf0aea9be": [
+            "1999-12-31T00:00:00.000"
+        ],
+        "546239d10cf25fdcf0aea9bd": [
+            "54806"
+        ],
+        "546239d10cf25fdcf0aea9bc": [
+            "608"
+        ],
+        "546239d10cf25fdcf0aea9bb": [
+            "-0700"
+         ],
+        "546239d10cf25fdcf0aea9ba": [
+            "WI"
+        ],
+        "546239d10cf25fdcf0aea9b5": [
+            "Snow"
+        ],
+        "546239d10cf25fdcf0aea9b6": [
+            "jsnow@blackwatch.org"
+        ],
+        "548f656a0cf2f50c89c3fc75": [
+            "54806"
+        ],
+        "546239d10cf25fdcf0aea9b4": [
+            "Jon"
+        ],
+        "546239d10cf25fdcf0aea9b9": [
+            "0016081112222"
+        ],
+         "546239d10cf25fdcf0aea9b7": [
+             "stark.bastard23"
+        ],
+        "546239d10cf25fdcf0aea9b8": [
+            "stark.bastard23"
+        ]
+    },
+    "listDetails": {
+        "5094304e0cf280bc6a98bf8e": {
+            "details": {
+                "mobileFlow": "509430b10cf280bc6a98bff8",
+                "trigger": "509430b10cf280bc6a98bff9"
+            },
+            "joinDate": "Thu Oct 09 11:36:14 CDT 2014",
+            "source": "MOBILE"
+        },
+        "4f3454170cf25b1ca44caf6a": {
+            "details": {
+                "mobileFlow": "54934e240cf2a36986b4770f",
+                "trigger": "54934e240cf2a36986b47710"
+            },
+            "joinDate": "Thu Dec 18 15:59:27 CST 2014",
+            "source": "MOBILE"
+        }
+    },
+    "blacklist": []
+}
+```
+#### [SubscribersAndList](/APIModel/SubscribersAndList)
+**Model**
 APIModel for SubscribersAndList
-    + Headers
-    + Body
-    
-            {
-                "list":"548f5cd20cf2f50c89c05ab8",
-                "subscribers": ""
-            }
-
-#### Trigger [/APIModel/Trigger]
-+ Model (application/json)
+```  
+{
+    "list":"548f5cd20cf2f50c89c05ab8",
+    "subscribers": ""
+}
+```
+#### [Trigger](/APIModel/Trigger)
+**Model**
 APIModel for Trigger
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "mobileFlow": "4edfcb2a0cf2146271ed7e46",
-                "name": "sample",
-                "shortCode": "4e8b4b5afda5efeeec370e8a"
-            }
-
-#### User [/APIModel/User]
-+ Model (application/json)
+```   
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "mobileFlow": "4edfcb2a0cf2146271ed7e46",
+    "name": "sample",
+    "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
+```
+#### [User](/APIModel/User)
+**Model**
 APIModel for User
-    + Headers
-    + Body
-    
-            {
-                "account": "546239d10cf25fdcf0aea9b2",
-                "apiKey": "2baa7764-f2fa-4b07-b5de-867dd8ee2532",
-                "createdBy": "5493568f0cf2fcad2e35ecb5",
-                "defaultshortCode": "4e8b4b5afda5efeeec370e8a",
-                "details": {
-                    "name": "Jon Doe",
-                    "title": "Communications Director",
-                    "phone": "0012022999393",
-                    "mobile": "0012022999393",
-                    "email": "jondoe@shormakers.org",
-                    "company": "Shoemakers International Union",
-                    "lastLogin": null
-                },
-                "group":"54623a230cf25fdcf0aeaa5c",
-                "id": "5493568f0cf2fcad2e35ecb5",
-                "name": "sample",
-                "password": "thiswouldbeareallybadactualpassword",
-                "role": "4fd220440cf2c16d2fa79ac0",
-                "shortCodes": [
-                    "4e8b4b5afda5efeeec370e8a"
-                ],
-                "status": "ACTIVE"
-            }
-
-#### UserDetails [/APIModel/UserDetails]
-+ Model (application/json)
+```
+{
+    "account": "546239d10cf25fdcf0aea9b2",
+    "apiKey": "2baa7764-f2fa-4b07-b5de-867dd8ee2532",
+    "createdBy": "5493568f0cf2fcad2e35ecb5",
+    "defaultshortCode": "4e8b4b5afda5efeeec370e8a",
+    "details": {
+        "name": "Jon Doe",
+        "title": "Communications Director",
+        "phone": "0012022999393",
+        "mobile": "0012022999393",
+        "email": "jondoe@shormakers.org",
+        "company": "Shoemakers International Union",
+        "lastLogin": null
+    },
+    "group":"54623a230cf25fdcf0aeaa5c",
+    "id": "5493568f0cf2fcad2e35ecb5",
+    "name": "sample",
+    "password": "thiswouldbeareallybadactualpassword",
+    "role": "4fd220440cf2c16d2fa79ac0",
+     "shortCodes": [
+        "4e8b4b5afda5efeeec370e8a"
+     ],
+    "status": "ACTIVE"
+}
+```
+#### [UserDetails](/APIModel/UserDetails)
+**Model**
 APIModel for UserDetails
-    + Headers
-    + Body
-    
-            {
-                "name": "Jon Doe",
-                "title": "Communications Director",
-                "phone": "0012022999393",
-                "mobile": "0012022999393",
-                "email": "jondoe@shormakers.org",
-                "company": "Shoemakers International Union"
+```  
+{
+    "name": "Jon Doe",
+    "title": "Communications Director",
+    "phone": "0012022999393",
+    "mobile": "0012022999393",
+    "email": "jondoe@shoemakers.org",
+    "company": "Shoemakers International Union"
             }
-
+```
 ### Group Authenticate
 
 These methods deal with logging into and out of the platform.
