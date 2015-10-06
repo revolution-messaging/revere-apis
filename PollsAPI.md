@@ -11,27 +11,27 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 **Response**
 ```json
 Status: 200
-        [
+[
+    {
+        "question": "Favourite programming language?",
+        "published_at": "2015-08-05T08:40:51.620Z",
+        "choices": [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "choice": "Swift",
+                "votes": 2048
+            }, {
+                "choice": "Python",
+                "votes": 1024
+            }, {
+                "choice": "Objective-C",
+                "votes": 512
+            }, {
+                "choice": "Ruby",
+                "votes": 256
             }
         ]
+    }
+]
 ```
 ### Create a New Question [POST]
 
@@ -42,15 +42,15 @@ form of choices.
 **Request**
 ```json
 
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
+{
+    "question": "Favourite programming language?",
+    "choices": [
+        "Swift",
+        "Python",
+        "Objective-C",
+        "Ruby"
+    ]
+}
 ```
 
 **Response**
@@ -63,23 +63,23 @@ Location: /questions/2
 ```
 + Body
 ```
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+{
+    "question": "Favourite programming language?",
+    "published_at": "2015-08-05T08:40:51.620Z",
+    "choices": [
+        {
+            "choice": "Swift",
+            "votes": 0
+        }, {
+            "choice": "Python",
+            "votes": 0
+        }, {
+            "choice": "Objective-C",
+            "votes": 0
+        }, {
+            "choice": "Ruby",
+            "votes": 0
+        }
+    ]
+}
 ```
