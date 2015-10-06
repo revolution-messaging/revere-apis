@@ -1403,7 +1403,7 @@ List legislators by filter
 - `political_party` (string, optional) - Legislator political party
 
 [GET](/v1/search?{name}{state}{group}{level}{political_party})
-** Accept:**
+**Accept:**
 ```json
 Status: 200
 
