@@ -1,21 +1,19 @@
 # Sync: Public
----
+
 HOST: https://sync.revmsg.net
 
 An API from Revolution Messaging, LLC. This API is used to submit public requests via https to Sync. Generally, these requests are publicly initiated via a client browser.
 
 Copyright (c) 2013 Revolution Messaging, LLC
 
-HTTP Response Codes
----
+## HTTP Response Codes
+
 - 202 `Accepted` - The request will be processed asynchronously.
 - 400 `Bad Request` - The request could not be interpreted correctly or some required parameters were missing.
 - 401 `Unauthorized` - Authentication failed - double-check your username and/or password.
 - 405 `Method Not Allowed` - The requested method is not supported. Only GET and POST are allowed.
 - 429 `Too Many Requests` - Quota or rate limit exceeded.
 - 500 `Internal Server Error` - Something is broken. Please contact us and we'll investigate.
-
----
 
 ### Constituents
 
@@ -86,7 +84,6 @@ PUT /constituent/{passkey}
 Status: 202 (Accepted)
 ```
 
---
 ### Actions
 
 Public action queueing method.
