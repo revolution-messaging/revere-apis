@@ -108,8 +108,9 @@ All public API endpoints require a user access token to be sent with the request
 Get geographic details of zipcode (most likely districts)
 
 - `zipcode` (number, required) - Valid 5-digit or 9-digit zipcode
-
-[GET](/v1/zipinfo/{zipcode})
+```
+GET /v1/zipinfo/{zipcode}
+```
 **Accept:**
 ```json
 Status: 200
@@ -128,8 +129,9 @@ Status: 200
 Get geographic details of zipcode (all districts)
 
 - `zipcode` (number, required) - Valid 5-digit zipcode
-
-[GET](/v1/zipinfo/zip_all_districts/{zipcode})
+```
+GET /v1/zipinfo/zip_all_districts/{zipcode}
+```
 **Accept:**
 ```json
 Status: 200
@@ -159,8 +161,9 @@ List legislators by state
 - `state` (string, required) - Two letter state abbreviation
 - `type` (string, required) - Resource to retrun with legislator
     - phones, emails, networks
-    
-[GET](/v1/state/{state}/{type})
+```    
+GET /v1/state/{state}/{type}
+```
 **Accept:**
 ```json
 Status: 200
@@ -412,8 +415,9 @@ List legislators by state and level
     - state-lower, state-upper, state-wide, fed-lower, fed-upper
 - `type` (string, required) - Resource to retrun with legislator
     - phones, networks
-
-[GET](/v1/state/{state}/{level}/{type})
+```
+GET /v1/state/{state}/{level}/{type}
+```
 **Accept:**
 ```json
 Status: 200
@@ -663,8 +667,9 @@ List legislators by zipcode
 - `zipcode` (number, required) - Valid 5-digit or 9-digit zipcode
 - `type` (string, required) - Resource to retrun with legislator
     - phones, emails, networks
-    
-[GET](/v1/zip/{zipcode}/{type})
+```    
+GET /v1/zip/{zipcode}/{type}
+```
 **Accept:**
 ```json
 Status: 200
@@ -958,8 +963,9 @@ List legislators by zipcode and level
     - state-lower, state-upper, state-wide, fed-lower, fed-upper
 - `type` (string, required) - Resource to retrun with legislator
     - phones, networks
-
-[GET](/v1/zip/{zipcode}/{level}/{type})
+```
+GET /v1/zip/{zipcode}/{level}/{type}
+```
 **Accept:**
 ```json
 Status: 200
@@ -1037,8 +1043,9 @@ Status: 200
 Get legislator by ID
 
 - `id` (string, required) - Document ID
-
-[GET](/v1/leg/{id})
+```
+GET /v1/leg/{id}
+```
 **Accept:**
 ```json
 Status: 200
@@ -1085,8 +1092,9 @@ List legislators by name
 - `level` (string, required) - Legislator level
     - state-lower, state-upper, state-wide, fed-lower, fed-upper
 - `political_party` (string, optional) - Legislator political party
-
-[GET](/v1/search/{name}?{state}{group}{level}{political_party})
+```
+GET /v1/search/{name}?{state}{group}{level}{political_party}
+```
 **Accept:**
 ```json
 Status: 200
@@ -1401,8 +1409,9 @@ List legislators by filter
 - `level` (string, required) - Legislator level
     - state-lower, state-upper, state-wide, fed-lower, fed-upper
 - `political_party` (string, optional) - Legislator political party
-
-[GET](/v1/search?{name}{state}{group}{level}{political_party})
+```
+GET /v1/search?{name}{state}{group}{level}{political_party}
+```
 **Accept:**
 ```json
 Status: 200
