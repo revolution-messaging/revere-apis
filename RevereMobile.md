@@ -1030,7 +1030,7 @@ APIModel for UserDetails
     "company": "Shoemakers International Union"
 }
 ```
-### Group Authenticate
+### Authenticate
 
 These methods deal with logging into and out of the platform.
 
@@ -1064,7 +1064,10 @@ POST /v1/authenticate
 ```
 **Request**
 ```
-[Authenticate][]
+{
+  "password": "thiswouldbeareallybadactualpassword",
+  "username": "jondoe"
+}
 ```
 **Response**
 ```
@@ -1075,14 +1078,29 @@ Status: 204
 Status: 401
 ```
 * * *
-Retrieve information on your currently-active session
+##### Retrieve information on your currently-active session
 ```
 GET /v1/authenticate/whoami
 ```
 **Response**
 ``` 
 Status: 200
-[SessionResponse][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "impersonated": false,
+  "isAdmin": false,
+  "isGroupAdmin": false,
+  "isRoot": false,
+  "permissions": [
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+  ],
+  "role": "4fd220440cf2c16d2fa79ac0",
+  "sessionId": "5493568f0cf2fcad2e35ecb5",
+  "user": "5493568f0cf2fcad2e35ecb5",
+  "username": "jondoe"
+}
 ```
 **Response**
 ```
@@ -1093,7 +1111,7 @@ Status: 401
 Status: 403
 ```
 * * * 
-End your authentication session
+##### End your authentication session
 ```
 POST /v1/authenticate/logout
 ```
@@ -1116,12 +1134,28 @@ POST /v2/authenticate
 ```
 **Request**
 ```
-[Authenticate][]
+{
+  "password": "thiswouldbeareallybadactualpassword",
+  "username": "jondoe"
+}
 ```
 **Response**
 ```
 Status: 200
-[Session][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "impersonated": false,
+  "isAdmin": false,
+  "isGroupAdmin": false,
+  "isRoot": false,
+  "permissions": [
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+  ],
+  "role": "4fd220440cf2c16d2fa79ac0",
+  "username": "jondoe"
+}
 ```
 **Response**
 ```
@@ -1132,14 +1166,29 @@ Status: 401
 Status: 403
 ```
 * * *
-Retrieve information on your currently-active session
+##### Retrieve information on your currently-active session
 ```
 GET /v2/authenticate/whoami
 ```
 ** Response**
 ```
 Status: 200
-[SessionResponse][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "impersonated": false,
+  "isAdmin": false,
+  "isGroupAdmin": false,
+  "isRoot": false,
+  "permissions": [
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+  ],
+  "role": "4fd220440cf2c16d2fa79ac0",
+  "sessionId": "5493568f0cf2fcad2e35ecb5",
+  "user": "5493568f0cf2fcad2e35ecb5",
+  "username": "jondoe"
+}
   ```
 **Response**
 ```
@@ -1149,7 +1198,7 @@ Status: 401
 ```
 Status: 403
 ```
-### Group Broadcast
+### Broadcast
 
 Use the Broadcast API to retrieve and cancel scheduled broadcasts.
 
@@ -1165,7 +1214,13 @@ Retrieve information about a specific broadcast if {id} is specified, or a colle
 ##### Response
 ```
 Status: 200
-[BroadcastResponse][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "content": "",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "schedule": ""
+}
 ```
 ##### Response
 ```
@@ -1183,6 +1238,7 @@ Status: 403
 ```
 Status: 500
 ```
+* * *
 ##### delete broadcast
 ```
 DELETE /v2/broadcast/{id}
@@ -1208,6 +1264,7 @@ Status: 403
 ```
 Status: 500
 ```
+* * *
 ##### create broadcast
 ```
 POST /v2/broadcast/{id}
@@ -1215,7 +1272,30 @@ POST /v2/broadcast/{id}
 Send or schedule a broadcast
 ##### Request
 ```
-[BroadcastRequest][]
+{
+  "sendAt": "2015-03-11T17:58:28.367Z",
+  "metadata": "4ec0a3dc0364de64869d93c2",
+  "content": [
+    {
+      "channel": "sms",
+      "audience": [
+        "550081f80cf2dcf7e469337f"
+      ],
+      "slices": [
+        {
+          "percentage": 50,
+          "message": "test",
+          "value": "blah"
+        },
+        {
+          "percentage": 50,
+          "mobileFlow": "523373030cf2431ec692c57d",
+          "value": "blah1"
+        }
+      ]
+    }
+  ]
+}
 ```
 ##### Response
 ```
@@ -1265,8 +1345,23 @@ GET /v1/campaign/{id}
 ##### Response
 ```
 Staus: 200
-[Campaign][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "endDate": null,
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "mobileFlows": [
+    "4edfcb2a0cf2146271ed7e46",
+    "4eea18df0cf29daf65b1e9e9",
+    "4eea18e60cf29daf65b1ea01"
+  ],
+  "name": "sample",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "startDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "status": "ACTIVE"
+}
 ```
+* * *
 ##### delete campaign
 ```
 DELETE /v1/campaign/{id}
@@ -1275,13 +1370,28 @@ DELETE /v1/campaign/{id}
 ```
 Status: 204
 ```
+* * *
 ##### update campaign
 ```
-Status: PUT
+PUT /v1/campaign/{id}
 ```
 ##### Request
 ```
-[Campaign][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "endDate": null,
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "mobileFlows": [
+    "4edfcb2a0cf2146271ed7e46",
+    "4eea18df0cf29daf65b1e9e9",
+    "4eea18e60cf29daf65b1ea01"
+  ],
+  "name": "sample",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "startDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "status": "ACTIVE"
+}
 ```
 ##### Response
 ```
@@ -1294,12 +1404,40 @@ POST /v1/campaign/
 ```
 ##### Request
 ```
-[Campaign][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "endDate": null,
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "mobileFlows": [
+    "4edfcb2a0cf2146271ed7e46",
+    "4eea18df0cf29daf65b1e9e9",
+    "4eea18e60cf29daf65b1ea01"
+  ],
+  "name": "sample",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "startDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "status": "ACTIVE"
+}
 ```
 ##### Response
 ```
 Status: 200
-[Campaign][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "endDate": null,
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "mobileFlows": [
+    "4edfcb2a0cf2146271ed7e46",
+    "4eea18df0cf29daf65b1e9e9",
+    "4eea18e60cf29daf65b1ea01"
+  ],
+  "name": "sample",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "startDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "status": "ACTIVE"
+}
 ```
 * * *
 Retrieve a collection of campaigns
@@ -1309,7 +1447,12 @@ GET /v1/campaign
 ##### Response
 ```
 Status: 200
-[Collection][]
+{
+  "collection": [],
+  "page": "1",
+  "size": "60",
+  "total": "81800"
+}
 ```
 ### Catchall/Inbox
 
@@ -1368,7 +1511,9 @@ GET /v1/catchAll/inboxCounter
 ##### Response
 ```
 Status: 200
-[CatchAllCounter][]
+{
+  "total": "81800"
+}
 ```
 ##### Response
 ```
@@ -1390,7 +1535,17 @@ GET /api/v1/catchAll
 ##### Response
 ```
 Staus: 200
-[CatchAll][]
+{
+  "dateReceived": "2012-11-04",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "list": "548f5cd20cf2f50c89c05ab8",
+  "msg": "Can you hear me now?",
+  "msisdn": "0012022999393",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "shortCodeIdString": "",
+  "status": "ACTIVE",
+  "subscriber": ""
+}
 ```
 ##### Response
 ```
@@ -1467,7 +1622,25 @@ Retrieve a filter by ID. This endpoint is capable of retrieving complex as well 
 ##### Response
 ```
 Status: 200
-[QueryFilter][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "lists": [
+    "54d001740cf2c7c3bf30a6e4",
+    "54cffeca0cf2c7c3bf30a289"
+  ],
+  "name": "sample",
+  "queryFilterDetails": [
+    {
+      "metadata": "54dd2c1e0cf21202213a7e84",
+      "operator": "in",
+      "radius": null,
+      "value": "11,12,13"
+    }
+  ],
+  "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
 ```
 ##### Response
 ```
@@ -1485,13 +1658,32 @@ Status: 403
 ```
 Status: 500
 ```
+* * *
 ##### update query filter
 ```
 PUT /v1/filter/{id}
 ```
 ##### Request
 ```
-[QueryFilter][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "lists": [
+    "54d001740cf2c7c3bf30a6e4",
+    "54cffeca0cf2c7c3bf30a289"
+  ],
+  "name": "sample",
+  "queryFilterDetails": [
+    {
+      "metadata": "54dd2c1e0cf21202213a7e84",
+      "operator": "in",
+      "radius": null,
+      "value": "11,12,13"
+    }
+  ],
+  "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
 ```
 ##### Response
 ```
@@ -1513,7 +1705,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ##### delete query filter
 ```
 DELETE /v1/filter/{id}
@@ -1539,13 +1731,32 @@ Status: 403
 ```
 Status: 500
 ```
+* * *
 ##### create query filter
 ```
 POST /v1/filter/{id}
 ```
 ##### Request
 ```
-[QueryFilter][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "lists": [
+    "54d001740cf2c7c3bf30a6e4",
+    "54cffeca0cf2c7c3bf30a289"
+  ],
+  "name": "sample",
+  "queryFilterDetails": [
+    {
+      "metadata": "54dd2c1e0cf21202213a7e84",
+      "operator": "in",
+      "radius": null,
+      "value": "11,12,13"
+    }
+  ],
+  "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
 ```
 ##### Response
 ```
@@ -1568,14 +1779,22 @@ Status: 403
 Status: 500
 ```
 * * *
-Use this method to retrieve all ZIP codes within a radius of another ZIP code. The response from this endpoint is usually used to build a filter for subscribers near a certain location.
+**Use this method** to retrieve all ZIP codes within a radius of another ZIP code. The response from this endpoint is usually used to build a filter for subscribers near a certain location.
 ```
 GET /v1/filter/zipcode 
 ```
 ##### Response
 ```
 Status: 200
-[Geospatial][]
+{
+    "centerZipcode": "20036",
+    "radius": "50",
+    "zipcodes": [
+        "17329",
+        "17331",
+        "17332
+    ]
+}
 ```
 ##### Response
 ```
@@ -1604,7 +1823,38 @@ PUT /v2/filter/{id}
 ```
 ##### Request
 ```
-[ComplexFilter][]
+{
+  "name": "complicatedfilter",
+  "lists": [
+    "54cffeca0cf2c7c3bf30a289",
+    "54d001740cf2c7c3bf30a6e4"
+  ],
+  "queryFilterDetails": {
+    "operator": "AND",
+    "details": [
+      {
+        "value": "21",
+        "operator": ">=",
+        "metadata": "metadataId"
+      },
+      {
+        "operator": "OR",
+        "details": [
+          {
+            "value": "214",
+            "operator": "=",
+            "metadata": "metadataId"
+          },
+          {
+            "value": "972",
+            "operator": "=",
+            "metadata": "metadataId"
+          }
+        ]
+      }
+    ]
+  }
+}
 ```
 ##### Response 
 ```
@@ -1622,18 +1872,81 @@ Status: 403
 ```
 Status: 500
 ```
+* * *
 ##### Create a new query filter 
 ```
 POST /v2/filter/{id}
 ```
 ##### Request
 ```
-[ComplexFilter][]
+{
+  "name": "complicatedfilter",
+  "lists": [
+    "54cffeca0cf2c7c3bf30a289",
+    "54d001740cf2c7c3bf30a6e4"
+  ],
+  "queryFilterDetails": {
+    "operator": "AND",
+    "details": [
+      {
+        "value": "21",
+        "operator": ">=",
+        "metadata": "metadataId"
+      },
+      {
+        "operator": "OR",
+        "details": [
+          {
+            "value": "214",
+            "operator": "=",
+            "metadata": "metadataId"
+          },
+          {
+            "value": "972",
+            "operator": "=",
+            "metadata": "metadataId"
+          }
+        ]
+      }
+    ]
+  }
+}
 ```
 ##### Response 
 ```
 Status: 200
-[ComplexFilter][]
+{
+  "name": "complicatedfilter",
+  "lists": [
+    "54cffeca0cf2c7c3bf30a289",
+    "54d001740cf2c7c3bf30a6e4"
+  ],
+  "queryFilterDetails": {
+    "operator": "AND",
+    "details": [
+      {
+        "value": "21",
+        "operator": ">=",
+        "metadata": "metadataId"
+      },
+      {
+        "operator": "OR",
+        "details": [
+          {
+            "value": "214",
+            "operator": "=",
+            "metadata": "metadataId"
+          },
+          {
+            "value": "972",
+            "operator": "=",
+            "metadata": "metadataId"
+          }
+        ]
+      }
+    ]
+  }
+}
 ```
 ##### Response 
 ```
@@ -1651,7 +1964,7 @@ Status: 403
 ```
 Status: 500
 ```
-### Group Group
+### Group
 All platform objects are associated with a group, and role permissions are exercised over the group.
 
 *Group* Model
@@ -1676,7 +1989,13 @@ Retrieve group specified by ID
 ##### Response 
 ```
 Status: 200
-[Group][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample"
+}
 ```
 ##### Response 
 ```
@@ -1694,7 +2013,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ##### delete
 ```
 DELETE /v1/group/{id}
@@ -1721,7 +2040,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ##### update
 ```
 PUT /v1/group/{id}
@@ -1730,7 +2049,13 @@ Update a group by ID
 
 ##### Request
 ```
-[Group][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample"
+}
 ```
 ##### Response 
 ```
@@ -1752,7 +2077,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ##### create
 ```
 POST /v1/group/{id}
@@ -1760,12 +2085,24 @@ POST /v1/group/{id}
 Create a new group
 ##### Request
 ```
-[Group][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample"
+}
 ```
 ##### Response 
 ```
 Status: 200
-[Group][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample"
+}
 ```
 ##### Response 
 ```
@@ -1784,14 +2121,19 @@ Status: 403
 Status: 500
 ```
 * * *
-Retrieve groups by filter and pagination parameters
+##### Retrieve groups by filter and pagination parameters
 ```
 GET /v1/group
 ```
 ##### Response 
 ```
 Status: 200
-[Collection][]
+{
+  "collection": [],
+  "page": "1",
+  "size": "60",
+  "total": "81800"
+}
 ```
 ##### Response 
 ```
@@ -1810,7 +2152,7 @@ Status: 403
 Status: 500
 ```
 
-### Group Impersonate
+### Impersonate
 Impersonate allows master admin users to alter their session to act as if they were another user.
 
 #### v1
@@ -1840,7 +2182,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ##### impersonate
 ```
 POST /v1/impersonate/{user}
@@ -1881,7 +2223,16 @@ GET /v1/list/{id}
 ##### Response 
 ```
 Status: 200
-[List][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "noOfSubscribers": "81800",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -1899,7 +2250,7 @@ Status: 403
 ```
 Status: 500
 ```
- 
+* * * 
 ##### delete list
 ```
 DELETE /v1/list/{id}
@@ -1924,14 +2275,23 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ##### update list
 ```
 PUT /v1/list/{id}
 ```
 ##### Request
 ```
-[List][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "noOfSubscribers": "81800",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -1953,19 +2313,37 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ##### create list
 ```
 POST
 ```
 ##### Request
 ```
-[List][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "noOfSubscribers": "81800",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
 Status: 200
-[List][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "noOfSubscribers": "81800",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -1984,7 +2362,7 @@ Status: 403
 Status: 500
 ```
 
-### Group Messaging
+### Messaging
 Messaging methods allow you to send broadcasts and one-off messages from the platform.
 
 `Messaging` model
@@ -2007,7 +2385,7 @@ Messaging methods allow you to send broadcasts and one-off messages from the pla
 | subscribers   | list  | false | The IDs of the subscribers to which to send the content.  |
 | tags  | array | false | The tags with which to label any messages associated with this content.   |
 
-### Group Metadata
+### Metadata
 Metadata methods deal with the metdata fields the platform uses to store subscriber data. See the Subscriber methods for manipulating the metadata on individual subscribers.
 
 `Metadata` model
@@ -2037,7 +2415,18 @@ GET /v1/metadata/{id}
 ##### Response 
 ```
 Status: 200
-[Metadata][]
+{
+  "id": "54dd2c1e0cf21202213a7e84",
+  "account": "4e6fa6177a475eefd68fb5ef",
+  "group": "4e6fa6187a475eefd68fb5f5",
+  "format": "[0-9]{1,2}",
+  "name": "shoe size",
+  "scope": "GROUP",
+  "multiValue": false,
+  "validValues": null,
+  "eventUrl": "http://tools.revmsg.net/metadataHandler",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -2055,7 +2444,7 @@ Status: 403
 ```
 Status: 500
 ```
- 
+* * * 
 ##### delete metadata
 ```
 DELETE /v1/metadata/{id}
@@ -2080,13 +2469,24 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ##### update metadata
 
 ##### PUT /v1/metadata/{id}
 ##### Request
 ```
-[Metadata][]
+{
+  "id": "54dd2c1e0cf21202213a7e84",
+  "account": "4e6fa6177a475eefd68fb5ef",
+  "group": "4e6fa6187a475eefd68fb5f5",
+  "format": "[0-9]{1,2}",
+  "name": "shoe size",
+  "scope": "GROUP",
+  "multiValue": false,
+  "validValues": null,
+  "eventUrl": "http://tools.revmsg.net/metadataHandler",
+  "status": "ACTIVE"
+}
 ```
 ##### Response
 ```
@@ -2108,19 +2508,41 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ##### create metadata
 ```
 POST /v1/metadata/{id}
 ```
 ##### Request
 ```
-[Metadata][]
+{
+  "id": "54dd2c1e0cf21202213a7e84",
+  "account": "4e6fa6177a475eefd68fb5ef",
+  "group": "4e6fa6187a475eefd68fb5f5",
+  "format": "[0-9]{1,2}",
+  "name": "shoe size",
+  "scope": "GROUP",
+  "multiValue": false,
+  "validValues": null,
+  "eventUrl": "http://tools.revmsg.net/metadataHandler",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
 Status: 200
-[Metadata][]
+{
+  "id": "54dd2c1e0cf21202213a7e84",
+  "account": "4e6fa6177a475eefd68fb5ef",
+  "group": "4e6fa6187a475eefd68fb5f5",
+  "format": "[0-9]{1,2}",
+  "name": "shoe size",
+  "scope": "GROUP",
+  "multiValue": false,
+  "validValues": null,
+  "eventUrl": "http://tools.revmsg.net/metadataHandler",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -2173,7 +2595,7 @@ Status: 403
 Status: 500
 ```
 
-### Group Mobileflow
+### Mobileflow
 
 `MobileFlow` model
 
