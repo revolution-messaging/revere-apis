@@ -644,6 +644,8 @@ APIModel for QueryFilter
 }
 ```
 #### [QueryFilterDetail](/APIModel/QueryFilterDetail)
+**Model**
+APIModel for QueryFilterDetail
 ```  
 {
     "metadata": "54dd2c1e0cf21202213a7e84",
@@ -1127,6 +1129,7 @@ Status: 401
 ```
 Status: 403
 ```
+* * *
 #### v2
 **log in**
 ```
@@ -1198,6 +1201,7 @@ Status: 401
 ```
 Status: 403
 ```
+* * *
 ### Broadcast
 
 Use the Broadcast API to retrieve and cancel scheduled broadcasts.
@@ -1317,7 +1321,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Campaign
 All outbound messages and any object that can send an outbound message on the platform must be associated with a campaign. Use campaigns to organize your mobile program.
 
@@ -1454,6 +1458,7 @@ Status: 200
   "total": "81800"
 }
 ```
+* * *
 ### Catchall/Inbox
 
 *Catch-all counter* model
@@ -1504,7 +1509,7 @@ Status: 404
 Status: 500
 ```
 * * *
-Retrieve the number of messages in the inbox
+##### Retrieve the number of messages in the inbox
 ```
 GET /v1/catchAll/inboxCounter
 ```
@@ -1563,7 +1568,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Filter
 Filters consist of a set of lists, a set of metadata-based criteria, and are used to retrieve dedpulicated collections of subscribers who are on one or more of the component lists and fit the criteria. v1 of the filter API allows only the simpler filters described with the `QueryFilter` model, below. These filters are limited to a set of AND criteria, including only subscribers who match all of the criteria in the filter. v2 of the API is backward-compatible, accepting the same models as v1, but also allows for the `ComplexFilter` model, which incorporates both AND and OR matches and also allows for arbitrary levels of recursion, as `ComplexFilterDetail` objects may be nested in the `details` property of other `ComplexFilterDetail` objects.
 
@@ -1812,7 +1817,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 #### v2
 Example payloads here use the `ComplexFilter` model, though this endpoint accepts `QueryFilter` objects as well.
 ##### Parameters
@@ -1964,6 +1969,7 @@ Status: 403
 ```
 Status: 500
 ```
+* * *
 ### Group
 All platform objects are associated with a group, and role permissions are exercised over the group.
 
@@ -2151,7 +2157,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Impersonate
 Impersonate allows master admin users to alter their session to act as if they were another user.
 
@@ -2207,7 +2213,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### List
 Lists are collections of mobile subscribers. Lists may be used in broadcasts or in the creation of filters.
 
@@ -2361,7 +2367,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Messaging
 Messaging methods allow you to send broadcasts and one-off messages from the platform.
 
@@ -2560,6 +2566,7 @@ Status: 403
 ```
 Status: 500
 ```
+* * *
 #### Share Metadata
 
 This method grants a role other than your own access to a metadata field. Users with that role will have all the permissions they have with metadata generally on this field.
@@ -2594,7 +2601,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Mobileflow
 
 `MobileFlow` model
