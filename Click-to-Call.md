@@ -1,7 +1,7 @@
-HOST: http://calling.reverehq.com/
-
 # Click-to-Call
 An API from Revolution Messaging, LLC. Click-to-Call is a RevereCalling API that allows you to trigger a call from your calling campaign line on a website, social network, or via other means.
+
+HOST: http://calling.reverehq.com/
 
 Copyright (c) 2013 Revolution Messaging, LLC
 
@@ -20,8 +20,11 @@ If the "revmsgfb" parameter is provided, *always* redirect to _http://tools.revm
 * If the phone parameter requested a call less than three minutes ago: _Sorry, you're calling too quickly._
 * If there was any other error: _Sorry, there was an error._
 
-## Click-to-call [/outgoing]
-### Initiate Call [GET]
+## Click-to-call
+### Initiate Call
+```
+GET /outgoing
+```
 Returns json if json in Accept header, or a callback-wrapped json object if JSONP is specified and a callback variable is provided. See _details_, above, for special redirect cases.
 
 #### Parameters
@@ -40,11 +43,15 @@ The rest of the parameters are as-stated:
 * *revmsghtml* (optional, string) - A fully-qualified URL that the system can redirect to if the request is made using text/html or text/plain content-types.
 * *data* (optional, string) - A valid string-encoded json object with variables that can be loaded later in the call.
 
-+ Response 200 (application/json)
-
-        { "error":false,"message":"The call's been placed." }
-
-### Initiate Call [POST]
+##### Response 
+```
+Status: 200
+{ "error":false,"message":"The call's been placed." }
+```
+### Initiate Call
+```
+POST /outgoing
+```
 Returns json if json in Accept header, or a callback-wrapped json object if JSONP is specified and a callback variable is provided. See _details_, above, for special redirect cases.
 
 #### Parameters
@@ -64,10 +71,12 @@ The rest of the parameters are as-stated:
 * *revmsghtml* (optional, string) - A fully-qualified URL that the system can redirect to if the request is made using text/html or text/plain content-types.
 * *data* (optional, string) - A valid string-encoded json object with variables that can be loaded later in the call.
 
-+ Request (application/json)
-    
-        { "phone":"(617) 523-2338","campaign_line":"+13213214321","name":"Paul Revere","zip":"02113" }
-
-+ Response 200 (application/json)
-
-        { "error":false,"message":"The call's been placed." }
+##### Request
+```
+{ "phone":"(617) 523-2338","campaign_line":"+13213214321","name":"Paul Revere","zip":"02113" }
+```
+##### Response 
+```
+Status: 200
+{ "error":false,"message":"The call's been placed." }
+```
