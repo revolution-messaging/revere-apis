@@ -4,10 +4,12 @@ HOST: http://polls.apiblueprint.org/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## [Questions Collection](/questions)
+## Questions Collection
 
-### List All Questions [GET]
-
+### List All Questions
+```
+GET /questions
+```
 **Response**
 ```json
 Status: 200
@@ -33,15 +35,16 @@ Status: 200
     }
 ]
 ```
-### Create a New Question [POST]
-
+### Create a New Question
+```
+POST /questions
+```
 You may create your own question using this action. It takes a JSON
 object containing a question and a collection of answers in the
 form of choices.
 
 **Request**
 ```json
-
 {
     "question": "Favourite programming language?",
     "choices": [
@@ -56,13 +59,6 @@ form of choices.
 **Response**
 ```json
 Status: 201
-```
-+ Headers
-```
-Location: /questions/2
-```
-+ Body
-```
 {
     "question": "Favourite programming language?",
     "published_at": "2015-08-05T08:40:51.620Z",
