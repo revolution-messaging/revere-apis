@@ -2603,7 +2603,7 @@ Status: 500
 ```
 GET /v2/subscriber/{idOrMsisdn}
 ```
-###### Parameters
+##### Parameters
 idOrMsisdn (required, 24 char hex or 12-digit msisdn) ... may be the subscriber's 24-char hex identifier or their mobile phone number.
 
 ##### Response 
