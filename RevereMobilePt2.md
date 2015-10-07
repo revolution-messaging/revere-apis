@@ -10,7 +10,16 @@ GET /v1/mobileflow/{id}
 ##### Response
 ```
 Status: 200
-[MobileFlow][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "campaign": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "programName": "Sample Program",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response
 ```
@@ -60,7 +69,16 @@ PUT /v1/mobileflow/{id}
 ```
 ##### Request
 ```
-[MobileFlow][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "campaign": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "programName": "Sample Program",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -89,12 +107,30 @@ POST /v1/mobileflow/{id}
 ```
 ##### Request
 ```
-[MobileFlow][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "campaign": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "programName": "Sample Program",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
 Status: 200
-[MobileFlow][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "campaign": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "programName": "Sample Program",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -112,7 +148,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 #### v2
 
 ##### Parameters
@@ -125,7 +161,16 @@ GET /v2/mobileflow/{id}
 ##### Response 
 ```
 Status: 200
-[MobileFlow][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "campaign": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "programName": "Sample Program",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -175,7 +220,16 @@ PUT /v2/mobileflow/{id}
 ```
 ##### Request
 ```
-[MobileFlow][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "campaign": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "programName": "Sample Program",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -204,12 +258,30 @@ POST /v2/mobileflow/{id}
 ```
 ##### Request
 ```
-[MobileFlow][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "campaign": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "programName": "Sample Program",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
 Status: 200
-[MobileFlow][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "campaign": "5493568f0cf2fcad2e35ecb5",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "programName": "Sample Program",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -227,7 +299,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### MO Routing
 
 #### `moroute` model
@@ -251,7 +323,12 @@ GET /v2/moroute/{id}
 ##### Response 
 ```
 Status: 200
-[MORoute][]
+{
+  "id": "50d4cdec0364ad1a2c78a078",
+  "keyword": "4e8d38cf0364b418446ce746",
+  "shortCode": "4e8b4b5afda5efeeec370e8a",
+  "rule": "^cancel\\s.*"
+}
 ```
 ##### Response 
 ```
@@ -276,7 +353,12 @@ POST /v2/moroute/{id}
 ```
 ##### Request
 ```
-[MORoute][]
+{
+  "id": "50d4cdec0364ad1a2c78a078",
+  "keyword": "4e8d38cf0364b418446ce746",
+  "shortCode": "4e8b4b5afda5efeeec370e8a",
+  "rule": "^cancel\\s.*"
+}
 ```
 ##### Response 
 ```
@@ -305,12 +387,22 @@ PUT /v2/moroute/{id}
 ```
 ##### Request
 ```
-[MORoute][]
+{
+  "id": "50d4cdec0364ad1a2c78a078",
+  "keyword": "4e8d38cf0364b418446ce746",
+  "shortCode": "4e8b4b5afda5efeeec370e8a",
+  "rule": "^cancel\\s.*"
+}
 ```
 ##### Response 
 ```
 Status: 200
-[MORoute][]
+{
+  "id": "50d4cdec0364ad1a2c78a078",
+  "keyword": "4e8d38cf0364b418446ce746",
+  "shortCode": "4e8b4b5afda5efeeec370e8a",
+  "rule": "^cancel\\s.*"
+}
 ```
 ##### Response 
 ```
@@ -353,7 +445,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Role
 
 #### `Role` model
@@ -382,7 +474,22 @@ GET /v1/role/{id}
 ##### Response 
 ```
 Status: 200
-[Role][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "groupsVisible": [
+    "4e6fa6187a475eefd68fb5f5"
+  ],
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "permissions": [
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -432,7 +539,22 @@ PUT /v1/role/{id}
 ```
 ##### Request
 ```
-[Role][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "groupsVisible": [
+    "4e6fa6187a475eefd68fb5f5"
+  ],
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "permissions": [
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -461,12 +583,42 @@ POST /v1/role/{id}
 ```
 ##### Request
 ```
-[Role][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "groupsVisible": [
+    "4e6fa6187a475eefd68fb5f5"
+  ],
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "permissions": [
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
 Status: 200
-[Role][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "groupsVisible": [
+    "4e6fa6187a475eefd68fb5f5"
+  ],
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "permissions": [
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -484,7 +636,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 #### v2
 
 ##### Parameters
@@ -497,7 +649,22 @@ GET /v2/role/{id}
 ##### Response 
 ```
 Status: 200
-[Role][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "groupsVisible": [
+    "4e6fa6187a475eefd68fb5f5"
+  ],
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "permissions": [
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -547,7 +714,22 @@ PUT /v2/role/{id}
 ```
 ##### Request
 ```
-[Role][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "groupsVisible": [
+    "4e6fa6187a475eefd68fb5f5"
+  ],
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "permissions": [
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -576,12 +758,42 @@ POST /v2/role/{id}
 ```
 ##### Request
 ```
-[Role][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "groupsVisible": [
+    "4e6fa6187a475eefd68fb5f5"
+  ],
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "permissions": [
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
 Status: 200
-[Role][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "groupsVisible": [
+    "4e6fa6187a475eefd68fb5f5"
+  ],
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "permissions": [
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f5:*:create,read,update,delete:*",
+    "4e6fa6177a475eefd68fb5ef:4e6fa6187a475eefd68fb5f4:metadata:read:*"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -599,7 +811,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Reporting
 
 Reporting comes in both synchronous and asynchronous varieties. Synchronous reporting retrieves metrics on your program in JSON format for consumption by a browser or application. Asynchronous reporting lets you create, run and rerun reporting templates that are compiled in the background, retrieving them as CSV files.
@@ -631,7 +843,12 @@ Retrieve subscriber growth report matching filter parameters
 ##### Response 
 ```
 Status: 200
-[Collection][]
+{
+  "collection": [],
+  "page": "1",
+  "size": "60",
+  "total": "81800"
+}
 ```
 ##### Response 
 ```
@@ -692,7 +909,24 @@ id (required, 24 char hex) ... the ID of the shortcode messages will be exported
 ##### Response 
 ```
 Status: 200
-[ReportingTemplateResponse][]
+{
+  "id": "reportId",
+  "account": "accountId",
+  "group": "groupId",
+  "shortCode": "shortCodeId",
+  "name": "Poll Summary for Mobile Flow SomeCampaignName",
+  "lastReport": {
+    "file": null,
+    "status": "NEW",
+    "submittedAt": "2014-09-01T08:42:39.539-05:00",
+    "completedAt": null,
+    "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+  },
+  "query": {
+    "type": "pollSummary",
+    "mobileFlow": "mobileFlowId"
+  }
+}
 ```
 ##### Response 
 ```
@@ -717,12 +951,44 @@ GET /v1/reporting/inbox/export
 ```
 ##### Request
 ```
-[ReportingTemplateRequest][]
+{
+  "id": null,
+  "account": null,
+  "group": null,
+  "shortCode": null,
+  "name": null,
+  "lastReport": null,
+  "query": {
+    "type": "messageDetails",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "messageType": "MO",
+    "contentType": "SUBSCRIPTION",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21"
+  }
+}
 ```
 ##### Response 
 ```
 Status: 200
-[ReportingTemplateResponse][]
+{
+  "id": "reportId",
+  "account": "accountId",
+  "group": "groupId",
+  "shortCode": "shortCodeId",
+  "name": "Poll Summary for Mobile Flow SomeCampaignName",
+  "lastReport": {
+    "file": null,
+    "status": "NEW",
+    "submittedAt": "2014-09-01T08:42:39.539-05:00",
+    "completedAt": null,
+    "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+  },
+  "query": {
+    "type": "pollSummary",
+    "mobileFlow": "mobileFlowId"
+  }
+}
 ```
 ##### Response 
 ```
@@ -749,12 +1015,44 @@ Retrieve message details report matching filter parameters
 
 ##### Request
 ```
-[ReportingTemplateRequest][]
+{
+  "id": null,
+  "account": null,
+  "group": null,
+  "shortCode": null,
+  "name": null,
+  "lastReport": null,
+  "query": {
+    "type": "messageDetails",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "messageType": "MO",
+    "contentType": "SUBSCRIPTION",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21"
+  }
+}
 ```
 ##### Response 
 ```
 Status: 200
-[ReportingTemplateResponse][]
+{
+  "id": "reportId",
+  "account": "accountId",
+  "group": "groupId",
+  "shortCode": "shortCodeId",
+  "name": "Poll Summary for Mobile Flow SomeCampaignName",
+  "lastReport": {
+    "file": null,
+    "status": "NEW",
+    "submittedAt": "2014-09-01T08:42:39.539-05:00",
+    "completedAt": null,
+    "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+  },
+  "query": {
+    "type": "pollSummary",
+    "mobileFlow": "mobileFlowId"
+  }
+}
 ```
 ##### Response 
 ```
@@ -780,12 +1078,44 @@ GET /v1/reporting/messageDetails/export
 Export message details report matching filter parameters
 ##### Request
 ```
-[ReportingTemplateRequest][]
+{
+  "id": null,
+  "account": null,
+  "group": null,
+  "shortCode": null,
+  "name": null,
+  "lastReport": null,
+  "query": {
+    "type": "messageDetails",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "messageType": "MO",
+    "contentType": "SUBSCRIPTION",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21"
+  }
+}
 ```
 ##### Response 
 ```
 Status: 200
-[ReportingTemplateResponse][]
+{
+  "id": "reportId",
+  "account": "accountId",
+  "group": "groupId",
+  "shortCode": "shortCodeId",
+  "name": "Poll Summary for Mobile Flow SomeCampaignName",
+  "lastReport": {
+    "file": null,
+    "status": "NEW",
+    "submittedAt": "2014-09-01T08:42:39.539-05:00",
+    "completedAt": null,
+    "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+  },
+  "query": {
+    "type": "pollSummary",
+    "mobileFlow": "mobileFlowId"
+  }
+}
 ```
 ##### Response 
 ```
@@ -811,12 +1141,44 @@ GET /v1/reporting/messageReport
 Retrieve message summary report matching filter parameters
 ##### Request
 ```
-[ReportingTemplateRequest][]
+{
+  "id": null,
+  "account": null,
+  "group": null,
+  "shortCode": null,
+  "name": null,
+  "lastReport": null,
+  "query": {
+    "type": "messageDetails",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "messageType": "MO",
+    "contentType": "SUBSCRIPTION",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21"
+  }
+}
 ```
 ##### Response 
 ```
 Status: 200
-[ReportingTemplateResponse][]
+{
+  "id": "reportId",
+  "account": "accountId",
+  "group": "groupId",
+  "shortCode": "shortCodeId",
+  "name": "Poll Summary for Mobile Flow SomeCampaignName",
+  "lastReport": {
+    "file": null,
+    "status": "NEW",
+    "submittedAt": "2014-09-01T08:42:39.539-05:00",
+    "completedAt": null,
+    "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+  },
+  "query": {
+    "type": "pollSummary",
+    "mobileFlow": "mobileFlowId"
+  }
+}
 ```
 ##### Response 
 ```
@@ -846,12 +1208,44 @@ summaryObject (required, 24 char hex) ... ID of the object being summarized
 
 ##### Request
 ```
-[ReportingTemplateRequest][]
+{
+  "id": null,
+  "account": null,
+  "group": null,
+  "shortCode": null,
+  "name": null,
+  "lastReport": null,
+  "query": {
+    "type": "messageDetails",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "messageType": "MO",
+    "contentType": "SUBSCRIPTION",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21"
+  }
+}
 ```
 ##### Response 
 ```
 Status: 200
-[ReportingTemplateResponse][]
+{
+  "id": "reportId",
+  "account": "accountId",
+  "group": "groupId",
+  "shortCode": "shortCodeId",
+  "name": "Poll Summary for Mobile Flow SomeCampaignName",
+  "lastReport": {
+    "file": null,
+    "status": "NEW",
+    "submittedAt": "2014-09-01T08:42:39.539-05:00",
+    "completedAt": null,
+    "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+  },
+  "query": {
+    "type": "pollSummary",
+    "mobileFlow": "mobileFlowId"
+  }
+}
 ```
 ##### Response 
 ```
@@ -878,12 +1272,44 @@ Export subscriber growth report matching filter parameters
 
 ##### Request
 ```
-[ReportingTemplateRequest][]
+{
+  "id": null,
+  "account": null,
+  "group": null,
+  "shortCode": null,
+  "name": null,
+  "lastReport": null,
+  "query": {
+    "type": "messageDetails",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "messageType": "MO",
+    "contentType": "SUBSCRIPTION",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21"
+  }
+}
 ```
 ##### Response 
 ```
 Status: 200
-[ReportingTemplateResponse][]
+{
+  "id": "reportId",
+  "account": "accountId",
+  "group": "groupId",
+  "shortCode": "shortCodeId",
+  "name": "Poll Summary for Mobile Flow SomeCampaignName",
+  "lastReport": {
+    "file": null,
+    "status": "NEW",
+    "submittedAt": "2014-09-01T08:42:39.539-05:00",
+    "completedAt": null,
+    "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+  },
+  "query": {
+    "type": "pollSummary",
+    "mobileFlow": "mobileFlowId"
+  }
+}
 ```
 ##### Response 
 ```
@@ -910,12 +1336,44 @@ Retrieve message summary report for session short code
 
 ##### Request
 ```
-[ReportingTemplateRequest][]
+{
+  "id": null,
+  "account": null,
+  "group": null,
+  "shortCode": null,
+  "name": null,
+  "lastReport": null,
+  "query": {
+    "type": "messageDetails",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "messageType": "MO",
+    "contentType": "SUBSCRIPTION",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21"
+  }
+}
 ```
 ##### Response 
 ```
 Status: 200
-[ReportingTemplateResponse][]
+{
+  "id": "reportId",
+  "account": "accountId",
+  "group": "groupId",
+  "shortCode": "shortCodeId",
+  "name": "Poll Summary for Mobile Flow SomeCampaignName",
+  "lastReport": {
+    "file": null,
+    "status": "NEW",
+    "submittedAt": "2014-09-01T08:42:39.539-05:00",
+    "completedAt": null,
+    "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+  },
+  "query": {
+    "type": "pollSummary",
+    "mobileFlow": "mobileFlowId"
+  }
+}
 ```
 ##### Response 
 ```
@@ -942,12 +1400,44 @@ Retrieve broadcast summary report for session short code
 
 ##### Request
 ```
-[ReportingTemplateRequest][]
+{
+  "id": null,
+  "account": null,
+  "group": null,
+  "shortCode": null,
+  "name": null,
+  "lastReport": null,
+  "query": {
+    "type": "messageDetails",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "messageType": "MO",
+    "contentType": "SUBSCRIPTION",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21"
+  }
+}
 ```
 ##### Response 
 ```
 Status: 200
-[ReportingTemplateResponse][]
+{
+  "id": "reportId",
+  "account": "accountId",
+  "group": "groupId",
+  "shortCode": "shortCodeId",
+  "name": "Poll Summary for Mobile Flow SomeCampaignName",
+  "lastReport": {
+    "file": null,
+    "status": "NEW",
+    "submittedAt": "2014-09-01T08:42:39.539-05:00",
+    "completedAt": null,
+    "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+  },
+  "query": {
+    "type": "pollSummary",
+    "mobileFlow": "mobileFlowId"
+  }
+}
 ```
 ##### Response 
 ```
@@ -973,12 +1463,44 @@ GET /v1/reporting/broadcastSummary/export
 Export broadcast summary report for session short code
 ##### Request
 ```
-[ReportingTemplateRequest][]
+{
+  "id": null,
+  "account": null,
+  "group": null,
+  "shortCode": null,
+  "name": null,
+  "lastReport": null,
+  "query": {
+    "type": "messageDetails",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "messageType": "MO",
+    "contentType": "SUBSCRIPTION",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21"
+  }
+}
 ```
 ##### Response 
 ```
 Status: 200
-[ReportingTemplateResponse][]
+{
+  "id": "reportId",
+  "account": "accountId",
+  "group": "groupId",
+  "shortCode": "shortCodeId",
+  "name": "Poll Summary for Mobile Flow SomeCampaignName",
+  "lastReport": {
+    "file": null,
+    "status": "NEW",
+    "submittedAt": "2014-09-01T08:42:39.539-05:00",
+    "completedAt": null,
+    "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+  },
+  "query": {
+    "type": "pollSummary",
+    "mobileFlow": "mobileFlowId"
+  }
+}
 ```
 ##### Response 
 ```
@@ -996,6 +1518,7 @@ Status: 403
 ```
 Status: 500
 ```
+* * *
 ### Asynchronous Reporting
 
 Asynchronous reporting allows larger and more complext reports to be saved, delegated to a separate reporting server and run without impacting the resources allocated to the application as a whole.
@@ -1225,12 +1748,44 @@ POST /v2/reporting/{id}
 ```
 ##### Request
 ```
-[ReportingTemplateRequest][]
+{
+  "id": null,
+  "account": null,
+  "group": null,
+  "shortCode": null,
+  "name": null,
+  "lastReport": null,
+  "query": {
+    "type": "messageDetails",
+    "campaign": "502520fd0cf236b8a1545f8b",
+    "messageType": "MO",
+    "contentType": "SUBSCRIPTION",
+    "beginOn": "2015-01-01",
+    "endOn": "2015-01-21"
+  }
+}
 ```
 ##### Response 
 ```
 Status: 200
-[ReportingTemplateResponse][]
+{
+  "id": "reportId",
+  "account": "accountId",
+  "group": "groupId",
+  "shortCode": "shortCodeId",
+  "name": "Poll Summary for Mobile Flow SomeCampaignName",
+  "lastReport": {
+    "file": null,
+    "status": "NEW",
+    "submittedAt": "2014-09-01T08:42:39.539-05:00",
+    "completedAt": null,
+    "scheduledAt": "2014-12-24T15:00:00.727-06:00"
+  },
+  "query": {
+    "type": "pollSummary",
+    "mobileFlow": "mobileFlowId"
+  }
+}
 ```
 ##### Response 
 ```
@@ -1255,7 +1810,12 @@ GET /v2/reporting/
 ##### Response 
 ```
 Status: 200
-[Collection][]
+{
+  "collection": [],
+  "page": "1",
+  "size": "60",
+  "total": "81800"
+}
 ```
 ##### Response 
 ```
@@ -1281,7 +1841,10 @@ GET /v2/reporting/status
 ##### Response 
 ```
 Status: 200
-[ReportingStatus][]
+{
+    lag: 7
+    status: "ONLINE"
+}
 ```
 ##### Response 
 ```
@@ -1299,7 +1862,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Shortcode
 
 **`shortcode` model**
@@ -1354,7 +1917,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 #### v1
 
 ##### Parameters
@@ -1366,7 +1929,26 @@ GET /v1/shortcode/{id}
 ##### Response 
 ```
 Status: 200
-[Shortcode][]
+{
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "provider": "AggregateUS",
+  "countryCode": "1",
+  "dedicated": true,
+  "description": "RevMsg",
+  "maxSmsLength": 160,
+  "profileId": "98765",
+  "shortcode": "675309",
+  "testPrefix": null,
+  "defaultStopResponse": "You will not receive any more mobile updates from {subscriber.recentMf.programName; default=\"RevMsg\"}.",
+  "defaultHelpResponse": "Mobile updates from {subscriber.recentMf.programName; default=\"RevMsg\"}. Reply STOP to quit. Msg&Data rates may apply. Tech support: sms@txthlp.com",
+  "carrierStopResponses": {},
+  "carrierHelpResponses": {},
+  "status": "ACTIVE",
+  "forwardURL": null,
+  "internalProcessing": null,
+  "sessionTimeout": 10800000,
+  "mms": false
+}
 ```
 ##### Response 
 ```
@@ -1384,7 +1966,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 #### v2
 
 ##### update shortcode
@@ -1399,12 +1981,50 @@ Update certain properties of a shortcode. May only be used to update the followi
 
 ##### Request
 ```
-[Shortcode][]
+{
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "provider": "AggregateUS",
+  "countryCode": "1",
+  "dedicated": true,
+  "description": "RevMsg",
+  "maxSmsLength": 160,
+  "profileId": "98765",
+  "shortcode": "675309",
+  "testPrefix": null,
+  "defaultStopResponse": "You will not receive any more mobile updates from {subscriber.recentMf.programName; default=\"RevMsg\"}.",
+  "defaultHelpResponse": "Mobile updates from {subscriber.recentMf.programName; default=\"RevMsg\"}. Reply STOP to quit. Msg&Data rates may apply. Tech support: sms@txthlp.com",
+  "carrierStopResponses": {},
+  "carrierHelpResponses": {},
+  "status": "ACTIVE",
+  "forwardURL": null,
+  "internalProcessing": null,
+  "sessionTimeout": 10800000,
+  "mms": false
+}
 ```
 ##### Response 
 ```
 Status: 200
-[Shortcode][]
+{
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "provider": "AggregateUS",
+  "countryCode": "1",
+  "dedicated": true,
+  "description": "RevMsg",
+  "maxSmsLength": 160,
+  "profileId": "98765",
+  "shortcode": "675309",
+  "testPrefix": null,
+  "defaultStopResponse": "You will not receive any more mobile updates from {subscriber.recentMf.programName; default=\"RevMsg\"}.",
+  "defaultHelpResponse": "Mobile updates from {subscriber.recentMf.programName; default=\"RevMsg\"}. Reply STOP to quit. Msg&Data rates may apply. Tech support: sms@txthlp.com",
+  "carrierStopResponses": {},
+  "carrierHelpResponses": {},
+  "status": "ACTIVE",
+  "forwardURL": null,
+  "internalProcessing": null,
+  "sessionTimeout": 10800000,
+  "mms": false
+}
 ```
 ##### Response 
 ```
@@ -1422,7 +2042,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Smart Lists
 
 A smart list is similar to a persistent filter, comprised of constituent lists and criteria filters, but which is treated like a subscription list for all intents and purposes, including reporting.
@@ -1451,12 +2071,58 @@ POST /v2/smartlist/{id}
 ```
 ##### Request
 ```
-[SmartListRequest][]
+{
+  "lists": [
+    "548f5cd20cf2f50c89c05ab8"
+  ],
+  "queryFilterDetails": {
+    "operator": "OR",
+    "details": [
+      {
+        "metadata": "546239d10cf25fdcf0aea9bc",
+        "operator": "=",
+        "value": "510"
+      },
+      {
+        "metadata": "548f5f3b0cf2f50c89c15385",
+        "operator": "=",
+        "value": "7"
+      }
+    ]
+  },
+  "name": "510 areacode OR chose 7"
+}
 ```
 ##### Response 
 ```
 Status: 200
-[SmartListResponse][]
+{
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "account": "546239d10cf25fdcf0aea9b2",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "queryFilterDetails": {
+    "operator": "or",
+    "details": [
+      {
+        "metadata": "546239d10cf25fdcf0aea9bc",
+        "operator": "=",
+        "value": "510",
+        "radius": null
+      },
+      {
+        "metadata": "548f5f3b0cf2f50c89c15385",
+        "operator": "=",
+        "value": "7",
+        "radius": null
+      }
+    ]
+  },
+  "lists": [
+    "548f5cd20cf2f50c89c05ab8"
+  ],
+  "name": "510 areacode OR chose 7"
+}
 ```
 ##### Response 
 ```
@@ -1482,7 +2148,33 @@ GET /v2/smartlist/{id}
 ##### Response 
 ```
 Status: 200
-[SmartListResponse][]
+{
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "account": "546239d10cf25fdcf0aea9b2",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "shortCode": "515b0768ca10e4ec580fcc60",
+  "queryFilterDetails": {
+    "operator": "or",
+    "details": [
+      {
+        "metadata": "546239d10cf25fdcf0aea9bc",
+        "operator": "=",
+        "value": "510",
+        "radius": null
+      },
+      {
+        "metadata": "548f5f3b0cf2f50c89c15385",
+        "operator": "=",
+        "value": "7",
+        "radius": null
+      }
+    ]
+  },
+  "lists": [
+    "548f5cd20cf2f50c89c05ab8"
+  ],
+  "name": "510 areacode OR chose 7"
+}
 ```
 ##### Response 
 ```
@@ -1553,7 +2245,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Subscriber
 
 Subscribers are the individual members Revere Mobile interacts with.
@@ -1568,7 +2260,87 @@ idOrMsisdn (optional, 24 char hex or 12-digit msisdn) ... may be the subscriber'
 ##### Response 
 ```
 Status: 200
-[Subscriber][]
+{
+  "id": "543438bf0cf25a19cdb8354e",
+  "firstName": "Jon",
+  "lastName": "Snow",
+  "email": "jsnow@blackwatch.org",
+  "facebook": "stark.bastard23",
+  "twitter": "stark.bastard23",
+  "mobileNumber": "0016081112222",
+  "state": "WI",
+  "timeZone": "-0700",
+  "areaCode": "608",
+  "zipCode": "54806",
+  "birthDate": "1999-12-31T00:00:00.000",
+  "dateAdded": "2014-12-16T13:57:02.355",
+  "metadata": {
+    "548f5f3b0cf2f50c89c15385": [
+      "7"
+    ],
+    "548f64ad0cf2f50c89c39f53": [
+      "12311980"
+    ],
+    "546239d10cf25fdcf0aea9bf": [
+      "2014-12-16T13:57:02.355"
+    ],
+    "546239d10cf25fdcf0aea9be": [
+      "1999-12-31T00:00:00.000"
+    ],
+    "546239d10cf25fdcf0aea9bd": [
+      "54806"
+    ],
+    "546239d10cf25fdcf0aea9bc": [
+      "608"
+    ],
+    "546239d10cf25fdcf0aea9bb": [
+      "-0700"
+    ],
+    "546239d10cf25fdcf0aea9ba": [
+      "WI"
+    ],
+    "546239d10cf25fdcf0aea9b5": [
+      "Snow"
+    ],
+    "546239d10cf25fdcf0aea9b6": [
+      "jsnow@blackwatch.org"
+    ],
+    "548f656a0cf2f50c89c3fc75": [
+      "54806"
+    ],
+    "546239d10cf25fdcf0aea9b4": [
+      "Jon"
+    ],
+    "546239d10cf25fdcf0aea9b9": [
+      "0016081112222"
+    ],
+    "546239d10cf25fdcf0aea9b7": [
+      "stark.bastard23"
+    ],
+    "546239d10cf25fdcf0aea9b8": [
+      "stark.bastard23"
+    ]
+  },
+  "listDetails": {
+    "5094304e0cf280bc6a98bf8e": {
+      "details": {
+        "mobileFlow": "509430b10cf280bc6a98bff8",
+        "trigger": "509430b10cf280bc6a98bff9"
+      },
+      "joinDate": "Thu Oct 09 11:36:14 CDT 2014",
+      "source": "MOBILE"
+    },
+    "4f3454170cf25b1ca44caf6a": {
+      "details": {
+        "mobileFlow": "54934e240cf2a36986b4770f",
+        "trigger": "54934e240cf2a36986b47710"
+      },
+      "joinDate": "Thu Dec 18 15:59:27 CST 2014",
+      "source": "MOBILE"
+    }
+  },
+  "blacklist": []
+}
 ```
 ##### Response 
 ```
@@ -1612,7 +2384,87 @@ search (optional, string) ... search query to match across all of a subscriber's
 ##### Response 
 ```
 Status: 200
-[Subscriber][]
+{
+  "id": "543438bf0cf25a19cdb8354e",
+  "firstName": "Jon",
+  "lastName": "Snow",
+  "email": "jsnow@blackwatch.org",
+  "facebook": "stark.bastard23",
+  "twitter": "stark.bastard23",
+  "mobileNumber": "0016081112222",
+  "state": "WI",
+  "timeZone": "-0700",
+  "areaCode": "608",
+  "zipCode": "54806",
+  "birthDate": "1999-12-31T00:00:00.000",
+  "dateAdded": "2014-12-16T13:57:02.355",
+  "metadata": {
+    "548f5f3b0cf2f50c89c15385": [
+      "7"
+    ],
+    "548f64ad0cf2f50c89c39f53": [
+      "12311980"
+    ],
+    "546239d10cf25fdcf0aea9bf": [
+      "2014-12-16T13:57:02.355"
+    ],
+    "546239d10cf25fdcf0aea9be": [
+      "1999-12-31T00:00:00.000"
+    ],
+    "546239d10cf25fdcf0aea9bd": [
+      "54806"
+    ],
+    "546239d10cf25fdcf0aea9bc": [
+      "608"
+    ],
+    "546239d10cf25fdcf0aea9bb": [
+      "-0700"
+    ],
+    "546239d10cf25fdcf0aea9ba": [
+      "WI"
+    ],
+    "546239d10cf25fdcf0aea9b5": [
+      "Snow"
+    ],
+    "546239d10cf25fdcf0aea9b6": [
+      "jsnow@blackwatch.org"
+    ],
+    "548f656a0cf2f50c89c3fc75": [
+      "54806"
+    ],
+    "546239d10cf25fdcf0aea9b4": [
+      "Jon"
+    ],
+    "546239d10cf25fdcf0aea9b9": [
+      "0016081112222"
+    ],
+    "546239d10cf25fdcf0aea9b7": [
+      "stark.bastard23"
+    ],
+    "546239d10cf25fdcf0aea9b8": [
+      "stark.bastard23"
+    ]
+  },
+  "listDetails": {
+    "5094304e0cf280bc6a98bf8e": {
+      "details": {
+        "mobileFlow": "509430b10cf280bc6a98bff8",
+        "trigger": "509430b10cf280bc6a98bff9"
+      },
+      "joinDate": "Thu Oct 09 11:36:14 CDT 2014",
+      "source": "MOBILE"
+    },
+    "4f3454170cf25b1ca44caf6a": {
+      "details": {
+        "mobileFlow": "54934e240cf2a36986b4770f",
+        "trigger": "54934e240cf2a36986b47710"
+      },
+      "joinDate": "Thu Dec 18 15:59:27 CST 2014",
+      "source": "MOBILE"
+    }
+  },
+  "blacklist": []
+}
 ```
 ##### Response 
 ```
@@ -1642,7 +2494,12 @@ GET /v1/subscriber/count
 ##### Response 
 ```
 Status: 200
-[SubscriberCountCollection][]
+{
+  "page": null,
+  "size": null,
+  "total": 3092,
+  "collection": []
+}
 ```
 ##### Response 
 ```
@@ -1677,7 +2534,12 @@ This method operates differently from other collection-retrieval methods. If ret
 ##### Response 
 ```
 Status: 200
-[Collection][]
+{
+  "collection": [],
+  "page": "1",
+  "size": "60",
+  "total": "81800"
+}
 ```
 ##### Response 
 ```
@@ -1704,7 +2566,11 @@ PUT /v1/subscriber/addMetadata/{idOrMsisdn}
 idOrMsisdn (optional, 24 char hex or 12-digit msisdn) ... may be the subscriber's 24-char hex identifier or their mobile phone number.
 ##### Request
 ```
-[MetadataValue][]
+{
+  "id": "54dd2c1e0cf21202213a7e84",
+  "name": "shoe size",
+  "value": "12"
+}
 ```
 ##### Response 
 ```
@@ -1726,8 +2592,8 @@ Status: 403
 ```
 Status: 500
 ```
-
-#### [v2](/v1/subscriber/{idOrMsisdn}?search={search})
+* * *
+#### v2
 
 ##### Parameters
 + idOrMsisdn (optional, 24 char hex or 12-digit msisdn) ... may be the subscriber's 24-char hex identifier or their mobile phone number with country code.
@@ -1743,7 +2609,87 @@ idOrMsisdn (required, 24 char hex or 12-digit msisdn) ... may be the subscriber'
 ##### Response 
 ```
 Status: 200
-[Subscriber][]
+{
+  "id": "543438bf0cf25a19cdb8354e",
+  "firstName": "Jon",
+  "lastName": "Snow",
+  "email": "jsnow@blackwatch.org",
+  "facebook": "stark.bastard23",
+  "twitter": "stark.bastard23",
+  "mobileNumber": "0016081112222",
+  "state": "WI",
+  "timeZone": "-0700",
+  "areaCode": "608",
+  "zipCode": "54806",
+  "birthDate": "1999-12-31T00:00:00.000",
+  "dateAdded": "2014-12-16T13:57:02.355",
+  "metadata": {
+    "548f5f3b0cf2f50c89c15385": [
+      "7"
+    ],
+    "548f64ad0cf2f50c89c39f53": [
+      "12311980"
+    ],
+    "546239d10cf25fdcf0aea9bf": [
+      "2014-12-16T13:57:02.355"
+    ],
+    "546239d10cf25fdcf0aea9be": [
+      "1999-12-31T00:00:00.000"
+    ],
+    "546239d10cf25fdcf0aea9bd": [
+      "54806"
+    ],
+    "546239d10cf25fdcf0aea9bc": [
+      "608"
+    ],
+    "546239d10cf25fdcf0aea9bb": [
+      "-0700"
+    ],
+    "546239d10cf25fdcf0aea9ba": [
+      "WI"
+    ],
+    "546239d10cf25fdcf0aea9b5": [
+      "Snow"
+    ],
+    "546239d10cf25fdcf0aea9b6": [
+      "jsnow@blackwatch.org"
+    ],
+    "548f656a0cf2f50c89c3fc75": [
+      "54806"
+    ],
+    "546239d10cf25fdcf0aea9b4": [
+      "Jon"
+    ],
+    "546239d10cf25fdcf0aea9b9": [
+      "0016081112222"
+    ],
+    "546239d10cf25fdcf0aea9b7": [
+      "stark.bastard23"
+    ],
+    "546239d10cf25fdcf0aea9b8": [
+      "stark.bastard23"
+    ]
+  },
+  "listDetails": {
+    "5094304e0cf280bc6a98bf8e": {
+      "details": {
+        "mobileFlow": "509430b10cf280bc6a98bff8",
+        "trigger": "509430b10cf280bc6a98bff9"
+      },
+      "joinDate": "Thu Oct 09 11:36:14 CDT 2014",
+      "source": "MOBILE"
+    },
+    "4f3454170cf25b1ca44caf6a": {
+      "details": {
+        "mobileFlow": "54934e240cf2a36986b4770f",
+        "trigger": "54934e240cf2a36986b47710"
+      },
+      "joinDate": "Thu Dec 18 15:59:27 CST 2014",
+      "source": "MOBILE"
+    }
+  },
+  "blacklist": []
+}
 ```
 ##### Response 
 ```
@@ -1802,7 +2748,12 @@ GET /v2/subscriber?listId={listId}&filterId={filterId}
 ##### Response
 ```
 Status: 200
-[Collection][]
+{
+  "collection": [],
+  "page": "1",
+  "size": "60",
+  "total": "81800"
+}
 ```
 ##### Response 
 ```
@@ -1831,7 +2782,10 @@ msisdn (required, 12-digit msisdn) ... the subscriber's mobile phone number
 ##### Response 
 ```
 Status: 200
-[SubscriberMessagesResponse][]
+{
+  "msisdn": "",
+  "messages": []
+}
 ```
 ##### Response 
 ```
@@ -1849,7 +2803,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Blacklist
 The blacklist is a collection of subscribers who the current shortcode is prevented from interacting with. No response will be made to any inbound messages from these subscribers and no outbound messages will ever be delivered to them. 
 
@@ -1916,7 +2870,12 @@ GET /v2/subscriber/blacklist/{idOrMsisdn}?shortCode={shortCode}
 ##### Response 
 ```
 Status: 200
-[Collection][]
+{
+  "collection": [],
+  "page": "1",
+  "size": "60",
+  "total": "81800"
+}
 ```
 ##### Response 
 ```
@@ -1934,7 +2893,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Trigger
 
 A trigger is a platform object that can cause a message to be sent. In plain language, both broadcasts and keywords are triggers. Both can be accessed via this API endpoint, though the use of the Trigger API for broadcasts is deprecated in favor of the Broadcast API.
@@ -1964,7 +2923,14 @@ Retrieve information on a specific trigger. When passed without the {id} paramet
 ##### Response 
 ```
 Status: 200
-[Trigger][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "mobileFlow": "4edfcb2a0cf2146271ed7e46",
+  "name": "sample",
+  "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
 ```
 ##### Response 
 ```
@@ -2018,7 +2984,14 @@ Reassign a keyword to a different mobile flow, or unassign it entirely.
 
 ##### Request
 ```
-[Trigger][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "mobileFlow": "4edfcb2a0cf2146271ed7e46",
+  "name": "sample",
+  "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
 ```
 ##### Response 
 ```
@@ -2049,12 +3022,26 @@ Create a new keyword.
 
 ##### Request
 ```
-[Trigger][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "mobileFlow": "4edfcb2a0cf2146271ed7e46",
+  "name": "sample",
+  "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
 ```
 ##### Response 
 ```
 Status: 200
-[Trigger][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "creationDate": "Fri Aug 10 09:55:57 CDT 2012",
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "mobileFlow": "4edfcb2a0cf2146271ed7e46",
+  "name": "sample",
+  "shortCode": "4e8b4b5afda5efeeec370e8a"
+}
 ```
 ##### Response 
 ```
@@ -2080,7 +3067,12 @@ GET /v1/trigger/recent
 ##### Response 
 ```
 Status: 200
-[Collection][]
+{
+  "collection": [],
+  "page": "1",
+  "size": "60",
+  "total": "81800"
+}
 ```
 ##### Response 
 ```
@@ -2108,7 +3100,12 @@ name (required, string) ... the keyword to check for availability
 ##### Response 
 ```
 Status: 200
-[Collection][]
+{
+  "collection": [],
+  "page": "1",
+  "size": "60",
+  "total": "81800"
+}
 ```
 ##### Response 
 ```
@@ -2134,7 +3131,12 @@ GET /v1/trigger/broadcast
 ##### Response 
 ```
 Status: 200
-[Collection][]
+{
+  "collection": [],
+  "page": "1",
+  "size": "60",
+  "total": "81800"
+}
 ```
 ##### Response 
 ```
@@ -2152,7 +3154,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### User
 
 Use these endpoints to control other users' access to Revere Mobile.
@@ -2200,7 +3202,30 @@ Retrieve information on a specific user with the {id} parameter set, or retrieve
 ##### Response 
 ```
 Status: 200
-[User][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "apiKey": "2baa7764-f2fa-4b07-b5de-867dd8ee2532",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "defaultshortCode": "4e8b4b5afda5efeeec370e8a",
+  "details": {
+    "name": "Jon Doe",
+    "title": "Communications Director",
+    "phone": "0012022999393",
+    "mobile": "0012022999393",
+    "email": "jondoe@shormakers.org",
+    "company": "Shoemakers International Union",
+    "lastLogin": null
+  },
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "password": "thiswouldbeareallybadactualpassword",
+  "role": "4fd220440cf2c16d2fa79ac0",
+  "shortCodes": [
+    "4e8b4b5afda5efeeec370e8a"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -2254,7 +3279,30 @@ Change a user's properties
 
 ##### Request
 ```
-[User][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "apiKey": "2baa7764-f2fa-4b07-b5de-867dd8ee2532",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "defaultshortCode": "4e8b4b5afda5efeeec370e8a",
+  "details": {
+    "name": "Jon Doe",
+    "title": "Communications Director",
+    "phone": "0012022999393",
+    "mobile": "0012022999393",
+    "email": "jondoe@shormakers.org",
+    "company": "Shoemakers International Union",
+    "lastLogin": null
+  },
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "password": "thiswouldbeareallybadactualpassword",
+  "role": "4fd220440cf2c16d2fa79ac0",
+  "shortCodes": [
+    "4e8b4b5afda5efeeec370e8a"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -2285,11 +3333,57 @@ Create a new user
 
 ##### Request
 ```
-[User][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "apiKey": "2baa7764-f2fa-4b07-b5de-867dd8ee2532",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "defaultshortCode": "4e8b4b5afda5efeeec370e8a",
+  "details": {
+    "name": "Jon Doe",
+    "title": "Communications Director",
+    "phone": "0012022999393",
+    "mobile": "0012022999393",
+    "email": "jondoe@shormakers.org",
+    "company": "Shoemakers International Union",
+    "lastLogin": null
+  },
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "password": "thiswouldbeareallybadactualpassword",
+  "role": "4fd220440cf2c16d2fa79ac0",
+  "shortCodes": [
+    "4e8b4b5afda5efeeec370e8a"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 200
 ```
-[User][]
+{
+  "account": "546239d10cf25fdcf0aea9b2",
+  "apiKey": "2baa7764-f2fa-4b07-b5de-867dd8ee2532",
+  "createdBy": "5493568f0cf2fcad2e35ecb5",
+  "defaultshortCode": "4e8b4b5afda5efeeec370e8a",
+  "details": {
+    "name": "Jon Doe",
+    "title": "Communications Director",
+    "phone": "0012022999393",
+    "mobile": "0012022999393",
+    "email": "jondoe@shormakers.org",
+    "company": "Shoemakers International Union",
+    "lastLogin": null
+  },
+  "group": "54623a230cf25fdcf0aeaa5c",
+  "id": "5493568f0cf2fcad2e35ecb5",
+  "name": "sample",
+  "password": "thiswouldbeareallybadactualpassword",
+  "role": "4fd220440cf2c16d2fa79ac0",
+  "shortCodes": [
+    "4e8b4b5afda5efeeec370e8a"
+  ],
+  "status": "ACTIVE"
+}
 ```
 ##### Response 
 ```
@@ -2322,7 +3416,9 @@ Accept: application/json
 ##### Response 
 ```
 200
-[APIKey][]
+{
+  "apiKey": "2baa7764-f2fa-4b07-b5de-867dd8ee2532"
+}
 ```
 ##### Response 
 ```
@@ -2340,7 +3436,7 @@ Status: 403
 ```
 Status: 500
 ```
-
+* * *
 ### Mobile Flow Components
 
 A mobile flow represents a complex interaction with a subscriber or other end-user. A mobile flow is composed of a series of content modules that contain the specifics of the interaction. You can set the maximum number of messages per month that the mobile flow will send to any one subscriber.
