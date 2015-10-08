@@ -1173,7 +1173,7 @@ Status: 403
 ```
 GET /v2/authenticate/whoami
 ```
-** Response**
+**Response**
 ```
 Status: 200
 {
