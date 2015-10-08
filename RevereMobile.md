@@ -17,7 +17,7 @@ Mobile flows offer a rich set of options for interacting with a subscriber. More
 
 ### Object IDs
 
-The Revere Mobile service describes many types of objects, such as users, subscribers, lists, metadata files, and mobile flows. The service uses 24-digit hexadecimal string to identify objects, for example, "4e7b79780cf25110e4ee41ac".
+The Revere Mobile service describes many types of objects, such as users, subscribers, lists, metadata files, and mobile flows. The service uses 24-digit hexadecimal string to identify objects, for example: `4e7b79780cf25110e4ee41ac`
 
 ### Authentication
 
