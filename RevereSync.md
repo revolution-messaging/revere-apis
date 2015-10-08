@@ -1,4 +1,4 @@
-# Sync: Public
+# Revere Sync
 
 HOST: https://sync.revmsg.net
 
