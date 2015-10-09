@@ -1,8 +1,17 @@
 # Ledge Zeppelin API
 
-## Ledge Zeppelin API service.
+#### HOST: https://api.ledgezeppelin.com
 
-HOST: https://api.ledgezeppelin.com
+### Endpoints
+
+- [Get geographic details of zipcode (most likely districts)](#get-geographic-details-of-zipcode-most-likely-districts)
+- [Get geographic details of zipcode (all districts)](#get-geographic-details-of-zipcode-all-districts)
+- [List legislators by state](#list-legislators-by-state)
+- [List legislators by state and level](#list-legislators-by-state-and-level)
+- [List legislators by zipcode](#list-legislators-by-zipcode)
+- [List legislators by zipcode and level](#list-legislators-by-zipcode-and-level)
+- [Get legislator by ID](#get-legislator-by-id)
+- [List legislators by filter](#list-legislators-by-filter)
 
 ### Access Tokens
 
@@ -67,7 +76,7 @@ Content-type: application/json
 
 Sub-resources are objects for organizing pieces of data related to legislators.
 
-###  Email Address
+####  Email Address
 
 - **label** (string, optional)
 - **address** (string, required)
@@ -80,7 +89,7 @@ Content-type: application/json
 }
 ```
 
-### Phone
+#### Phone
 
 - **label** (string, optional) - The location of the phone (district office, capitol office, etc)
 - **number** (string, required)
@@ -93,7 +102,7 @@ Content-type: application/json
 }
 ```
 
-### Network
+#### Network
 
 - **label** (string, optional) - The name of the network
 - **url** (string, required)
