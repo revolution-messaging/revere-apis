@@ -67,7 +67,7 @@ Content-type: application/json
 
 Sub-resources are objects for organizing pieces of data related to legislators.
 
-###  Resource
+###  Email Address
 
 - **label** (string, optional)
 - **address** (string, required)
@@ -80,7 +80,7 @@ Content-type: application/json
 }
 ```
 
-### Phone Resource
+### Phone
 
 - **label** (string, optional) - The location of the phone (district office, capitol office, etc)
 - **number** (string, required)
@@ -93,7 +93,7 @@ Content-type: application/json
 }
 ```
 
-### Network Resource
+### Network
 
 - **label** (string, optional) - The name of the network
 - **url** (string, required)
