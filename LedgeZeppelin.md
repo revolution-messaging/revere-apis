@@ -50,7 +50,7 @@ A legislator returned by the API service will look like:
         }
     ],
     "emails": [],
-    "networks": []
+    "networks": [],
     "country": "us",
     "date_modified": "2013-11-11T15:54:24.741Z",
     "date_added": "2013-11-11T15:54:24.741Z",
@@ -73,7 +73,7 @@ Sub resources are objects for organizing pieces of data related to legislators.
 ```json
 {
     "label": "District",
-    "address: "representative@whitehouse.gov"
+    "address": "representative@whitehouse.gov"
 }
 ```
 
@@ -85,7 +85,7 @@ Sub resources are objects for organizing pieces of data related to legislators.
 ```json
 {
     "label": "District",
-    "number: "(123) 456-7890"
+    "number": "(123) 456-7890"
 }
 ```
 
@@ -97,7 +97,7 @@ Sub resources are objects for organizing pieces of data related to legislators.
 ```json
 {
     "label": "Twitter",
-    "address: "https://twitter.com/representative"
+    "address": "https://twitter.com/representative"
 }
 ```
 
