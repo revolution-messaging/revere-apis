@@ -44,7 +44,7 @@ Via: 1.1 vegur
 ### Base Endpoint
 
 ```
-https://revere-exchange.herokuapp.com/api
+https://xchng.reverehq.com/api
 ```
 
 ### Sessions (Authentication)
@@ -279,7 +279,7 @@ GET /clients/:client_id/ads?page=&per_page=&offset=
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| client_id | Integer | True | ID for client record the ads belong to |
+| client_id | Integer | True | ID for the client record the ads belong to |
 | page | Integer | False | Current page (default: 1) |
 | per_page | Integer | False | How many to list in a page (default: 25) |
 | offset | Integer | False | The offset to start from (default: 0) |
@@ -315,7 +315,7 @@ GET /clients/:client_id/ads/:ad_id
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| client_id | Integer | True | ID for client record the ad belongs to |
+| client_id | Integer | True | ID for the client record the ad belongs to |
 | ad_id | Integer | True | ID for ad record |
 
 **Response**
@@ -347,7 +347,7 @@ POST /clients/:client_id/ads
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| client_id | Integer | True | ID for client record the ad belongs to |
+| client_id | Integer | True | ID for the client record the ad belongs to |
 
 **Request**
 
@@ -401,7 +401,7 @@ PUT /clients/:client_id/ads/:ad_id
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| client_id | Integer | True | ID for client record the ad belongs to |
+| client_id | Integer | True | ID for the client record the ad belongs to |
 | ad_id | Integer | True | ID for ad record |
 
 **Request**
@@ -455,7 +455,7 @@ DELETE /clients/:client_id/ads/:ad_id
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| client_id | Integer | True | ID for client record the ad belongs to |
+| client_id | Integer | True | ID for the client record the ad belongs to |
 | ad_id | Integer | True | ID for ad record |
 
 **Response**
@@ -478,7 +478,7 @@ GET /clients/:client_id/campaigns
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| client_id | Integer | True | ID for client record the campaign belongs to |
+| client_id | Integer | True | ID for the client record the campaign belongs to |
 
 **Response**
 
@@ -509,7 +509,7 @@ GET /clients/:client_id/campaigns/:campaign_id
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| client_id | Integer | True | ID for client record the campaign belongs to |
+| client_id | Integer | True | ID for the client record the campaign belongs to |
 | campaign_id | Integer | True | ID for campaign record |
 
 **Response**
@@ -527,18 +527,102 @@ GET /clients/:client_id/campaigns/:campaign_id
     "end_date": "2015-10-23T11:40:05-07:00",
     "audiences": [
       {
-
+        "id": 1,
+        "name": "Team Dog",
+        "status": "active",
+        "list_file_name": "/audiences/2015/5a837fed24dd1897978362b45bec887c/team_dog.csv",
+        "list_file_size": "2752",
+        "list_content_type": "text/csv",
+        "list_url": "https://revere-exchange.s3.amazonaws.com/audiences/2015/5a837fed24dd1897978362b45bec887c/team_dog.csv",
+        "list_updated_at": "2015-09-22T22:49:43-07:00",
+        "created_at": "2015-09-22T22:49:43-07:00",
+        "updated_at": "2015-09-22T22:49:43-07:00"
       }
     ],
     "advertisements": [
       {
         "id": 1,
-        "status": "active"
+        "name": "Team Dog Video",
+        "status": "active",
+        "media_type": "adVideo",
+        "media_url": "https://revere-exchange.s3.amazonaws.com/ads/2015/ee2c55a90afb289207d89ca2fda1f8fd/team_dog_video.mp4",
+        "media_file_name": "/ads/2015/ee2c55a90afb289207d89ca2fda1f8fd/team_dog_video.mp4",
+        "media_file_size": 5120,
+        "media_content_type": "video/mp4",
+        "media_updated_at": "2015-09-22T22:49:43-07:00",
+        "created_at": "2015-09-21T19:50:15-07:00",
+        "updated_at": "2015-09-21T19:50:15-07:00"
+      }
+    ],
+    "created_at": "2015-09-21T19:50:15-07:00",
+    "updated_at": "2015-09-21T19:50:15-07:00"
+  }
+}
+```
+
+#### Create a Campaign
+
+**Parameters**
+
+| Name | Type | Required | Description |
+| ---- | ---- | -------- | ----------- |
+| client_id | Integer | True | ID for the client record the campaign belongs to |
+
+**Request**
+
+| Name | Type | Required | Description |
+| ---- | ---- | -------- | ----------- |
+| name | String | True | Name of advertisement |
+| goal | String | True | Type of advertisement |
+| start_date | Integer | False | File name (key) from uploaded attachment |
+| end_date | String | If given **media_file_name** | Size of uploaded attachment in bytes |
+| ad_ids | Int[] | False | Array of Ad IDs to associate with the campaign |
+| ads_campaigns_attributes | Object[] | False | Array of Ad objects to create and associate with the campaign |
+| audience_ids | Int[] | False | Array of Audience IDs to associate with the campaign |
+| audiences_campaigns_attributes | Object[] | False | Array of Ad objects to create and associate with the campaign |
+
+```json
+{
+  "campaigns": {
+    "client_id": 1,
+    "name": "Go Team Dog",
+    "goal": "acquisition",
+    "budget": "1200.00",
+    "start_date": "2015-09-23T11:40:05-07:00",
+    "end_date": "2015-10-23T11:40:05-07:00",
+    "audiences_campaigns_attributes": [
+      {
+        "audience_attributes": {
+          "name": "Team Cat",
+          "list_file_name": "/audiences/2015/5a837fed24dd1897978362b45bec887c/team_cat.csv",
+          "list_file_size": "800",
+          "list_content_type": "text/csv",
+          "list_url": "https://revere-exchange.s3.amazonaws.com/audiences/2015/5a837fed24dd1897978362b45bec887c/team_cat.csv",
+          "list_updated_at": "2015-09-22T22:49:43-07:00"
+        }
+      }
+    ],
+    "ads_campaigns_attributes": [
+      {
+        "saturation": "high",
+        "ad_attributes": {
+          "name": "Go Team Dog Hooray Hooray",
+          "media_type": "adVideo",
+          "media_url": "https://revere-exchange.s3.amazonaws.com/ads/2015/ee2c55a90afb289207d89ca2fda1f8fd/go_team_dog_hooray_hooray.mp4",
+          "media_file_name": "/ads/2015/ee2c55a90afb289207d89ca2fda1f8fd/go_team_dog_hooray_hooray.mp4",
+          "media_file_size": 5120,
+          "media_content_type": "video/mp4",
+          "media_updated_at": "2015-09-22T22:49:43-07:00"
+        }
       }
     ]
   }
 }
 ```
+
+#### Update a Campaign
+
+#### Delete a Campaign
 
 ### Clients
 
