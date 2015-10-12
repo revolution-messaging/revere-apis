@@ -572,10 +572,10 @@ GET /clients/:client_id/campaigns/:campaign_id
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| name | String | True | Name of advertisement |
-| goal | String | True | Type of advertisement |
-| start_date | Integer | False | File name (key) from uploaded attachment |
-| end_date | String | If given **media_file_name** | Size of uploaded attachment in bytes |
+| name | String | True | Name of campaign |
+| goal | String | True | Goal of campaign (awareness, acquisition) |
+| start_date | Integer | True | Start date and time of campaign |
+| end_date | String | True | End date and time of campaign |
 | ad_ids | Int[] | False | Array of Ad IDs to associate with the campaign |
 | ads_campaigns_attributes | Object[] | False | Array of Ad objects to create and associate with the campaign |
 | audience_ids | Int[] | False | Array of Audience IDs to associate with the campaign |
