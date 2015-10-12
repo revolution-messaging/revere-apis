@@ -597,7 +597,6 @@ GET /clients/:client_id/campaigns/:campaign_id
           "list_file_name": "/audiences/2015/5a837fed24dd1897978362b45bec887c/team_cat.csv",
           "list_file_size": "800",
           "list_content_type": "text/csv",
-          "list_url": "https://revere-exchange.s3.amazonaws.com/audiences/2015/5a837fed24dd1897978362b45bec887c/team_cat.csv",
           "list_updated_at": "2015-09-22T22:49:43-07:00"
         }
       }
@@ -608,7 +607,6 @@ GET /clients/:client_id/campaigns/:campaign_id
         "ad_attributes": {
           "name": "Go Team Dog Hooray Hooray",
           "media_type": "adVideo",
-          "media_url": "https://revere-exchange.s3.amazonaws.com/ads/2015/ee2c55a90afb289207d89ca2fda1f8fd/go_team_dog_hooray_hooray.mp4",
           "media_file_name": "/ads/2015/ee2c55a90afb289207d89ca2fda1f8fd/go_team_dog_hooray_hooray.mp4",
           "media_file_size": 5120,
           "media_content_type": "video/mp4",
