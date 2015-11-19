@@ -43,8 +43,16 @@ Via: 1.1 vegur
 
 ### Base Endpoint
 
+Production
+
 ```
 https://xchng.reverehq.com/api
+```
+
+Staging
+
+```
+https://xchngstaging.reverehq.com/api
 ```
 
 ### Sessions (Authentication)
