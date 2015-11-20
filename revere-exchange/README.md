@@ -83,7 +83,12 @@ POST /sessions
 {
   "sso_uid": "4879d096-76a1-4618-aa8e-2a7c93e79428",
   "email": "josh@revolutionmessaging.com",
-  "auth_token": "[filtered]"
+  "auth_token": "[filtered]",
+  "user": {
+    "id": 1,
+    "name": "Josh Minnich",
+    "role": "admin"
+  }
 }
 ```
 
