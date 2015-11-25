@@ -22,7 +22,7 @@ Accept: application/vnd.revere-exchange-v1+json
 
 ### Schema
 
-All API access is over HTTPS, and accessed from the revere-exchange.herokuapp.com domain. All data is sent and received as JSON unless otherwise noted.
+All API access is over HTTPS, and accessed from the xchng.reverehq.com domain. All data is sent and received as JSON unless otherwise noted.
 
 ```
 HTTP/1.1 200 OK
