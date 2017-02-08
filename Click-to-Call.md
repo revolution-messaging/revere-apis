@@ -16,6 +16,8 @@ If the "revmsghtml" parameter is provided, there is no callback in the URL, and 
 
 ## Returned error messages
 
+If there was a problem placing the phone call you will recieve a status code of 400 with one of the following error messages in the returned payload:
+
 * If the required parameters were not provided or were not in the proper format: _Sorry, but you haven't provided any of the info we were expecting._
 * If the provided campaign line is not found in the system: _This phone number is not configured._
 * If there was any other error: _Sorry, there was an error._
@@ -42,7 +44,10 @@ Returns json if json in Accept header, or a callback-wrapped json object if JSON
 #### Response 200
 
 ```
-{ "error":false,"message":"The call's been placed." }
+{
+  "error":false,
+  "message": "The call's been placed."
+}
 ```
 
 ### Initiate call
