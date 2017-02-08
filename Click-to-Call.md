@@ -43,7 +43,7 @@ Returns json if json in Accept header, or a callback-wrapped json object if JSON
 
 #### Response 200
 
-```
+```json
 {
   "error":false,
   "message": "The call's been placed."
@@ -83,7 +83,7 @@ These request parameters can be provided via POST using: application/json, appli
 
 #### Response 200
 
-```
+```json
 {
   "error": false,
   "message": "The call's been placed."
