@@ -2,7 +2,7 @@
 
 An API from Revolution Messaging, LLC. Click-to-Call is a RevereCalling API that allows you to trigger a call from your calling campaign line on a website, social network, or via other means.
 
-HOST: http://phone.reverehq.com/
+HOST: https://phone.reverehq.com/
 
 Copyright (c) 2017 Revolution Messaging, LLC
 
